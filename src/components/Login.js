@@ -58,11 +58,12 @@
 
 
 import React, { useState , useRef } from 'react';  // Combine React and useState imports
-import Header from './Header';
+
 import {checkValideData} from "../utils/validate";
 import {createUserWithEmailAndPassword , signInWithEmailAndPassword } from "firebase/auth";
 import {auth} from "../utils/firebase";
 import {updateProfile } from "firebase/auth";
+import Header from './Header';
 
 
 import { useDispatch } from 'react-redux';
@@ -152,7 +153,7 @@ const Login = () => {
 
   return (
     <div>
-      <Header />
+       <Header />
       <div className="absolute">
         <img className=' h-screen  md:w-screen object-cover '
           src='https://media.istockphoto.com/id/1169694902/photo/assorted-indian-non-vegetarian-food-recipe-served-in-a-group-includes-chicken-curry-mutton.webp?a=1&b=1&s=612x612&w=0&k=20&c=u_Txs8ayelMVBzmb142cbiE7UO4vDokq9hXUCUREPEc=' alt="bg img"
