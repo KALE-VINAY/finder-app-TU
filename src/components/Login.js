@@ -160,7 +160,7 @@ const Login = () => {
         />
       </div>
 
-      <form onSubmit={(e) => e.preventDefault()} className=" w-8/12 md:w-3/12 absolute p-6 md:p-12  bg-gradient-to-l from bg-yellow-50 my-36 md:my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80 border-black">
+      <form onSubmit={(e) => e.preventDefault()} className=" w-8/12 md:w-3/12 absolute p-6 md:p-12  bg-gradient-to-l from bg-yellow-50 my-36 md:my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-60 border-black">
         <h1 className="font-bold font-serif text-4xl py-4 text-gray-800 ">
           {isSignInForm ? "Sign In" : "Sign Up"}
         </h1>
@@ -193,7 +193,7 @@ const Login = () => {
         <button className=" p-4 my-6 bg-yellow-300 w-full rounded-lg" onClick={handleButtonClick}>
           {isSignInForm ? "Sign In" : "Sign Up"}
         </button>
-        <p className=" py-4 cursor-pointer text-black" onClick={toggleSignInForm}>
+        <p className=" py-4 cursor-pointer  font-serif text-gray-800 " onClick={toggleSignInForm}>
           {isSignInForm ? "New to here? Sign up now" : "Already a member? Sign in"}
         </p>
       </form>
