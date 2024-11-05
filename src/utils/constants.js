@@ -1,4 +1,4 @@
-export const LOGO = "https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png";
+export const LOGO = "https://img.freepik.com/premium-vector/food-logo-design-vector-white-background_1277164-14861.jpg?w=740";
 
 export const USER_AVATER ="https://tse4.mm.bing.net/th?id=OIP.Zk9O2lnVmvKoT5GukRJ8ogHaIU&pid=Api&P=0&h=180";
 

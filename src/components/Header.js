@@ -140,14 +140,14 @@ const Header = () => {
 
 
   return (
-    <div className='absolute w-full px-4 py-3 bg-gradient-to-b from-black z-10 flex flex-wrap justify-between items-center'>
+    <div className='absolute w-full px-4 py-3 bg-white z-10 flex flex-wrap justify-between items-center'>
       
       <img className="w-16 md:w-24 bg-gradient-to-b from-black" src={LOGO} alt="logo" />
+      <h1 className='text-5xl  font-serif text-center '>TU Food App</h1>
 
       {user && (
         <div className='flex flex-wrap items-center'>
           
-
        
 
           <div className='flex items-center ml-2'>
@@ -158,7 +158,7 @@ const Header = () => {
             />
             <button 
               onClick={handleSignOut} 
-              className='ml-2 text-white font-bold'>
+              className='ml-2 text-black font-bold'>
               Sign Out
             </button>
           </div>
