@@ -58,16 +58,16 @@
 
 
 import React, { useState , useRef } from 'react';  // Combine React and useState imports
-
+import { useNavigate } from 'react-router-dom';
 import {checkValideData} from "../utils/validate";
 import {createUserWithEmailAndPassword , signInWithEmailAndPassword } from "firebase/auth";
 import {auth} from "../utils/firebase";
 import {updateProfile } from "firebase/auth";
 import Header from './Header';
-
-
+import { useEffect } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
 import { useDispatch } from 'react-redux';
-import { addUser } from '../utils/userSlice';
+import { addUser ,removeUser } from '../utils/userSlice';
 import { BG_URL, USER_AVATER } from '../utils/constants';
 
 const Login = () => {
@@ -76,7 +76,7 @@ const Login = () => {
   const [errorMessage , setErrorMessage] = useState(null);
 
   const dispatch = useDispatch();
-  
+  const navigate = useNavigate();
   const email = useRef(null);
   const password = useRef(null);
   const name = useRef(null);  
@@ -145,7 +145,21 @@ const Login = () => {
 
     }
 
-    }
+    };
+
+    useEffect(() => {
+      const unsubscribe = onAuthStateChanged(auth, (user) => {
+        if (user) {
+          const { uid, email, displayName, photoURL } = user;
+          dispatch(addUser({ uid, email, displayName, photoURL }));
+          navigate("/browse");
+        } else {
+          dispatch(removeUser());
+          navigate("/");
+        }
+      });
+      return () => unsubscribe();
+    }, [navigate, dispatch]);
 
 
 
