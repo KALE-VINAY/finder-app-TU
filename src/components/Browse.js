@@ -4,6 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import the ca
 import RestaurantCard from './RestaurantCard';
 import Header from './Header';
 import Footer from './Footer';
+import Hostel from './Hostel';
 
 const Browse = () => {
   const restaurants = [
@@ -109,6 +110,7 @@ const Browse = () => {
           ))}
         </div>
       </div>
+      <Hostel/>
       <Footer />
     </div>
   );
