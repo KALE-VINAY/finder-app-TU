@@ -84,28 +84,14 @@ const RestaurantMenu = () => {
           <p className="text-yellow-600">Last updated 3 months ago</p>
         </div>
 
-        {/* Top Dishes */}
-        <div className="mb-6">
-          <h3 className="text-gray-500 mb-4">TOP DISHES</h3>
-          <div className="flex space-x-4 overflow-x-auto">
-            {topDishes.map((dish) => (
-              <div
-                key={dish.id}
-                className="flex items-center space-x-2 bg-yellow-50 px-4 py-2 rounded-lg whitespace-nowrap"
-              >
-                <span className="text-yellow-500">✦</span>
-                <span>{dish.name}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+      
 
         {/* Menu Categories */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {menuCategories.map((category) => (
             <div key={category.id} className="bg-white rounded-lg overflow-hidden shadow">
               <img
-                src={category.image}
+                src="public\srishti2.jpg"
                 alt={category.title}
                 className="w-full h-48 object-cover"
               />
@@ -118,15 +104,7 @@ const RestaurantMenu = () => {
         </div>
       </div>
 
-      {/* Bottom Action Buttons */}
-      <div className="fixed bottom-0 left-0 right-0 p-4 bg-white flex space-x-4">
-        <button className="flex-1 border border-red-500 text-red-500 py-3 rounded-lg">
-          Book a table
-        </button>
-        <button className="flex-1 bg-red-500 text-white py-3 rounded-lg">
-          Pay bill
-        </button>
-      </div>
+     
 
       {/* Navigation Bar */}
       <div className="fixed bottom-0 left-0 right-0 flex justify-between p-4 bg-white border-t">

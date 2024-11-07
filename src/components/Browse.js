@@ -98,7 +98,7 @@ const Browse = () => {
         >
           {carouselImages.map((src, index) => (
             <div key={index}>
-              <img src={src} alt={`Carousel ${index + 1}`} className="min-w-full h-96 rounded-xl" />
+              <img src={src} alt={`Carousel ${index + 1}`} className="min-w-full mt-5 h-96 rounded-xl object-cover" />
             </div>
           ))}
         </Carousel>
@@ -110,7 +110,13 @@ const Browse = () => {
           ))}
         </div>
       </div>
-      <Hostel/>
+      <div className=' font-serif text-center text-5xl  '>hostel canteens in TU</div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-5 my-10 ">
+          {restaurants.map((restaurant, index) => (
+            <Hostel key={index} {...restaurant} />
+          ))}
+        </div>
+      
       <Footer />
     </div>
   );

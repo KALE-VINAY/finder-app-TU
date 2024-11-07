@@ -1,9 +1,11 @@
 // RestaurantCard.js
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const RestaurantCard = ({ name, cuisines, price, rating, time, discount, imageUrl, promoted }) => {
   return (
-    <a href='/restaurant'>
+    <a href='/restaurant' >
+    
 <div className="relative bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
       {promoted && (
         <div className="absolute top-2 left-2 bg-gray-700 text-white text-xs font-semibold px-2 py-1 rounded">
