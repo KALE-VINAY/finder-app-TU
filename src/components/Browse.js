@@ -90,6 +90,60 @@ const Browse = () => {
     
   ];
 
+  const hostels = [
+    {
+      name: "Nilachal Men's Hostel",
+      cuisines: 'South Indian, North Indian',
+      price: '₹100 for one',
+      rating: 4.4,
+      time: '31 min',
+      discount: '50% OFF',
+      imageUrl: 'https://www.tezu.ernet.in/hostels/nmh/images/gallery/2.jpg',
+      promoted: true,
+    },
+    {
+      name: "Kanchenjungha Men's Hostel",
+      cuisines: 'Fast food restaurant',
+      price: '₹150 for one',
+      rating: 4.3,
+      time: '36 min',
+      discount: '40% OFF',
+      imageUrl: 'https://www.tezu.ernet.in/hostels/kmh/gallery/main.jpeg',
+      promoted: true,
+    },
+    {
+      name: "Charaideo Men's Hostel ",
+      cuisines: 'Indian restaurant',
+      price: '₹40 for one',
+      rating: 4.6,
+      time: '24 min',
+      imageUrl: 'https://www.tezu.ernet.in/hostels/cmh/image/ht26.jpg',
+      promoted: false,
+    },
+    {
+      name: "Patkai Men's Hostel",
+      cuisines: 'South Indian, North Indian, Cafe',
+      price: '₹150 for one',
+      rating: 4.3,
+      time: '36 min',
+      discount: '40% OFF',
+      imageUrl: 'https://tse4.mm.bing.net/th?id=OIP.nS_Igy3OUb8UrxhNEV0NlwHaFA&pid=Api&P=0&h=180',
+      promoted: true,
+    },
+    {
+      name: "Saraighat C.V. Raman Men's Hostel",
+      cuisines: 'Fast food restaurant',
+      price: '₹150 for one',
+      rating: 4.3,
+      time: '36 min',
+      discount: '40% OFF',
+      imageUrl: 'https://tse4.mm.bing.net/th?id=OIP.Ug5xLjQwRsVGRsUT4jcOFwHaFj&pid=Api&P=0&h=180',
+      promoted: true,
+    },
+    
+  ];
+
+
   const carouselImages = [
     'https://media.istockphoto.com/id/854033828/photo/collage-of-food-products.webp?a=1&b=1&s=612x612&w=0&k=20&c=UlsaFrbeoA1GWsBB2zdAxa2ftskWPCb_0Ixrkc4-6ys=',
     'https://tse4.mm.bing.net/th?id=OIP.KiXKWwQ4bjHKjYGdGAhOQwHaCU&pid=Api&P=0&h=180',
@@ -123,8 +177,8 @@ const Browse = () => {
       </div>
       <div className=' font-serif text-center text-5xl  '>hostel canteens in TU</div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-5 my-10 ">
-          {restaurants.map((restaurant, index) => (
-            <Hostel key={index} {...restaurant} />
+          {hostels.map((hostel, index) => (
+            <Hostel key={index} {...hostel} />
           ))}
         </div>
       
