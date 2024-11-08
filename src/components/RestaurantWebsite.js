@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {   Star,  Copy, Navigation } from 'lucide-react';
 import Header from './Header';
+import Footer from './Footer';
 
 const RestaurantWebsite = () => {
   const [activeTab, setActiveTab] = useState('Overview');
@@ -137,7 +138,7 @@ const RestaurantWebsite = () => {
           
         </div>
       </div>
-
+    {/* <Footer/> */}
   
     </div>
   );

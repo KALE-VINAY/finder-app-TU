@@ -9,7 +9,7 @@ import Hostel from './Hostel';
 const Browse = () => {
   const restaurants = [
     {
-      name: 'Paakashala',
+      name: 'SRISHTI RESTAURANT',
       cuisines: 'South Indian, North Indian',
       price: '₹100 for one',
       rating: 4.4,
@@ -19,8 +19,18 @@ const Browse = () => {
       promoted: true,
     },
     {
-      name: 'S N Refreshments',
-      cuisines: 'South Indian',
+      name: 'Essential',
+      cuisines: 'Fast food restaurant',
+      price: '₹150 for one',
+      rating: 4.3,
+      time: '36 min',
+      discount: '40% OFF',
+      imageUrl: 'https://media.istockphoto.com/id/1442604378/photo/food-photos-various-entrees-appetizers-deserts-etc.jpg?s=612x612&w=0&k=20&c=WUCuJ2L2VKlrsIsXVnYX1HoG5rZM8K6ISeiE1liMBq4=',
+      promoted: true,
+    },
+    {
+      name: 'Amenityyy',
+      cuisines: 'Indian restaurant',
       price: '₹40 for one',
       rating: 4.6,
       time: '24 min',
@@ -28,8 +38,8 @@ const Browse = () => {
       promoted: false,
     },
     {
-      name: 'Namaste',
-      cuisines: 'South Indian, North Indian',
+      name: 'Varieties Restaurant',
+      cuisines: 'South Indian, North Indian, Cafe',
       price: '₹150 for one',
       rating: 4.3,
       time: '36 min',
@@ -38,8 +48,8 @@ const Browse = () => {
       promoted: true,
     },
     {
-      name: 'Namaste',
-      cuisines: 'South Indian, North Indian',
+      name: "Soha's cafe",
+      cuisines: 'Fast food restaurant',
       price: '₹150 for one',
       rating: 4.3,
       time: '36 min',
@@ -48,8 +58,8 @@ const Browse = () => {
       promoted: true,
     },
     {
-      name: 'Namaste',
-      cuisines: 'South Indian, North Indian',
+      name: 'GS Hotel',
+      cuisines: 'Family restaurant',
       price: '₹150 for one',
       rating: 4.3,
       time: '36 min',
@@ -58,8 +68,8 @@ const Browse = () => {
       promoted: true,
     },
     {
-      name: 'Namaste',
-      cuisines: 'South Indian, North Indian',
+      name: 'Food Zone',
+      cuisines: 'Fast food restaurant',
       price: '₹150 for one',
       rating: 4.3,
       time: '36 min',
@@ -68,8 +78,8 @@ const Browse = () => {
       promoted: true,
     },
     {
-      name: 'Namaste',
-      cuisines: 'South Indian, North Indian',
+      name: 'SOE DHABA, Tezpur University',
+      cuisines: 'Restaurant',
       price: '₹150 for one',
       rating: 4.3,
       time: '36 min',
@@ -77,6 +87,7 @@ const Browse = () => {
       imageUrl: 'https://media.istockphoto.com/id/1442604378/photo/food-photos-various-entrees-appetizers-deserts-etc.jpg?s=612x612&w=0&k=20&c=WUCuJ2L2VKlrsIsXVnYX1HoG5rZM8K6ISeiE1liMBq4=',
       promoted: true,
     },
+    
   ];
 
   const carouselImages = [
