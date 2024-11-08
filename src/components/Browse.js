@@ -171,7 +171,7 @@ const Browse = () => {
       </div>
       
       
-        <div className='mt-40'>
+        <div className='mt-2'>
 
         <h1 className="relative text-5xl my-5 text-black font-serif text-center">Restaurants near TU</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-5">
