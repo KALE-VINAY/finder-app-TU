@@ -40,27 +40,27 @@ const RestaurantWebsite = () => {
     <div className="max-w-7xl mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row justify-between" >
           <div className="flex flex-col w-6/12 gap-4" >
-            <h1 className="text-4xl font-bold font-serif mt-24">SRISHTI RESTAURANT</h1>
+            <h1 className="text-4xl font-bold font-serif mt-14">SRISHTI RESTAURANT</h1>
             <p className="text-gray-600 my-2">Modern Indian, North Indian</p>
             <p className="text-gray-600">Tezpur university, tezpur</p>
            
           </div>
                     {/* Map */}
                     <div className="mt-8 w-6/12">
-                      <h3 className="font-semibold mb-4">Direction</h3>
+                    
                       <div className="bg-gray-200 h-48 rounded-lg mb-4">
+                        
                       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3564.511878273082!2d92.8335486754745!3d26.696089476776873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3744eb254a078c07%3A0x8ff094b13b51d188!2sSRISHTI%20RESTAURANT!5e0!3m2!1sen!2sin!4v1731004026537!5m2!1sen!2sin" 
                       className='w-full h-full'
                       ></iframe>
                        
                       </div>
-                      <div className="flex justify-between">
-                      
-                        <button className="flex items-center text-red-500">
+                      <a href='https://maps.app.goo.gl/gLiTcH5XEii5tBUS9' className="flex items-center text-red-500">
                           <Navigation className="w-4 h-4 mr-1" />
                           Direction
-                        </button>
-                      </div>
+                        </a>
+                      
+                      
                     </div>
         </div>
 
@@ -117,7 +117,7 @@ const RestaurantWebsite = () => {
 
       {/* Restaurant Hero Section */}
       <div className="relative">
-        <div className="grid grid-cols-3 gap-0 mx-4 mb-4 ">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-0 mx-4 mb-4 ">
         
             <img 
               src="/srishti1.jpg" 
