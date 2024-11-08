@@ -153,36 +153,48 @@ const Browse = () => {
   return (
     <div>
       <Header />
-      <div className="min-h-screen bg-white p-2 mb-10">
-        <Carousel
-          showThumbs={false}
-          showStatus={false}
-          autoPlay
-          infiniteLoop
-          className="rounded-xl mt-28"
-        >
-          {carouselImages.map((src, index) => (
-            <div key={index}>
-              <img src={src} alt={`Carousel ${index + 1}`} className="min-w-full mt-5 h-96 rounded-xl object-cover" />
-            </div>
-          ))}
-        </Carousel>
-        
-        <h1 className="text-5xl font-serif my-14 text-center">Restaurants near TU</h1>
+     
+      <div className="min-h-screen bg-white p-2 ">
+      
+      <div>
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="fixed mb-24 inset-0 w-full h-full object-cover opacity-80  "
+      >
+        <source src="https://videos.pexels.com/video-files/4253149/4253149-uhd_1440_2732_25fps.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+     
+      </div>
+      
+      
+        <div className='mt-40'>
+
+        <h1 className="relative text-5xl my-5 text-black font-serif text-center">Restaurants near TU</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-5">
           {restaurants.map((restaurant, index) => (
             <RestaurantCard key={index} {...restaurant} />
           ))}
         </div>
       </div>
-      <div className=' font-serif text-center text-5xl  '>hostel canteens in TU</div>
+      
+      <div className='relative my-5 font-serif text-center text-5xl  '>hostel canteens in TU</div>
+      
+      
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-5 my-10 ">
           {hostels.map((hostel, index) => (
             <Hostel key={index} {...hostel} />
           ))}
         </div>
       
-      <Footer />
+      <Footer  />
+
+        </div>
+        
+       
     </div>
   );
 };
