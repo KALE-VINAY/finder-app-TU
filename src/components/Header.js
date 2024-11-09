@@ -143,7 +143,9 @@ const Header = () => {
     <div className='relative w-full px-4 py-3 bg-white z-10 flex flex-wrap justify-between items-center'>
       
       <img className="w-16 md:w-24 bg-gradient-to-b from-black" src={LOGO} alt="logo" />
-      <h1 className='text-5xl  font-serif text-center '>TU Food App</h1>
+      <h1 className='text-5xl sm:block md:block lg:block xl:block font-serif text-center hidden'>
+  TU Food App
+</h1>
 
       {user && (
         <div className='flex flex-wrap items-center'>
