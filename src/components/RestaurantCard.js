@@ -1,10 +1,13 @@
 // RestaurantCard.js
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 
 const RestaurantCard = ({ name, cuisines, price, rating, time, discount, imageUrl, promoted }) => {
+
+  
   return (
-    <a href='/restaurant' >
+    
+    
     
 <div className="relative bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
       {/* {promoted && (
@@ -13,7 +16,7 @@ const RestaurantCard = ({ name, cuisines, price, rating, time, discount, imageUr
         </div>
       )} */}
       <img src={imageUrl} alt={name} className="w-full h-40 object-cover" />
-      <div className="p-4">
+      <div className="p-4 ">
         {/* {discount && (
           <span className="absolute top-2 right-2 bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded">
             {discount}
@@ -25,7 +28,7 @@ const RestaurantCard = ({ name, cuisines, price, rating, time, discount, imageUr
         
       </div>
     </div>
-    </a>
+   
     
   );
 };

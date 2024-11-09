@@ -23,7 +23,7 @@ const appRouter =createBrowserRouter(
             element: <Browse/>
         },
         {
-          path:"/restaurant",
+          path:"/restaurant/:id",
           element: <RestaurantWebsite/>
         }
     ]);
