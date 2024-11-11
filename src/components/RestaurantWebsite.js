@@ -1,4 +1,4 @@
-import React from 'react';
+import React , { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Star, Copy, Navigation } from 'lucide-react';
 import Header from './Header';
@@ -6,8 +6,25 @@ import Footer from './Footer';
 
 const RestaurantWebsite = () => {
   const { id } = useParams();
-  console.log('Restaurant ID:', id);
+  const [isOpen, setIsOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
+  const openModal = (index) => {
+    setCurrentIndex(index);
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+
+  const goToPrevious = () => {
+    setCurrentIndex((currentIndex - 1 + images.length) % images.length);
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((currentIndex + 1) % images.length);
+  };
   // Example restaurant data
   const restaurantData = {
     1: {
@@ -149,7 +166,12 @@ const RestaurantWebsite = () => {
 
   // Fetch the restaurant data based on ID
   const restaurant = restaurantData[id];
-
+  const images = [
+    restaurant.imageUrl1,
+    restaurant.imageUrl2,
+    restaurant.imageUrl3
+  ];
+  
   if (!restaurant) {
     return <p>Restaurant not found.</p>;
   }
@@ -202,12 +224,49 @@ const RestaurantWebsite = () => {
       {/* Restaurant Images */}
       <div className="relative">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-0 mx-4 mb-4">
-          <img src={imageUrl1} alt="Restaurant" className="w-full h-auto object-cover rounded" />
-          <img src={imageUrl2} alt="Interior" className="w-full h-auto object-cover rounded" />
-          <img src={imageUrl3} alt="Food" className="w-full h-auto object-cover rounded" />
-        </div>
+        {images.map((img, index) => (
+          <img
+            key={index}
+            src={img}
+            alt={`Image ${index + 1}`}
+            onClick={() => openModal(index)}
+            className="object-cover cursor-pointer hover:opacity-80 transition-opacity"
+          />
+        ))} </div>
       </div>
-
+       {/* Modal Popup */}
+       {isOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 transition-opacity"
+          onClick={closeModal} // Close modal when clicking outside
+        >
+          <div className="relative" onClick={(e) => e.stopPropagation()}>
+            <button
+              className="absolute top-2 right-2 text-white text-3xl font-bold hover:text-gray-300"
+              onClick={closeModal}
+            >
+              &times;
+            </button>
+            <button
+              className="absolute left-2 top-1/2 transform -translate-y-1/2 text-white text-4xl font-bold hover:text-gray-300"
+              onClick={goToPrevious}
+            >
+              &#10094;
+            </button>
+            <img
+              src={images[currentIndex]}
+              alt={`Image ${currentIndex + 1}`}
+              className="max-w-screen-md max-h-[80vh] object-contain"
+            />
+            <button
+              className="absolute right-2 top-1/2 transform -translate-y-1/2 text-white text-4xl font-bold hover:text-gray-300"
+              onClick={goToNext}
+            >
+              &#10095;
+            </button>
+          </div>
+        </div>
+      )}
       {/* Footer */}
       <Footer />
     </div>
