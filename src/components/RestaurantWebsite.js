@@ -143,7 +143,7 @@ const RestaurantWebsite = () => {
       contact2: 9706612728,
       imageUrl1: "/foodZone.jpg" ,
       imageUrl2: "/foodZone1.jpg",
-      imageUrl3 : null,
+      imageUrl3 : "null",
     },
     8: {
       name: 'SOE DHABA, Tezpur University',
@@ -273,7 +273,7 @@ const RestaurantWebsite = () => {
             <img
               src={images[currentIndex]}
               alt={`Image ${currentIndex + 1}`}
-              className="max-w-screen-md max-h-[80vh] object-contain"
+              className="max-w-full  max-h-[80vh] object-contain"
             />
             <button
               className="absolute right-2 top-1/2 transform -translate-y-1/2 text-white text-4xl font-bold hover:text-gray-300"
