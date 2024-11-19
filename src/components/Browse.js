@@ -321,11 +321,12 @@ const Browse = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-gray-800 my-12 uppercase tracking-wider">
             Hostel Canteens in TU
           </h2>
-          <div className=" font-serif font-bold text-gray-800 text-2xl text-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          Coming Soon ... 
-            {/* {hostels.map((hostel, index) => (
+          <h2 className='font-serif font-bold text-gray-800 mb-5 text-2xl text-center'>Coming Soon ... </h2>
+          <div className="  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          
+            {hostels.map((hostel, index) => (
               <Hostel key={index} {...hostel} />
-            ))} */}
+            ))}
           </div>
         </div>
       
