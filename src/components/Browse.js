@@ -40,22 +40,6 @@ const Browse = () => {
       time: '36 min',
       discount: '40% OFF',
       imageUrl: 'https://media.istockphoto.com/id/1442604378/photo/food-photos-various-entrees-appetizers-deserts-etc.jpg?s=612x612&w=0&k=20&c=WUCuJ2L2VKlrsIsXVnYX1HoG5rZM8K6ISeiE1liMBq4=',
-      promoted: true,
-      iframe : "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3564.511878273082!2d92.8335486754745!3d26.696089476776873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3744eb254a078c07%3A0x8ff094b13b51d188!2sSRISHTI%20RESTAURANT!5e0!3m2!1sen!2sin!4v1731004026537!5m2!1sen!2sin",
-      maplink: 'https://maps.app.goo.gl/gLiTcH5XEii5tBUS9',
-      contact1: 9600774916,
-      contact2: 9365419001,
-      imageUrl1: "/srishti1.jpg" ,
-      imageUrl2: "/srishti2.jpg",
-      imageUrl3 : "/srishti2.jpg",
-    },
-    { id:3,
-      name: 'Amenityyy',
-      cuisines: 'Indian restaurant',
-      price: '₹40 for one',
-      rating: 4.6,
-      time: '24 min',
-      imageUrl: 'https://media.istockphoto.com/id/1271604943/photo/assorted-indian-home-food-different-dishes-and-snacks-wooden-rustic-table-homemade-pilaf.jpg?s=612x612&w=0&k=20&c=f2aFRB_7ooZ01F3NA1grsLBwbXhnJuXj5VoalTKSYxo=',
       promoted: false,
       iframe : "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3564.511878273082!2d92.8335486754745!3d26.696089476776873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3744eb254a078c07%3A0x8ff094b13b51d188!2sSRISHTI%20RESTAURANT!5e0!3m2!1sen!2sin!4v1731004026537!5m2!1sen!2sin",
       maplink: 'https://maps.app.goo.gl/gLiTcH5XEii5tBUS9',
@@ -65,58 +49,39 @@ const Browse = () => {
       imageUrl2: "/srishti2.jpg",
       imageUrl3 : "/srishti2.jpg",
     },
-    {id:4,
-      name: 'Varieties Restaurant',
-      cuisines: 'South Indian, North Indian, Cafe',
-      price: '₹150 for one',
-      rating: 4.3,
-      time: '36 min',
-      discount: '40% OFF',
-      imageUrl: 'https://media.istockphoto.com/id/1005630488/photo/thali.jpg?s=612x612&w=0&k=20&c=ufwOsc-f-c7ibq5vzsQ1y8VTC3o61RtgN3YhVa_U5ms=',
-      promoted: true,
-      iframe : "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3564.511878273082!2d92.8335486754745!3d26.696089476776873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3744eb254a078c07%3A0x8ff094b13b51d188!2sSRISHTI%20RESTAURANT!5e0!3m2!1sen!2sin!4v1731004026537!5m2!1sen!2sin",
-      maplink: 'https://maps.app.goo.gl/gLiTcH5XEii5tBUS9',
+    { id:3,
+      name: 'VRL',
+      cuisines: 'Indian hotel',
+      price: '₹40 for one',
+      rating: 4.6,
+      time: '24 min',
+      imageUrl: 'https://media.istockphoto.com/id/1271604943/photo/assorted-indian-home-food-different-dishes-and-snacks-wooden-rustic-table-homemade-pilaf.jpg?s=612x612&w=0&k=20&c=f2aFRB_7ooZ01F3NA1grsLBwbXhnJuXj5VoalTKSYxo=',
+      promoted: false,
+      iframe : "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1968.6291083407486!2d92.83511937358017!3d26.696472705960026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1732034471128!5m2!1sen!2sin",
+      maplink: 'https://maps.app.goo.gl/r67P3fW6EyAj2Bh68',
       contact1: 9600774916,
       contact2: 9365419001,
-      imageUrl1: "/srishti1.jpg" ,
-      imageUrl2: "/srishti2.jpg",
-      imageUrl3 : "/srishti2.jpg",
+      imageUrl1: "/VRL1.jpg" ,
+      imageUrl2: "/VRL3.jpg",
+      imageUrl3 : "/VRL1.jpg",
+    },
+    { id:4,
+      name: 'Spice Delight',
+      cuisines: 'restaurant',
+      price: '₹40 for one',
+      rating: 4.6,
+      time: '24 min',
+      imageUrl: 'https://media.istockphoto.com/id/1271604943/photo/assorted-indian-home-food-different-dishes-and-snacks-wooden-rustic-table-homemade-pilaf.jpg?s=612x612&w=0&k=20&c=f2aFRB_7ooZ01F3NA1grsLBwbXhnJuXj5VoalTKSYxo=',
+      promoted: false,
+      iframe : "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1782.245944895408!2d92.83499500000002!3d26.696728399999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3744ebbef08f81db%3A0xade8999b5075ba4b!2sCentral%20university!5e0!3m2!1sen!2sin!4v1732035437308!5m2!1sen!2sin",
+      maplink: 'https://maps.app.goo.gl/rgm7u417p3VCsTXC7',
+      contact1: 9365768276,
+      contact2: 9365768276,
+      imageUrl1: "/spice_delight3.jpg" ,
+      imageUrl2: "/spice_delight2.jpg",
+      imageUrl3 : "/spice_delight3.jpg",
     },
     {id:5,
-      name: "Soha's cafe",
-      cuisines: 'Fast food restaurant',
-      price: '₹150 for one',
-      rating: 4.3,
-      time: '36 min',
-      discount: '40% OFF',
-      imageUrl: 'https://media.istockphoto.com/id/1408964184/photo/chicken-tikka-masala-kadai-chicken-coconut-sabdji-indias-samosa-veg-curry-bainkar-bharta.jpg?s=612x612&w=0&k=20&c=hzCybSQollGMvUfvVTONbD7R96G63gCXgC5XPwdOkBo=',
-      promoted: true,
-      iframe : "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3564.511878273082!2d92.8335486754745!3d26.696089476776873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3744eb254a078c07%3A0x8ff094b13b51d188!2sSRISHTI%20RESTAURANT!5e0!3m2!1sen!2sin!4v1731004026537!5m2!1sen!2sin",
-      maplink: 'https://maps.app.goo.gl/gLiTcH5XEii5tBUS9',
-      contact1: 9600774916,
-      contact2: 9365419001,
-      imageUrl1: "/srishti1.jpg" ,
-      imageUrl2: "/srishti2.jpg",
-      imageUrl3 : "/srishti2.jpg",
-    },
-    {id:6,
-      name: 'GS Hotel',
-      cuisines: 'Family restaurant',
-      price: '₹150 for one',
-      rating: 4.3,
-      time: '36 min',
-      discount: '40% OFF',
-      imageUrl: 'https://media.istockphoto.com/id/1490687071/photo/top-view-for-oriental-food.jpg?s=612x612&w=0&k=20&c=9yVib9aJvvzCPtKSpNTKavb6BUPFqe2pOr4LKRT4gPY=',
-      promoted: true,
-      iframe : "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3564.511878273082!2d92.8335486754745!3d26.696089476776873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3744eb254a078c07%3A0x8ff094b13b51d188!2sSRISHTI%20RESTAURANT!5e0!3m2!1sen!2sin!4v1731004026537!5m2!1sen!2sin",
-      maplink: 'https://maps.app.goo.gl/gLiTcH5XEii5tBUS9',
-      contact1: 9600774916,
-      contact2: 9365419001,
-      imageUrl1: "/srishti1.jpg" ,
-      imageUrl2: "/srishti2.jpg",
-      imageUrl3 : "/srishti2.jpg",
-    },
-    {id:7,
       name: 'Food Zone',
       cuisines: 'Fast food restaurant',
       price: '₹150 for one',
@@ -133,7 +98,7 @@ const Browse = () => {
       imageUrl2: "/srishti2.jpg",
       imageUrl3 : "/srishti2.jpg",
     },
-    {id:8,
+    {id:6,
       name: 'SOE DHABA, Tezpur University',
       cuisines: 'Restaurant',
       price: '₹150 for one',
@@ -150,7 +115,7 @@ const Browse = () => {
       imageUrl2: "/srishti2.jpg",
       imageUrl3 : "/srishti2.jpg",
     },
-    {id:9,
+    {id:7,
       name: 'Diksha food restaurant ',
       cuisines: 'Restaurant',
       price: '₹150 for one',
@@ -167,6 +132,74 @@ const Browse = () => {
       imageUrl2: "/srishti2.jpg",
       imageUrl3 : "/srishti2.jpg",
     },
+    { id:8,
+      name: 'Amenityyy',
+      cuisines: 'Indian restaurant',
+      price: '₹40 for one',
+      rating: 4.6,
+      time: '24 min',
+      imageUrl: 'https://media.istockphoto.com/id/1271604943/photo/assorted-indian-home-food-different-dishes-and-snacks-wooden-rustic-table-homemade-pilaf.jpg?s=612x612&w=0&k=20&c=f2aFRB_7ooZ01F3NA1grsLBwbXhnJuXj5VoalTKSYxo=',
+      promoted: false,
+      iframe : "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3564.511878273082!2d92.8335486754745!3d26.696089476776873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3744eb254a078c07%3A0x8ff094b13b51d188!2sSRISHTI%20RESTAURANT!5e0!3m2!1sen!2sin!4v1731004026537!5m2!1sen!2sin",
+      maplink: 'https://maps.app.goo.gl/gLiTcH5XEii5tBUS9',
+      contact1: 9600774916,
+      contact2: 9365419001,
+      imageUrl1: "/srishti1.jpg" ,
+      imageUrl2: "/srishti2.jpg",
+      imageUrl3 : "/srishti2.jpg",
+    },
+    {id:9,
+      name: 'Varieties Restaurant',
+      cuisines: 'South Indian, North Indian, Cafe',
+      price: '₹150 for one',
+      rating: 4.3,
+      time: '36 min',
+      discount: '40% OFF',
+      imageUrl: 'https://media.istockphoto.com/id/1005630488/photo/thali.jpg?s=612x612&w=0&k=20&c=ufwOsc-f-c7ibq5vzsQ1y8VTC3o61RtgN3YhVa_U5ms=',
+      promoted: true,
+      iframe : "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3564.511878273082!2d92.8335486754745!3d26.696089476776873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3744eb254a078c07%3A0x8ff094b13b51d188!2sSRISHTI%20RESTAURANT!5e0!3m2!1sen!2sin!4v1731004026537!5m2!1sen!2sin",
+      maplink: 'https://maps.app.goo.gl/gLiTcH5XEii5tBUS9',
+      contact1: 9600774916,
+      contact2: 9365419001,
+      imageUrl1: "/srishti1.jpg" ,
+      imageUrl2: "/srishti2.jpg",
+      imageUrl3 : "/srishti2.jpg",
+    },
+    {id:10,
+      name: "Soha's cafe",
+      cuisines: 'Fast food restaurant',
+      price: '₹150 for one',
+      rating: 4.3,
+      time: '36 min',
+      discount: '40% OFF',
+      imageUrl: 'https://media.istockphoto.com/id/1408964184/photo/chicken-tikka-masala-kadai-chicken-coconut-sabdji-indias-samosa-veg-curry-bainkar-bharta.jpg?s=612x612&w=0&k=20&c=hzCybSQollGMvUfvVTONbD7R96G63gCXgC5XPwdOkBo=',
+      promoted: true,
+      iframe : "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3564.511878273082!2d92.8335486754745!3d26.696089476776873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3744eb254a078c07%3A0x8ff094b13b51d188!2sSRISHTI%20RESTAURANT!5e0!3m2!1sen!2sin!4v1731004026537!5m2!1sen!2sin",
+      maplink: 'https://maps.app.goo.gl/gLiTcH5XEii5tBUS9',
+      contact1: 9600774916,
+      contact2: 9365419001,
+      imageUrl1: "/srishti1.jpg" ,
+      imageUrl2: "/srishti2.jpg",
+      imageUrl3 : "/srishti2.jpg",
+    },
+    {id:11,
+      name: 'GS Hotel',
+      cuisines: 'Family restaurant',
+      price: '₹150 for one',
+      rating: 4.3,
+      time: '36 min',
+      discount: '40% OFF',
+      imageUrl: 'https://media.istockphoto.com/id/1490687071/photo/top-view-for-oriental-food.jpg?s=612x612&w=0&k=20&c=9yVib9aJvvzCPtKSpNTKavb6BUPFqe2pOr4LKRT4gPY=',
+      promoted: true,
+      iframe : "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3564.511878273082!2d92.8335486754745!3d26.696089476776873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3744eb254a078c07%3A0x8ff094b13b51d188!2sSRISHTI%20RESTAURANT!5e0!3m2!1sen!2sin!4v1731004026537!5m2!1sen!2sin",
+      maplink: 'https://maps.app.goo.gl/gLiTcH5XEii5tBUS9',
+      contact1: 9600774916,
+      contact2: 9365419001,
+      imageUrl1: "/srishti1.jpg" ,
+      imageUrl2: "/srishti2.jpg",
+      imageUrl3 : "/srishti2.jpg",
+    },
+   
     
   ];
 
@@ -232,55 +265,72 @@ const Browse = () => {
   ];
 
   return (
-    <div>
+    <div >
       <Header />
-     
-      <div className="min-h-screen bg-white p-2 ">
       
-      <div>
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="fixed mb-24 inset-0 w-full h-full object-cover opacity-80  "
-      >
-        <source src="https://videos.pexels.com/video-files/4253149/4253149-uhd_1440_2732_25fps.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-     
-      </div>
+      {/* Video Background with Overlay */}
       
-      
-        <div className='mt-2'>
+        
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="fixed mb-24 inset-0 w-full h-full object-cover opacity-80"
+          >
+            <source src="https://videos.pexels.com/video-files/4253149/4253149-uhd_1440_2732_25fps.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+       
+        
+        <div className="relative z-10 container mx-auto px-4 py-8">
+          {/* Carousel Section
+          <div className="mb-8 shadow-lg rounded-lg overflow-hidden">
+            <Carousel 
+              showThumbs={false} 
+              autoPlay 
+              infiniteLoop 
+              interval={3000} 
+              className="max-h-[400px]"
+            >
+              {carouselImages.map((image, index) => (
+                <div key={index} className="h-[300px] md:h-[400px]">
+                  <img 
+                    src={image} 
+                    alt={`Carousel ${index + 1}`} 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ))}
+            </Carousel>
+          </div> */}
 
-        <h1 className="relative text-5xl my-5 text-black font-serif text-center">Restaurants near TU</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-5">
-        {restaurants.map((restaurant, index) => (
-          <Link key={restaurant.id} to={`/restaurant/${restaurant.id}`}>
-              <RestaurantCard 
-                key={index} {...restaurant} 
-              />
+          {/* Restaurants Section */}
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-gray-800 mb-8 uppercase tracking-wider">
+            Restaurants near TU
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {restaurants.map((restaurant) => (
+              <Link key={restaurant.id} to={`/restaurant/${restaurant.id}`} className="transform transition-all hover:scale-105">
+                <RestaurantCard {...restaurant} />
               </Link>
             ))}
-        </div>
-        {/* <RestaurantCard  {...restaurants[0]}/> */}
-      </div>
-      
-      <div className='relative my-5 font-serif text-center text-5xl  '>hostel canteens in TU</div>
-      
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-5 my-10 ">
-          {hostels.map((hostel, index) => (
-            <Hostel key={index} {...hostel} />
-          ))}
-        </div>
-      
-      <Footer  />
+          </div>
 
+          {/* Hostels Section */}
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-gray-800 my-12 uppercase tracking-wider">
+            Hostel Canteens in TU
+          </h2>
+          <div className=" font-serif font-bold text-gray-800 text-2xl text-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          Coming Soon ... 
+            {/* {hostels.map((hostel, index) => (
+              <Hostel key={index} {...hostel} />
+            ))} */}
+          </div>
         </div>
-        
-       
+      
+      
+      <Footer />
     </div>
   );
 };

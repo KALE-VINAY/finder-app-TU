@@ -108,6 +108,7 @@ import { addUser , removeUser } from '../utils/userSlice';
 import { LOGO, SUPPORTED_LANGUAGES } from '../utils/constants';
 
 
+
 const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -137,13 +138,13 @@ const Header = () => {
     return () => unsubscribe();
   }, [navigate, dispatch]);
 
-
+  // bg-gradient-to-b from-black
 
   return (
-    <div className='relative w-full px-4 py-3 bg-white z-10 flex flex-wrap justify-between items-center'>
+    <div className='relative w-full px-4 py-3 bg-transparent z-10 flex flex-wrap justify-between items-center'>
       
-      <img className="w-16 md:w-24 bg-gradient-to-b from-black" src={LOGO} alt="logo" />
-      <h1 className='text-5xl sm:block md:block lg:block xl:block font-serif text-center hidden'>
+      <img className="w-16 md:w-24 " src="food_logo_f.png" alt="logo" />
+      <h1 className='text-5xl sm:block bg-gradient-to-b from-white md:block lg:block xl:block font-serif text-center hidden'>
   TU Food App
 </h1>
 

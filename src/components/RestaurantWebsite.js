@@ -1,4 +1,4 @@
-import React , { useState } from 'react';
+import React , { useState ,useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Star, Copy, Navigation } from 'lucide-react';
 import Header from './Header';
@@ -8,6 +8,11 @@ const RestaurantWebsite = () => {
   const { id } = useParams();
   const [isOpen, setIsOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Add this useEffect to scroll to top when component mounts or id changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
 
   const openModal = (index) => {
     setCurrentIndex(index);
@@ -62,73 +67,39 @@ const RestaurantWebsite = () => {
       imageUrl3 : "/essential_food.jpg",
     },
     3: {
-      name: 'Amenityyy',
-      cuisines: 'Indian restaurant',
+      name: 'VRL',
+      cuisines: 'Indian hotel',
       price: '₹40 for one',
       rating: 4.6,
       time: '24 min',
       imageUrl: 'https://media.istockphoto.com/id/1271604943/photo/assorted-indian-home-food-different-dishes-and-snacks-wooden-rustic-table-homemade-pilaf.jpg?s=612x612&w=0&k=20&c=f2aFRB_7ooZ01F3NA1grsLBwbXhnJuXj5VoalTKSYxo=',
       promoted: false,
-      iframe : "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d656.1298495007186!2d92.83236191981491!3d26.69779216017308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3744ebea3538a4f7%3A0x7617598a4d939c18!2sAmenityyy!5e0!3m2!1sen!2sin!4v1731346516340!5m2!1sen!2sin",
-      maplink: 'https://maps.app.goo.gl/rgm7u417p3VCsTXC7',
-      contact1: 9600774916,
-      contact2: 9365419001,
-      imageUrl1: "/srishti1.jpg" ,
-      imageUrl2: "/srishti2.jpg",
-      imageUrl3 : "/srishti2.jpg",
+      iframe : "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1968.6291083407486!2d92.83511937358017!3d26.696472705960026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1732034471128!5m2!1sen!2sin",
+      maplink: 'https://maps.app.goo.gl/r67P3fW6EyAj2Bh68',
+      contact1: 8822002423,
+      contact2: 8822002423,
+      imageUrl1: "/VRL1.jpg" ,
+      imageUrl2: "/VRL3.jpg",
+      imageUrl3 : "/VRL1.jpg",
     },
     4: {
-      name: 'Varieties Restaurant',
-      cuisines: 'South Indian, North Indian, Cafe',
-      price: '₹150 for one',
-      rating: 4.3,
-      time: '36 min',
-      discount: '40% OFF',
-      imageUrl: 'https://media.istockphoto.com/id/1005630488/photo/thali.jpg?s=612x612&w=0&k=20&c=ufwOsc-f-c7ibq5vzsQ1y8VTC3o61RtgN3YhVa_U5ms=',
-      promoted: true,
-      iframe : "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1782.260656668083!2d92.83590185342128!3d26.695787884128276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3744eb38e8b50c37%3A0x96bcd15978b7eac2!2sVarieties%20Restaurant!5e0!3m2!1sen!2sin!4v1731346796876!5m2!1sen!2sin",
-      maplink: 'https://maps.app.goo.gl/TL5cvqKW5jWYeke88',
-      contact1: 9600774916,
-      contact2: 9365419001,
-      imageUrl1: "/srishti1.jpg" ,
-      imageUrl2: "/srishti2.jpg",
-      imageUrl3 : "/srishti2.jpg",
+      name: 'Spice Delight',
+      cuisines: 'restaurant',
+      price: '₹40 for one',
+      rating: 4.6,
+      time: '24 min',
+      imageUrl: 'https://media.istockphoto.com/id/1271604943/photo/assorted-indian-home-food-different-dishes-and-snacks-wooden-rustic-table-homemade-pilaf.jpg?s=612x612&w=0&k=20&c=f2aFRB_7ooZ01F3NA1grsLBwbXhnJuXj5VoalTKSYxo=',
+      promoted: false,
+      iframe : "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1782.245944895408!2d92.83499500000002!3d26.696728399999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3744ebbef08f81db%3A0xade8999b5075ba4b!2sCentral%20university!5e0!3m2!1sen!2sin!4v1732035437308!5m2!1sen!2sin",
+      maplink: 'https://maps.app.goo.gl/rgm7u417p3VCsTXC7',
+      contact1: 9365768276,
+      contact2: 9365768276,
+      imageUrl1: "/spice_delight2.jpg" ,
+      imageUrl2: "/spice_delight3.jpg",
+      imageUrl3 : "/spice_delight2.jpg",
     },
+    
     5: {
-      name: "Soha's cafe",
-      cuisines: 'Fast food restaurant',
-      price: '₹150 for one',
-      rating: 4.3,
-      time: '36 min',
-      discount: '40% OFF',
-      imageUrl: 'https://media.istockphoto.com/id/1408964184/photo/chicken-tikka-masala-kadai-chicken-coconut-sabdji-indias-samosa-veg-curry-bainkar-bharta.jpg?s=612x612&w=0&k=20&c=hzCybSQollGMvUfvVTONbD7R96G63gCXgC5XPwdOkBo=',
-      promoted: true,
-      iframe : "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d458.70435617654186!2d92.83673925778622!3d26.69558122669966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1731346935848!5m2!1sen!2sin",
-      maplink: 'https://maps.app.goo.gl/NwyBRKxNykBDcadY9',
-      contact1: 9600774916,
-      contact2: 9365419001,
-      imageUrl1: "/srishti1.jpg" ,
-      imageUrl2: "/srishti2.jpg",
-      imageUrl3 : "/srishti2.jpg",
-    },
-    6: {
-      name: 'GS Hotel',
-      cuisines: 'Family restaurant',
-      price: '₹150 for one',
-      rating: 4.3,
-      time: '36 min',
-      discount: '40% OFF',
-      imageUrl: 'https://media.istockphoto.com/id/1490687071/photo/top-view-for-oriental-food.jpg?s=612x612&w=0&k=20&c=9yVib9aJvvzCPtKSpNTKavb6BUPFqe2pOr4LKRT4gPY=',
-      promoted: true,
-      iframe : "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d408.3734726976119!2d92.83475698355481!3d26.696319415879397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3744ebc74cb9ea6d%3A0x50ca25f7d090df40!2sGS%20Hotel!5e0!3m2!1sen!2sin!4v1731345993140!5m2!1sen!2sin",
-      maplink: 'https://maps.app.goo.gl/7wGZdkk5eKapkRccA',
-      contact1: 9707525721,
-      contact2: 9365419001,
-      imageUrl1: "/srishti1.jpg" ,
-      imageUrl2: "/srishti2.jpg",
-      imageUrl3 : "/srishti2.jpg",
-    },
-    7: {
       name: 'Food Zone',
       cuisines: 'Fast food restaurant',
       price: '₹150 for one',
@@ -143,9 +114,9 @@ const RestaurantWebsite = () => {
       contact2: 9706612728,
       imageUrl1: "/foodZone.jpg" ,
       imageUrl2: "/foodZone1.jpg",
-      imageUrl3 : "null",
+      imageUrl3 : "/foodZone.jpg",
     },
-    8: {
+    6: {
       name: 'SOE DHABA, Tezpur University',
       cuisines: 'Restaurant',
       price: '₹150 for one',
@@ -162,7 +133,7 @@ const RestaurantWebsite = () => {
       imageUrl2: "/soe_dabha1.jpg",
       imageUrl3 :"/soe_dabha.jpg" ,
     },
-    9: {
+    7: {
       name: 'Diksha Food Restaurant ',
       cuisines: 'Restaurant',
       price: '₹150 for one',
@@ -179,6 +150,73 @@ const RestaurantWebsite = () => {
       imageUrl2: "/Diksha_food2.jpg",
       imageUrl3 :"/Diksha_food.jpg" ,
     },
+    8: {
+      name: 'Amenityyy',
+      cuisines: 'Indian restaurant',
+      price: '₹40 for one',
+      rating: 4.6,
+      time: '24 min',
+      imageUrl: 'https://media.istockphoto.com/id/1271604943/photo/assorted-indian-home-food-different-dishes-and-snacks-wooden-rustic-table-homemade-pilaf.jpg?s=612x612&w=0&k=20&c=f2aFRB_7ooZ01F3NA1grsLBwbXhnJuXj5VoalTKSYxo=',
+      promoted: false,
+      iframe : "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d656.1298495007186!2d92.83236191981491!3d26.69779216017308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3744ebea3538a4f7%3A0x7617598a4d939c18!2sAmenityyy!5e0!3m2!1sen!2sin!4v1731346516340!5m2!1sen!2sin",
+      maplink: 'https://maps.app.goo.gl/rgm7u417p3VCsTXC7',
+      contact1: 9600774916,
+      contact2: 9365419001,
+      imageUrl1: "/srishti1.jpg" ,
+      imageUrl2: "/srishti2.jpg",
+      imageUrl3 : "/srishti2.jpg",
+    },
+    9: {
+      name: 'Varieties Restaurant',
+      cuisines: 'South Indian, North Indian, Cafe',
+      price: '₹150 for one',
+      rating: 4.3,
+      time: '36 min',
+      discount: '40% OFF',
+      imageUrl: 'https://media.istockphoto.com/id/1005630488/photo/thali.jpg?s=612x612&w=0&k=20&c=ufwOsc-f-c7ibq5vzsQ1y8VTC3o61RtgN3YhVa_U5ms=',
+      promoted: true,
+      iframe : "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1782.260656668083!2d92.83590185342128!3d26.695787884128276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3744eb38e8b50c37%3A0x96bcd15978b7eac2!2sVarieties%20Restaurant!5e0!3m2!1sen!2sin!4v1731346796876!5m2!1sen!2sin",
+      maplink: 'https://maps.app.goo.gl/TL5cvqKW5jWYeke88',
+      contact1: 9600774916,
+      contact2: 9365419001,
+      imageUrl1: "/srishti1.jpg" ,
+      imageUrl2: "/srishti2.jpg",
+      imageUrl3 : "/srishti2.jpg",
+    },
+    10: {
+      name: "Soha's cafe",
+      cuisines: 'Fast food restaurant',
+      price: '₹150 for one',
+      rating: 4.3,
+      time: '36 min',
+      discount: '40% OFF',
+      imageUrl: 'https://media.istockphoto.com/id/1408964184/photo/chicken-tikka-masala-kadai-chicken-coconut-sabdji-indias-samosa-veg-curry-bainkar-bharta.jpg?s=612x612&w=0&k=20&c=hzCybSQollGMvUfvVTONbD7R96G63gCXgC5XPwdOkBo=',
+      promoted: true,
+      iframe : "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d458.70435617654186!2d92.83673925778622!3d26.69558122669966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1731346935848!5m2!1sen!2sin",
+      maplink: 'https://maps.app.goo.gl/NwyBRKxNykBDcadY9',
+      contact1: 9600774916,
+      contact2: 9365419001,
+      imageUrl1: "/srishti1.jpg" ,
+      imageUrl2: "/srishti2.jpg",
+      imageUrl3 : "/srishti2.jpg",
+    },
+    11: {
+      name: 'GS Hotel',
+      cuisines: 'Family restaurant',
+      price: '₹150 for one',
+      rating: 4.3,
+      time: '36 min',
+      discount: '40% OFF',
+      imageUrl: 'https://media.istockphoto.com/id/1490687071/photo/top-view-for-oriental-food.jpg?s=612x612&w=0&k=20&c=9yVib9aJvvzCPtKSpNTKavb6BUPFqe2pOr4LKRT4gPY=',
+      promoted: true,
+      iframe : "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d408.3734726976119!2d92.83475698355481!3d26.696319415879397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3744ebc74cb9ea6d%3A0x50ca25f7d090df40!2sGS%20Hotel!5e0!3m2!1sen!2sin!4v1731345993140!5m2!1sen!2sin",
+      maplink: 'https://maps.app.goo.gl/7wGZdkk5eKapkRccA',
+      contact1: 9707525721,
+      contact2: 9365419001,
+      imageUrl1: "/srishti1.jpg" ,
+      imageUrl2: "/srishti2.jpg",
+      imageUrl3 : "/srishti2.jpg",
+    },
   };
 
   // Fetch the restaurant data based on ID
@@ -194,99 +232,132 @@ const RestaurantWebsite = () => {
   }
 
   const { name, cuisines, iframe, maplink, contact1, contact2, imageUrl1, imageUrl2, imageUrl3 } = restaurant;
+  
 
   return (
     <div className="min-h-screen bg-white">
-      
-
-      {/* Restaurant Info */}
-      <div className="max-w-7xl mx-auto px-4 py-8">
-        <div className="flex flex-col md:flex-row justify-between">
-          <div className="flex flex-col w-6/12 gap-4">
-            <h1 className="text-4xl font-bold font-serif mt-14">{name}</h1>
-            <p className="text-gray-600 my-2">{cuisines}</p>
+    {/* Restaurant Info */}
+    <div className="container mx-auto px-4 py-8">
+      <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-8">
+        {/* Restaurant Details */}
+        <div className="w-full md:w-1/2">
+          <h1 className="text-3xl md:text-4xl font-bold font-serif mb-4">{name}</h1>
+          <div className="space-y-2 mb-6">
+            <p className="text-gray-600">{cuisines}</p>
             <p className="text-gray-600">Tezpur University, Tezpur</p>
           </div>
 
-          {/* Map */}
-          <div className="mt-8 w-6/12">
-            <div className="bg-gray-200 h-48 rounded-lg mb-4">
-              <iframe src={iframe} className="w-full h-full"></iframe>
+          {/* Contact Details for Mobile */}
+          <div className="md:hidden mb-6">
+            <h2 className="text-lg font-semibold mb-4">Contact Details</h2>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="border rounded-lg p-3 text-center">
+                <p className="text-gray-700">{contact1}</p>
+              </div>
+              {contact2 && (
+                <div className="border rounded-lg p-3 text-center">
+                  <p className="text-gray-700">{contact2}</p>
+                </div>
+              )}
             </div>
-            <a href={maplink} className="flex items-center text-red-500">
-              <Navigation className="w-4 h-4 mr-1" />
-              Direction
-            </a>
           </div>
         </div>
 
-        {/* Contact Details */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-          <div className="md:col-span-2">
-            <div className="flex items-center space-x-4 mb-4">
-              <span className="text-gray-600 text-lg">Contact Details:</span>
-            </div>
-            <div className="grid grid-cols-2 gap-4 mb-8">
-              <div className="border rounded-lg p-4">
-                <p className="text-gray-700 text-lg">{contact1}</p>
-              </div>
-              <div className="border rounded-lg p-4">
-                <p className="text-gray-700 text-lg">{contact2}</p>
-              </div>
-            </div>
+        {/* Map Section */}
+        <div className="w-full md:w-1/2">
+          <div className="bg-gray-200 h-48 md:h-64 rounded-lg mb-4 overflow-hidden">
+            <iframe 
+              src={iframe} 
+              className="w-full h-full"
+              title="Restaurant Location"
+              allowFullScreen=""
+              loading="lazy"
+            ></iframe>
           </div>
+          <a 
+            href={maplink} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center justify-center text-red-500 hover:text-red-600 transition-colors"
+          >
+            <Navigation className="w-4 h-4 mr-2" />
+            Get Directions
+          </a>
         </div>
       </div>
 
-      {/* Restaurant Images */}
-      <div className="relative">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-0 mx-4 mb-4">
-        {images.map((img, index) => (
-          <img
-            key={index}
-            src={img}
-            alt={`Image ${index + 1}`}
-            onClick={() => openModal(index)}
-            className="object-cover cursor-pointer hover:opacity-80 transition-opacity"
-          />
-        ))} </div>
-      </div>
-       {/* Modal Popup */}
-       {isOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 transition-opacity"
-          onClick={closeModal} // Close modal when clicking outside
-        >
-          <div className="relative" onClick={(e) => e.stopPropagation()}>
-            <button
-              className="absolute top-2 right-2 text-white text-3xl font-bold hover:text-gray-300"
-              onClick={closeModal}
-            >
-              &times;
-            </button>
-            <button
-              className="absolute left-2 top-1/2 transform -translate-y-1/2 text-white text-4xl font-bold hover:text-gray-300"
-              onClick={goToPrevious}
-            >
-              &#10094;
-            </button>
-            <img
-              src={images[currentIndex]}
-              alt={`Image ${currentIndex + 1}`}
-              className="max-w-full  max-h-[80vh] object-contain"
-            />
-            <button
-              className="absolute right-2 top-1/2 transform -translate-y-1/2 text-white text-4xl font-bold hover:text-gray-300"
-              onClick={goToNext}
-            >
-              &#10095;
-            </button>
+      {/* Contact Details for Desktop */}
+      <div className="hidden md:block mt-8">
+        <h2 className="text-lg font-semibold mb-4">Contact Details</h2>
+        <div className="grid grid-cols-2 gap-4 max-w-xl">
+          <div className="border rounded-lg p-4">
+            <p className="text-gray-700 text-lg text-center">{contact1}</p>
           </div>
+          {contact2 && (
+            <div className="border rounded-lg p-4">
+              <p className="text-gray-700 text-lg text-center">{contact2}</p>
+            </div>
+          )}
         </div>
-      )}
-      {/* Footer */}
-      <Footer />
+      </div>
     </div>
+
+    {/* Restaurant Images */}
+    <div className="container mx-auto px-4 mb-8">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
+        {images.map((img, index) => (
+          <div 
+            key={index} 
+            className="aspect-square overflow-hidden rounded-lg"
+          >
+            <img
+              src={img}
+              alt={`Restaurant Image ${index + 1}`}
+              onClick={() => openModal(index)}
+              className="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+
+    {/* Modal Popup */}
+    {isOpen && (
+      <div
+        className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4"
+        onClick={closeModal}
+      >
+        <div className="relative max-w-full max-h-full" onClick={(e) => e.stopPropagation()}>
+          <button
+            className="absolute top-2 right-2 text-white text-3xl font-bold hover:text-gray-300 z-10"
+            onClick={closeModal}
+          >
+            &times;
+          </button>
+          <button
+            className="absolute left-2 top-1/2 transform -translate-y-1/2 text-white text-4xl font-bold hover:text-gray-300 z-10"
+            onClick={goToPrevious}
+          >
+            &#10094;
+          </button>
+          <img
+            src={images[currentIndex]}
+            alt={`Enlarged Image ${currentIndex + 1}`}
+            className="max-w-full max-h-[80vh] object-contain mx-auto"
+          />
+          <button
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 text-white text-4xl font-bold hover:text-gray-300 z-10"
+            onClick={goToNext}
+          >
+            &#10095;
+          </button>
+        </div>
+      </div>
+    )}
+
+    {/* Footer
+    <Footer /> */}
+  </div>
   );
 };
 

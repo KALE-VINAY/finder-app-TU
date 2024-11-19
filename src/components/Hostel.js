@@ -3,7 +3,7 @@ import React from 'react'
 
 const Hostel = ({ name, cuisines, price, rating, time, discount, imageUrl, promoted }) => {
   return (
-    <a href='/restaurant'>
+    <a href='/browse'>
     <div className="relative bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
           
          

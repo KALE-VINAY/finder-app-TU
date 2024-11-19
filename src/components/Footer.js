@@ -51,7 +51,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 text-gray-400 text-sm">
-        <p>&copy; 2023 TU Food. All rights reserved.</p>
+        <p>&copy; 2024 TU Food. All rights reserved.</p>
       </div>
     </footer>
   );
