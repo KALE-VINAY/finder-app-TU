@@ -1,7 +1,13 @@
 import React from 'react';
-import { Phone, Clock, Truck, AlertCircle } from 'lucide-react';
+import { Phone, Clock, Truck, AlertCircle,Navigation } from 'lucide-react';
+// import { Star, Copy,  } from 'lucide-react';
 
 const MedicalServices = () => {
+
+    const map ={
+      maplink : 'https://maps.app.goo.gl/6cjLknRXx7Zw4AiZ8',
+
+    }
   const medicalShops = [
     {
       name: "Standard Medical",
@@ -22,14 +28,14 @@ const MedicalServices = () => {
   ];
 
   const healthCenterTimings = {
-    weekdays: "8:00 AM - 10:00 PM",
-    weekends: "9:00 AM - 6:00 PM",
-    holidays: "9:00 AM - 5:00 PM"
+    weekdays: "8:30 AM - 12:30 PM , 4:00 PM - 6:00 PM",
+    weekends: "8:30 AM - 12:30 PM , 3:00 PM - 6:00 PM",
+    holidays: "10:00 AM - 12:00 PM"
   };
 
   const emergencyContacts = [
-    { title: "TU Campus Ambulance", number: "+91 7002366254" },
-    { title: "Emergency Doctor TU", number: "+91 9954449470" },
+    { title: "TU Campus Ambulance", number: "7002366254" },
+    { title: "Emergency Doctor TU", number: "9954449470" },
     { title: "Kanaklata Civil Hospital", number: "03712221494" },
     { title: "Tezpur Fire Service", number: " 101  , 20101" }
   ];
@@ -67,24 +73,33 @@ const MedicalServices = () => {
           <div className="flex items-center text-green-800 text-xl font-semibold mb-4">
             <Clock className="mr-2" />
             Health Center Timings
+            <a 
+            href={map.maplink} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center justify-center ml-5 text-green-900 hover:text-red-600 transition-colors"
+          >
+            <Navigation className="w-4 h-4 mr-2" />
+            Get Directions
+          </a>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="p-4 bg-green-50 rounded-lg">
-              <div className="font-semibold mb-2 text-green-700">Weekdays</div>
+              <div className="font-semibold mb-2 text-green-700">April - September</div>
               <div className="flex items-center text-green-600">
                 <Clock className="w-4 h-4 mr-2" />
                 {healthCenterTimings.weekdays}
               </div>
             </div>
             <div className="p-4 bg-green-50 rounded-lg">
-              <div className="font-semibold mb-2 text-green-700">Weekends</div>
+              <div className="font-semibold mb-2 text-green-700">October - March </div>
               <div className="flex items-center text-green-600">
                 <Clock className="w-4 h-4 mr-2" />
                 {healthCenterTimings.weekends}
               </div>
             </div>
             <div className="p-4 bg-green-50 rounded-lg">
-              <div className="font-semibold mb-2 text-green-700">Holidays</div>
+              <div className="font-semibold mb-2 text-green-700">Weekends - Sat,Sun </div>
               <div className="flex items-center text-green-600">
                 <Clock className="w-4 h-4 mr-2" />
                 {healthCenterTimings.holidays}
