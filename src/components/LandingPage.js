@@ -16,7 +16,7 @@ import {
 const LandingPage = () => {
   const services = [
     {
-      title: "Restaurants near TU & Hostel Canteens",
+      title: "Restaurants & Hostel Canteens",
       description: "Discover local cuisines and campus dining options",
       icon: <Utensils className="w-6 h-6" />,
       path: "/browse",
@@ -26,28 +26,28 @@ const LandingPage = () => {
       title: "Travel & Tours",
       description: "Explore exciting destinations and tour packages",
       icon: <Plane className="w-6 h-6" />,
-      path: "/browse",
+      path: "/travel-and-tours",
       color: "bg-blue-500"
     },
     {
       title: "Car & Bike Rentals",
       description: "Rent vehicles for your convenience",
       icon: <Car className="w-6 h-6" />,
-      path: "/browse",
+      path: "/car-and-bike-rentals",
       color: "bg-red-500"
     },
     {
-      title: "Medical Services",
+      title: "TU Medical Services",
       description: "24/7 healthcare support and assistance",
       icon: <Stethoscope className="w-6 h-6" />,
-      path: "/browse",
+      path: "/medical-services",
       color: "bg-green-500"
     },
     {
       title: "Sports Jersey & Department T-Shirts",
       description: "Custom jerseys and college merchandise",
       icon: <Shirt className="w-6 h-6" />,
-      path: "/browse",
+      path: "/sports-jersey",
       color: "bg-purple-500"
     }
   ];

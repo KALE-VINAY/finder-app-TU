@@ -4,18 +4,20 @@ import { Phone, Clock, Truck, AlertCircle } from 'lucide-react';
 const MedicalServices = () => {
   const medicalShops = [
     {
-      name: "Campus Pharmacy",
-      location: "Near Main Gate",
-      contact: "+1-234-567-8900",
+      name: "Standard Medical",
+      location: "Near Tezpur University",
+      contact: "6003474635 , 8876918416",
       deliveryHours: "9:00 AM - 9:00 PM",
-      deliveryNote: "Free delivery for orders above $10"
+      deliveryNote: "Free delivery for orders",
+      imgURL: '/medical_standard_medical.png',
     },
     {
-      name: "Student Health Store",
-      location: "Student Center",
-      contact: "+1-234-567-8901",
-      deliveryHours: "10:00 AM - 8:00 PM",
-      deliveryNote: "Free delivery for all prescriptions"
+      name: "M/S Anirudha Medicos",
+      location: "Near Tezpur Gate, Napaam",
+      contact: "8723015310",
+      deliveryHours: "08:00 AM - 9:30 PM",
+      deliveryNote: "Free delivery for orders",
+      imgURL: '/medical_anirudha1.png',
     }
   ];
 
@@ -26,10 +28,10 @@ const MedicalServices = () => {
   };
 
   const emergencyContacts = [
-    { title: "Campus Emergency", number: "911" },
-    { title: "Health Center Emergency", number: "+1-234-567-8902" },
-    { title: "Campus Security", number: "+1-234-567-8903" },
-    { title: "Mental Health Helpline", number: "+1-234-567-8904" }
+    { title: "TU Campus Ambulance", number: "+91 7002366254" },
+    { title: "Emergency Doctor TU", number: "+91 9954449470" },
+    { title: "Kanaklata Civil Hospital", number: "03712221494" },
+    { title: "Tezpur Fire Service", number: " 101  , 20101" }
   ];
 
   return (
@@ -115,6 +117,7 @@ const MedicalServices = () => {
                   </p>
                   <p className="text-sm text-green-600 font-medium">{shop.deliveryNote}</p>
                 </div>
+                <img src={shop.imgURL} className='aspect-square overflow-hidden rounded-lg mt-5'/>
               </div>
             ))}
           </div>
