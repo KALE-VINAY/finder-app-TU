@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import GoogleAd from './GoogleAd';
 import { 
   Utensils, 
   Plane, 
@@ -85,9 +85,19 @@ const LandingPage = () => {
             </div>
           </div>
 
+          {/* Add an Ad after Hero Section */}
+            <div className="container mx-auto px-4 my-8">
+              <GoogleAd 
+                adClient="ca-pub-4690888267077588"
+                adSlot="YOUR_AD_SLOT_ID"
+                fullWidth={true}
+              />
+            </div>
+
           {/* Services Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {services.map((service, index) => (
+              <React.Fragment key={index}>
               <Link key={index} to={service.path} className="group">
                 <div className="bg-gray-800 backdrop-blur-lg bg-opacity-50 rounded-xl p-6 hover:bg-opacity-70 transition-all duration-300 border border-gray-700 hover:border-gray-600">
                   <div className={`${service.color} w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
@@ -105,9 +115,31 @@ const LandingPage = () => {
                   </div>
                 </div>
               </Link>
+
+              {/* Insert an ad every 3 service cards */}
+              {(index + 1) % 3 === 0 && (
+                  <div className="col-span-full my-4">
+                    <GoogleAd 
+                      adClient="ca-pub-4690888267077588"
+                      adSlot="ANOTHER_AD_SLOT_ID"
+                      fullWidth={true}
+                    />
+                  </div>
+                )}
+
+              </React.Fragment>
             ))}
           </div>
         </div>
+      </div>
+
+      {/* Footer with Ad */}
+      <div className="container mx-auto px-4 my-8">
+        <GoogleAd 
+          adClient="ca-pub-4690888267077588"
+          adSlot="FOOTER_AD_SLOT_ID"
+          fullWidth={true}
+        />
       </div>
 
       {/* Footer */}
