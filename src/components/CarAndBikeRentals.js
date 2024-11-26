@@ -40,7 +40,7 @@ const CarAndBikeRentals = () => {
       imgURL:"https://www.motortrend.com/uploads/sites/10/2020/07/2020-hyundai-venue-denim-suv-angular-front.png",
     },
     {
-      name: "Mercedes C-Class",
+      name: "Tata Altroz",
       category: "Luxury",
       price: "$120/day",
       features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
@@ -50,7 +50,7 @@ const CarAndBikeRentals = () => {
     }
     ,
     {
-      name: "Mercedes C-Class",
+      name: "Tata nexon",
       category: "Luxury",
       price: "$120/day",
       features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
@@ -60,7 +60,7 @@ const CarAndBikeRentals = () => {
     }
     ,
     {
-      name: "Mercedes C-Class",
+      name: "Swift",
       category: "Luxury",
       price: "$120/day",
       features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
@@ -70,24 +70,35 @@ const CarAndBikeRentals = () => {
     }
     ,
     {
-      name: "Mercedes C-Class",
+      name: "Dzire",
       category: "Luxury",
       price: "$120/day",
       features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
       available: false ,
-      contact:'9127011121',
+      contact:'9864182962',
       imgURL:"https://tse2.mm.bing.net/th?id=OIP.8IFfAwBtKUK6W6vkjozOCgHaEk&pid=Api&P=0&h=180",
     }
     ,
     {
-      name: "Mercedes C-Class",
+      name: "Altroz",
       category: "Luxury",
       price: "$120/day",
       features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
       available: false ,
       contact:'9127011121',
-      imgURL:"/cars/zazabor_tata_altroz.png",
+      imgURL:"https://tse1.mm.bing.net/th?id=OIP.okvJpQydsrL6ieg3HKxRRQHaFL&pid=Api&P=0&h=180",
     }
+    ,
+    {
+      name: "mahindra",
+      category: "Luxury",
+      price: "$120/day",
+      features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
+      available: false ,
+      contact:'9600774916',
+      imgURL:"https://tse4.mm.bing.net/th?id=OIP.knZtz2tqCxmyKf3_SmrjNgHaE8&pid=Api&P=0&h=180",
+    }
+    
   ];
 
 
@@ -242,7 +253,7 @@ const CarAndBikeRentals = () => {
       price: "$40/day",
       features: ["300cc", "ABS", "Digital Console"],
       available: true ,
-      contact:'',
+      contact:'9127011121',
       imgURL:"https://tse3.mm.bing.net/th?id=OIP.SCrHuq5klYi5EXS_5dUd8wHaEK&pid=Api&P=0&h=180",
     },
     {
@@ -251,7 +262,7 @@ const CarAndBikeRentals = () => {
       price: "$35/day",
       features: ["350cc", "Classic Style", "Comfortable"],
       available: true ,
-      contact:'',
+      contact:'9127011121',
       imgURL:"https://tse4.mm.bing.net/th?id=OIP.h2pmVAtuAtAgX8wSoCBLaQHaFv&pid=Api&P=0&h=180",
     },
     {
@@ -260,7 +271,7 @@ const CarAndBikeRentals = () => {
       price: "$45/day",
       features: ["250cc", "ABS", "LED Lights"],
       available: true ,
-      contact:'',
+      contact:'9127011121',
       imgURL:"https://tse3.mm.bing.net/th?id=OIP.bpwWKvJgR3NZYFsyTRfHcAHaFW&pid=Api&P=0&h=180",
     }
   ];
@@ -493,17 +504,17 @@ const CarAndBikeRentals = () => {
                       {vehicle.category}
                     </span>
                   </div>
-                  <ul className="space-y-2 mb-4">
+                  {/* <ul className="space-y-2 mb-4">
                     {vehicle.features.map((feature, idx) => (
                       <li key={idx} className="text-gray-600 flex items-center">
                         <span className="w-2 h-2 bg-red-400 rounded-full mr-2"></span>
                         {feature}
                       </li>
                     ))}
-                  </ul>
+                  </ul> */}
                   <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold text-red-600">{vehicle.price}</span>
-                    <button 
+                    {/* <span className="text-2xl font-bold text-red-600">{vehicle.price}</span> */}
+                    {/* <button 
                       className={`px-4 py-2 rounded-lg font-semibold ${
                         vehicle.available 
                           ? 'bg-red-600 text-white hover:bg-red-700' 
@@ -512,7 +523,12 @@ const CarAndBikeRentals = () => {
                       disabled={!vehicle.available}
                     >
                       {vehicle.available ? 'Book Now' : 'Not Available'}
-                    </button>
+                    </button> */}
+                      <a href={`tel:${vehicle.number}`} className="flex items-center text-red-600 hover:text-red-800">
+                        <Phone className="w-4 h-4 mr-2" />
+                        {vehicle.contact}
+                      </a>
+
                   </div>
                 </div>
               </div>
