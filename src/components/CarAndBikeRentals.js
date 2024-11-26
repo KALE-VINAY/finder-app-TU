@@ -176,7 +176,7 @@ const CarAndBikeRentals = () => {
   
   const traveller = [
     {
-      name: "Innova",
+      name: "force traveller",
       category: "Sedan",
       price: "₹/day",
       features: ["5 Seats", "Automatic", "AC", "GPS"],
@@ -185,7 +185,7 @@ const CarAndBikeRentals = () => {
       imgURL:"https://tse2.mm.bing.net/th?id=OIP.IikCZ6gIzyDq0Y8MzJGsXAHaFu&pid=Api&P=0&h=180",
     },
     {
-      name: "Huyndai Venue",
+      name: "force traveller",
       category: "SUV",
       price: "₹1800/day",
       features: ["7 Seats", "Automatic", "AC", "GPS"],
@@ -194,7 +194,7 @@ const CarAndBikeRentals = () => {
       imgURL:"https://tse2.mm.bing.net/th?id=OIP.ii7yAMLtMGKY6W2chi-jagHaEK&pid=Api&P=0&h=180",
     },
     {
-      name: "Mercedes C-Class",
+      name: "force traveller",
       category: "Luxury",
       price: "$120/day",
       features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
@@ -204,7 +204,7 @@ const CarAndBikeRentals = () => {
     }
     ,
     {
-      name: "Mercedes C-Class",
+      name: "force traveller",
       category: "Luxury",
       price: "$120/day",
       features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
