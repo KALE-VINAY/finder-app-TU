@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect } from 'react';
 import { Plane, Map, Phone, Mail, Clock, Star, ChevronRight } from 'lucide-react';
 
 const TravelAndTours = () => {
   const [selectedDestination, setSelectedDestination] = useState(0);
 
+    // Add this useEffect to scroll to top when component mounts or id changes
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   const destinations = [
     {
       title: "TAWANG",

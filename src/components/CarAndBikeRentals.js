@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 import { 
   Car, 
   Bike, 
@@ -14,6 +14,11 @@ import {
 
 const CarAndBikeRentals = () => {
   const [activeTab, setActiveTab] = useState('cars');
+
+   // Add this useEffect to scroll to top when component mounts or id changes
+   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const cars = [
     {

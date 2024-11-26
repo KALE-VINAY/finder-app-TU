@@ -1,9 +1,14 @@
-import React from 'react';
+import React ,{useEffect}from 'react';
 import { Phone, Clock, Truck, AlertCircle,Navigation } from 'lucide-react';
 // import { Star, Copy,  } from 'lucide-react';
 
 const MedicalServices = () => {
 
+   // Add this useEffect to scroll to top when component mounts or id changes
+   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
     const map ={
       maplink : 'https://maps.app.goo.gl/6cjLknRXx7Zw4AiZ8',
     }
