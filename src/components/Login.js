@@ -152,7 +152,7 @@ const Login = () => {
         if (user) {
           const { uid, email, displayName, photoURL } = user;
           dispatch(addUser({ uid, email, displayName, photoURL }));
-          navigate("/browse");
+          navigate("/landing-page");
         } else {
           dispatch(removeUser());
           navigate("/");
@@ -170,7 +170,7 @@ const Login = () => {
       
       <div className="absolute">
         <img className=' h-screen  md:w-screen object-cover '
-          src='https://media.istockphoto.com/id/1169694902/photo/assorted-indian-non-vegetarian-food-recipe-served-in-a-group-includes-chicken-curry-mutton.webp?a=1&b=1&s=612x612&w=0&k=20&c=u_Txs8ayelMVBzmb142cbiE7UO4vDokq9hXUCUREPEc=' alt="bg img"
+          src='http://www.tezu.ernet.in/images/tu3.jpg' alt="bg img"
         />
       </div>
 
@@ -204,7 +204,7 @@ const Login = () => {
 
         <p className="text-red-500 font-bold text-lg py-2" >{errorMessage}</p>
 
-        <button className=" p-4 my-6 bg-yellow-300 w-full rounded-lg" onClick={handleButtonClick}>
+        <button className=" p-4 my-6 bg-gray-700 w-full rounded-lg" onClick={handleButtonClick}>
           {isSignInForm ? "Sign In" : "Sign Up"}
         </button>
         <p className=" py-4 cursor-pointer  font-serif text-gray-800 " onClick={toggleSignInForm}>

@@ -17,39 +17,39 @@ const LandingPage = () => {
   const services = [
     {
       title: "Restaurants & Hostel Canteens",
-      description: "Discover local cuisines and campus dining options",
+      description: "Discover local restaurants menu and contact details",
       icon: <Utensils className="w-6 h-6" />,
       path: "/browse",
       color: "bg-orange-500"
     },
+    // {
+    //   title: "Travel & Tours",
+    //   description: "Explore exciting destinations and tour packages",
+    //   icon: <Plane className="w-6 h-6" />,
+    //   path: "/travel-and-tours",
+    //   color: "bg-blue-500"
+    // },
     {
-      title: "Travel & Tours",
-      description: "Explore exciting destinations and tour packages",
-      icon: <Plane className="w-6 h-6" />,
-      path: "/travel-and-tours",
-      color: "bg-blue-500"
-    },
-    {
-      title: "Car & Bike Rentals",
-      description: "Rent vehicles for your convenience",
+      title: "Vehicle Rentals",
+      description: "cars, bikes, Autos and Travellers ",
       icon: <Car className="w-6 h-6" />,
       path: "/car-and-bike-rentals",
       color: "bg-red-500"
     },
     {
       title: "TU Medical Services",
-      description: "24/7 healthcare support and assistance",
+      description: "Medicine hostel delivery and healthcare support",
       icon: <Stethoscope className="w-6 h-6" />,
       path: "/medical-services",
       color: "bg-green-500"
     },
-    {
-      title: "Sports Jersey & Department T-Shirts",
-      description: "Custom jerseys and college merchandise",
-      icon: <Shirt className="w-6 h-6" />,
-      path: "/sports-jersey",
-      color: "bg-purple-500"
-    }
+    // {
+    //   title: "Sports Jersey & Department T-Shirts",
+    //   description: "Custom jerseys and college merchandise",
+    //   icon: <Shirt className="w-6 h-6" />,
+    //   path: "/sports-jersey",
+    //   color: "bg-purple-500"
+    // }
   ];
 
   return (
@@ -64,7 +64,7 @@ const LandingPage = () => {
         <div className="relative z-10 container mx-auto px-4 py-20">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-red-600">
-              Welcome to Our Services
+              Welcome 
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8">
               Your one-stop destination for all campus services

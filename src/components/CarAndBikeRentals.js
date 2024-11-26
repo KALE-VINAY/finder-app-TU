@@ -204,7 +204,7 @@ const CarAndBikeRentals = () => {
     }
     ,
     {
-      name: "force traveller",
+      name: "force traveller (GTS Traveller)",
       category: "Luxury",
       price: "$120/day",
       features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
@@ -266,7 +266,7 @@ const CarAndBikeRentals = () => {
       imgURL:"https://tse4.mm.bing.net/th?id=OIP.k9upQd40jih0M56dBUHu1wHaE8&pid=Api&P=0&h=180",
     },
     {
-      name: "access scooty",
+      name: "Access scooty",
       category: "Sports",
       price: "$40/day",
       features: ["300cc", "ABS", "Digital Console"],
