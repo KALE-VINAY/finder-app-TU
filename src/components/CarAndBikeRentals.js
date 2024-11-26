@@ -248,7 +248,7 @@ const CarAndBikeRentals = () => {
 
   const bikes = [
     {
-      name: "Honda CBR",
+      name: "KTM Duke",
       category: "Sports",
       price: "$40/day",
       features: ["300cc", "ABS", "Digital Console"],
@@ -257,7 +257,7 @@ const CarAndBikeRentals = () => {
       imgURL:"https://tse3.mm.bing.net/th?id=OIP.SCrHuq5klYi5EXS_5dUd8wHaEK&pid=Api&P=0&h=180",
     },
     {
-      name: "Royal Enfield Classic",
+      name: "Royal Enfield Himalayan",
       category: "Cruiser",
       price: "$35/day",
       features: ["350cc", "Classic Style", "Comfortable"],
@@ -266,7 +266,7 @@ const CarAndBikeRentals = () => {
       imgURL:"https://tse4.mm.bing.net/th?id=OIP.h2pmVAtuAtAgX8wSoCBLaQHaFv&pid=Api&P=0&h=180",
     },
     {
-      name: "Yamaha MT",
+      name: "Himalayan",
       category: "Street",
       price: "$45/day",
       features: ["250cc", "ABS", "LED Lights"],
@@ -346,7 +346,7 @@ const CarAndBikeRentals = () => {
                     <div className="flex justify-between items-center mb-4">
                       <h3 className="text-xl font-semibold">{vehicle.name}</h3>
                       <span className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm">
-                        {vehicle.category}
+                        {/* {vehicle.category} */}
                       </span>
                     </div>
                     {/* <ul className="space-y-2 mb-4">
@@ -397,7 +397,7 @@ const CarAndBikeRentals = () => {
                     <div className="flex justify-between items-center mb-4">
                       <h3 className="text-xl font-semibold">{vehicle.name}</h3>
                       <span className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm">
-                        {vehicle.category}
+                        {/* {vehicle.category} */}
                       </span>
                     </div>
                     {/* <ul className="space-y-2 mb-4">
@@ -447,7 +447,7 @@ const CarAndBikeRentals = () => {
                     <div className="flex justify-between items-center mb-4">
                       <h3 className="text-xl font-semibold">{vehicle.name}</h3>
                       <span className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm">
-                        {vehicle.category}
+                        {/* {vehicle.category} */}
                       </span>
                     </div>
                     {/* <ul className="space-y-2 mb-4">
@@ -501,7 +501,7 @@ const CarAndBikeRentals = () => {
                   <div className="flex justify-between items-center mb-4">
                     <h3 className="text-xl font-semibold">{vehicle.name}</h3>
                     <span className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm">
-                      {vehicle.category}
+                      {/* {vehicle.category} */}
                     </span>
                   </div>
                   {/* <ul className="space-y-2 mb-4">
