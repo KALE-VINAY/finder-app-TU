@@ -420,7 +420,7 @@ const CarAndBikeRentals = () => {
                       >
                         {vehicle.available ? 'Book Now' : 'Not Available'}
                       </button> */}
-                      <a href={`tel:${vehicle.number}`} className="flex items-center text-red-600 hover:text-red-800">
+                      <a href={`tel:${vehicle.contact}`} className="flex items-center text-red-600 hover:text-red-800">
                         <Phone className="w-4 h-4 mr-2" />
                         {vehicle.contact}
                       </a>
@@ -470,7 +470,7 @@ const CarAndBikeRentals = () => {
                       >
                         {vehicle.available ? 'Book Now' : 'Not Available'}
                       </button> */}
-                      <a href={`tel:${vehicle.number}`} className="flex items-center text-red-600 hover:text-red-800">
+                      <a href={`tel:${vehicle.contact}`} className="flex items-center text-red-600 hover:text-red-800">
                         <Phone className="w-4 h-4 mr-2" />
                         {vehicle.contact}
                       </a>
@@ -524,7 +524,7 @@ const CarAndBikeRentals = () => {
                     >
                       {vehicle.available ? 'Book Now' : 'Not Available'}
                     </button> */}
-                      <a href={`tel:${vehicle.number}`} className="flex items-center text-red-600 hover:text-red-800">
+                      <a href={`tel:${vehicle.contact}`} className="flex items-center text-red-600 hover:text-red-800">
                         <Phone className="w-4 h-4 mr-2" />
                         {vehicle.contact}
                       </a>
