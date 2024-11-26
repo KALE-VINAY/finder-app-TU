@@ -327,8 +327,8 @@ const CarAndBikeRentals = () => {
       {/* Hero Section */}
       <div className="bg-red-600 text-white py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Premium Vehicle Rentals</h1>
-          <p className="text-xl mb-8">Explore our fleet of cars and bikes for your next journey</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Vehicle Rentals</h1>
+          <p className="text-xl mb-8">Explore our fleet of cars, auto, travellers and bikes for your next journey</p>
           <div className="flex justify-center gap-4">
             <button 
               className={`px-8 py-3 rounded-full font-semibold transition-colors ${
