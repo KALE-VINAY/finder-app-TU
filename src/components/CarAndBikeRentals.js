@@ -17,25 +17,64 @@ const CarAndBikeRentals = () => {
 
   const cars = [
     {
-      name: "Toyota Camry",
+      name: "Innova",
       category: "Sedan",
-      price: "$60/day",
+      price: "₹/day",
       features: ["5 Seats", "Automatic", "AC", "GPS"],
-      available: true
+      available: true ,
+      imgURL:"https://apnigadee.com/assets/car.png",
     },
     {
-      name: "Honda CR-V",
+      name: "Huyndai Venue",
       category: "SUV",
-      price: "$80/day",
+      price: "₹1800/day",
       features: ["7 Seats", "Automatic", "AC", "GPS"],
-      available: true
+      available: true ,
+      imgURL:"https://www.motortrend.com/uploads/sites/10/2020/07/2020-hyundai-venue-denim-suv-angular-front.png",
     },
     {
       name: "Mercedes C-Class",
       category: "Luxury",
       price: "$120/day",
       features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
-      available: false
+      available: false ,
+      imgURL:"https://tse1.mm.bing.net/th?id=OIP.2C-W4iRD975uYU5S2acZ0wHaEW&pid=Api&P=0&h=180",
+    }
+    ,
+    {
+      name: "Mercedes C-Class",
+      category: "Luxury",
+      price: "$120/day",
+      features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
+      available: false ,
+      imgURL:"https://tse4.mm.bing.net/th?id=OIP.T2zUKgzmNPWdlPj1Z5venwHaE8&pid=Api&P=0&h=180",
+    }
+    ,
+    {
+      name: "Mercedes C-Class",
+      category: "Luxury",
+      price: "$120/day",
+      features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
+      available: false ,
+      imgURL:"https://tse4.mm.bing.net/th?id=OIP.asBr7ZFfLqOGyCSazjuVbQHaFP&pid=Api&P=0&h=180",
+    }
+    ,
+    {
+      name: "Mercedes C-Class",
+      category: "Luxury",
+      price: "$120/day",
+      features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
+      available: false ,
+      imgURL:"https://tse2.mm.bing.net/th?id=OIP.8IFfAwBtKUK6W6vkjozOCgHaEk&pid=Api&P=0&h=180",
+    }
+    ,
+    {
+      name: "Mercedes C-Class",
+      category: "Luxury",
+      price: "$120/day",
+      features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
+      available: false ,
+      imgURL:"/cars/zazabor_tata_altroz.png",
     }
   ];
 
@@ -45,21 +84,24 @@ const CarAndBikeRentals = () => {
       category: "Sports",
       price: "$40/day",
       features: ["300cc", "ABS", "Digital Console"],
-      available: true
+      available: true ,
+      imgURL:"https://tse3.mm.bing.net/th?id=OIP.SCrHuq5klYi5EXS_5dUd8wHaEK&pid=Api&P=0&h=180",
     },
     {
       name: "Royal Enfield Classic",
       category: "Cruiser",
       price: "$35/day",
       features: ["350cc", "Classic Style", "Comfortable"],
-      available: true
+      available: true ,
+      imgURL:"https://tse4.mm.bing.net/th?id=OIP.h2pmVAtuAtAgX8wSoCBLaQHaFv&pid=Api&P=0&h=180",
     },
     {
       name: "Yamaha MT",
       category: "Street",
       price: "$45/day",
       features: ["250cc", "ABS", "LED Lights"],
-      available: true
+      available: true ,
+      imgURL:"https://tse3.mm.bing.net/th?id=OIP.bpwWKvJgR3NZYFsyTRfHcAHaFW&pid=Api&P=0&h=180",
     }
   ];
 
@@ -120,11 +162,13 @@ const CarAndBikeRentals = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {(activeTab === 'cars' ? cars : bikes).map((vehicle, index) => (
             <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="h-48 bg-gray-200">
+              <div className="h-48 bg-white">
                 <img 
-                  src={`/api/placeholder/400/320`}
+                  src={
+                    vehicle.imgURL
+                  }
                   alt={vehicle.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </div>
               <div className="p-6">

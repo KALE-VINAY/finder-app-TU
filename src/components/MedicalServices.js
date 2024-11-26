@@ -6,7 +6,6 @@ const MedicalServices = () => {
 
     const map ={
       maplink : 'https://maps.app.goo.gl/6cjLknRXx7Zw4AiZ8',
-
     }
   const medicalShops = [
     {
