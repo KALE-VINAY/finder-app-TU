@@ -28,7 +28,7 @@ const CarAndBikeRentals = () => {
       features: ["5 Seats", "Automatic", "AC", "GPS"],
       available: true ,
       contact:'9706218186',
-      imgURL:"https://apnigadee.com/assets/car.png",
+      imgURL:"https://tse1.mm.bing.net/th?id=OIP.QCO6nYNKoEEQN2uMmMio6wHaEx&pid=Api&P=0&h=180",
     },
     {
       name: "Huyndai Venue",
@@ -256,6 +256,34 @@ const CarAndBikeRentals = () => {
       contact:'9127011121',
       imgURL:"https://tse3.mm.bing.net/th?id=OIP.SCrHuq5klYi5EXS_5dUd8wHaEK&pid=Api&P=0&h=180",
     },
+    {
+      name: "Ntorq scooty",
+      category: "Sports",
+      price: "$40/day",
+      features: ["300cc", "ABS", "Digital Console"],
+      available: true ,
+      contact:'8876057961',
+      imgURL:"https://tse4.mm.bing.net/th?id=OIP.k9upQd40jih0M56dBUHu1wHaE8&pid=Api&P=0&h=180",
+    },
+    {
+      name: "access scooty",
+      category: "Sports",
+      price: "$40/day",
+      features: ["300cc", "ABS", "Digital Console"],
+      available: true ,
+      contact:'8876057961',
+      imgURL:"https://tse4.mm.bing.net/th?id=OIP.c336dwbyrc1XOUwkweG7TwHaE3&pid=Api&P=0&h=180",
+    },
+    {
+      name: "Ntorq scooty",
+      category: "Sports",
+      price: "$40/day",
+      features: ["300cc", "ABS", "Digital Console"],
+      available: true ,
+      contact:'7575984658',
+      imgURL:"https://tse2.mm.bing.net/th?id=OIP.9x7m3CUUqVjweZkex7jBYgAAAA&pid=Api&P=0&h=180",
+    },
+    
     {
       name: "Royal Enfield Himalayan",
       category: "Cruiser",
