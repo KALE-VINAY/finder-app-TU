@@ -27,6 +27,7 @@ const CarAndBikeRentals = () => {
       price: "₹/day",
       features: ["5 Seats", "Automatic", "AC", "GPS"],
       available: true ,
+      contact:'9706218186',
       imgURL:"https://apnigadee.com/assets/car.png",
     },
     {
@@ -35,6 +36,7 @@ const CarAndBikeRentals = () => {
       price: "₹1800/day",
       features: ["7 Seats", "Automatic", "AC", "GPS"],
       available: true ,
+      contact:'9127011121',
       imgURL:"https://www.motortrend.com/uploads/sites/10/2020/07/2020-hyundai-venue-denim-suv-angular-front.png",
     },
     {
@@ -43,6 +45,7 @@ const CarAndBikeRentals = () => {
       price: "$120/day",
       features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
       available: false ,
+      contact:'9085748140',
       imgURL:"https://tse1.mm.bing.net/th?id=OIP.2C-W4iRD975uYU5S2acZ0wHaEW&pid=Api&P=0&h=180",
     }
     ,
@@ -52,6 +55,7 @@ const CarAndBikeRentals = () => {
       price: "$120/day",
       features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
       available: false ,
+      contact:'9127011121',
       imgURL:"https://tse4.mm.bing.net/th?id=OIP.T2zUKgzmNPWdlPj1Z5venwHaE8&pid=Api&P=0&h=180",
     }
     ,
@@ -61,6 +65,7 @@ const CarAndBikeRentals = () => {
       price: "$120/day",
       features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
       available: false ,
+      contact:'9127011121',
       imgURL:"https://tse4.mm.bing.net/th?id=OIP.asBr7ZFfLqOGyCSazjuVbQHaFP&pid=Api&P=0&h=180",
     }
     ,
@@ -70,6 +75,7 @@ const CarAndBikeRentals = () => {
       price: "$120/day",
       features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
       available: false ,
+      contact:'9127011121',
       imgURL:"https://tse2.mm.bing.net/th?id=OIP.8IFfAwBtKUK6W6vkjozOCgHaEk&pid=Api&P=0&h=180",
     }
     ,
@@ -79,6 +85,7 @@ const CarAndBikeRentals = () => {
       price: "$120/day",
       features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
       available: false ,
+      contact:'9127011121',
       imgURL:"/cars/zazabor_tata_altroz.png",
     }
   ];
@@ -86,12 +93,85 @@ const CarAndBikeRentals = () => {
 
   const auto = [
     {
+      name: "Kalam Auto",
+      category: "Sedan",
+      price: "₹/day",
+      features: ["5 Seats", "Automatic", "AC", "GPS"],
+      available: true ,
+      contact:'8402978782',
+      imgURL:"https://tse1.mm.bing.net/th?id=OIP.sXfCAfFwcKj0xVqn3Sc59gHaEK&pid=Api&P=0&h=180",
+    },
+    {
+      name: "Noor Ahmed",
+      category: "SUV",
+      price: "₹1800/day",
+      features: ["7 Seats", "Automatic", "AC", "GPS"],
+      available: true ,
+      contact:'9707262042',
+      imgURL:"https://tse4.mm.bing.net/th?id=OIP.zGT21lCFfHa93ECFW36B2AHaHa&pid=Api&P=0&h=180",
+    },
+    {
+      name: "Nekib da ",
+      category: "Luxury",
+      price: "$120/day",
+      features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
+      available: false ,
+      contact:'8486851308',
+      imgURL:"https://tse4.mm.bing.net/th?id=OIP.NkY4s1yBwV74XzyGYWU-5gHaEd&pid=Api&P=0&h=180",
+    }
+    ,
+    {
+      name: "Billai da",
+      category: "Luxury",
+      price: "$120/day",
+      features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
+      available: false ,
+      contact:'7896701818',
+      imgURL:"https://tse4.mm.bing.net/th?id=OIP.SxvGoj3jsfuYk4RYObogdQHaHa&pid=Api&P=0&h=180",
+    }
+    ,
+    // {
+    //   name: "Mercedes C-Class",
+    //   category: "Luxury",
+    //   price: "$120/day",
+    //   features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
+    //   available: false ,
+    //   contact:'',
+    //   imgURL:"https://tse4.mm.bing.net/th?id=OIP.Nz-6xNa6rBQR0dC641EogAAAAA&pid=Api&P=0&h=180",
+    // }
+    // ,
+    // {
+    //   name: "Mercedes C-Class",
+    //   category: "Luxury",
+    //   price: "$120/day",
+    //   features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
+    //   available: false ,
+    //   contact:'',
+    //   imgURL:"https://tse3.mm.bing.net/th?id=OIP.QEthQt0VZO561CKHw7mBFwHaEh&pid=Api&P=0&h=180",
+    // }
+    // ,
+    // {
+    //   name: "Mercedes C-Class",
+    //   category: "Luxury",
+    //   price: "$120/day",
+    //   features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
+    //   available: false ,
+    //   contact:'',
+    //   imgURL:"https://tse3.mm.bing.net/th?id=OIP.kqbwEYB0r6iqjj72yXmaiQHaFj&pid=Api&P=0&h=180",
+    // }
+  ];
+
+
+  
+  const traveller = [
+    {
       name: "Innova",
       category: "Sedan",
       price: "₹/day",
       features: ["5 Seats", "Automatic", "AC", "GPS"],
       available: true ,
-      imgURL:"https://tse1.mm.bing.net/th?id=OIP.sXfCAfFwcKj0xVqn3Sc59gHaEK&pid=Api&P=0&h=180",
+      contact:'7099036358',
+      imgURL:"https://tse2.mm.bing.net/th?id=OIP.IikCZ6gIzyDq0Y8MzJGsXAHaFu&pid=Api&P=0&h=180",
     },
     {
       name: "Huyndai Venue",
@@ -99,7 +179,8 @@ const CarAndBikeRentals = () => {
       price: "₹1800/day",
       features: ["7 Seats", "Automatic", "AC", "GPS"],
       available: true ,
-      imgURL:"https://tse4.mm.bing.net/th?id=OIP.zGT21lCFfHa93ECFW36B2AHaHa&pid=Api&P=0&h=180",
+      contact:'9706638636',
+      imgURL:"https://tse2.mm.bing.net/th?id=OIP.ii7yAMLtMGKY6W2chi-jagHaEK&pid=Api&P=0&h=180",
     },
     {
       name: "Mercedes C-Class",
@@ -107,7 +188,8 @@ const CarAndBikeRentals = () => {
       price: "$120/day",
       features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
       available: false ,
-      imgURL:"https://tse4.mm.bing.net/th?id=OIP.NkY4s1yBwV74XzyGYWU-5gHaEd&pid=Api&P=0&h=180",
+      contact:'9706159569',
+      imgURL:"https://tse2.mm.bing.net/th?id=OIP.BjmJOl0I2T17aFaC8aiNnwHaE8&pid=Api&P=0&h=180",
     }
     ,
     {
@@ -116,35 +198,39 @@ const CarAndBikeRentals = () => {
       price: "$120/day",
       features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
       available: false ,
-      imgURL:"https://tse4.mm.bing.net/th?id=OIP.SxvGoj3jsfuYk4RYObogdQHaHa&pid=Api&P=0&h=180",
+      contact:'6901812251',
+      imgURL:"https://tse3.mm.bing.net/th?id=OIP.Lfz8yaFZ3YLRmV03g4NvsgHaEM&pid=Api&P=0&h=180",
     }
     ,
-    {
-      name: "Mercedes C-Class",
-      category: "Luxury",
-      price: "$120/day",
-      features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
-      available: false ,
-      imgURL:"https://tse4.mm.bing.net/th?id=OIP.Nz-6xNa6rBQR0dC641EogAAAAA&pid=Api&P=0&h=180",
-    }
-    ,
-    {
-      name: "Mercedes C-Class",
-      category: "Luxury",
-      price: "$120/day",
-      features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
-      available: false ,
-      imgURL:"https://tse3.mm.bing.net/th?id=OIP.QEthQt0VZO561CKHw7mBFwHaEh&pid=Api&P=0&h=180",
-    }
-    ,
-    {
-      name: "Mercedes C-Class",
-      category: "Luxury",
-      price: "$120/day",
-      features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
-      available: false ,
-      imgURL:"https://tse3.mm.bing.net/th?id=OIP.kqbwEYB0r6iqjj72yXmaiQHaFj&pid=Api&P=0&h=180",
-    }
+    // {
+    //   name: "Mercedes C-Class",
+    //   category: "Luxury",
+    //   price: "$120/day",
+    //   features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
+    //   available: false ,
+    //   contact:'',
+    //   imgURL:"https://tse2.mm.bing.net/th?id=OIP.N2AUzQrnZPN0gyBvOyPs2AHaEj&pid=Api&P=0&h=180",
+    // }
+    // ,
+    // {
+    //   name: "Mercedes C-Class",
+    //   category: "Luxury",
+    //   price: "$120/day",
+    //   features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
+    //   available: false ,
+    //   contact:'',
+    //   imgURL:"https://tse4.mm.bing.net/th?id=OIP.niwv-TXiVl1RN_cSpWv_mQHaEa&pid=Api&P=0&h=180",
+    // }
+    // ,
+    // {
+    //   name: "Mercedes C-Class",
+    //   category: "Luxury",
+    //   price: "$120/day",
+    //   features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
+    //   available: false ,
+    //   contact:'',
+    //   imgURL:"https://tse2.mm.bing.net/th?id=OIP.hNa-zjopEP8wUSYCvFFKlgHaEj&pid=Api&P=0&h=180",
+    // }
   ];
 
 
@@ -156,6 +242,7 @@ const CarAndBikeRentals = () => {
       price: "$40/day",
       features: ["300cc", "ABS", "Digital Console"],
       available: true ,
+      contact:'',
       imgURL:"https://tse3.mm.bing.net/th?id=OIP.SCrHuq5klYi5EXS_5dUd8wHaEK&pid=Api&P=0&h=180",
     },
     {
@@ -164,6 +251,7 @@ const CarAndBikeRentals = () => {
       price: "$35/day",
       features: ["350cc", "Classic Style", "Comfortable"],
       available: true ,
+      contact:'',
       imgURL:"https://tse4.mm.bing.net/th?id=OIP.h2pmVAtuAtAgX8wSoCBLaQHaFv&pid=Api&P=0&h=180",
     },
     {
@@ -172,6 +260,7 @@ const CarAndBikeRentals = () => {
       price: "$45/day",
       features: ["250cc", "ABS", "LED Lights"],
       available: true ,
+      contact:'',
       imgURL:"https://tse3.mm.bing.net/th?id=OIP.bpwWKvJgR3NZYFsyTRfHcAHaFW&pid=Api&P=0&h=180",
     }
   ];
@@ -227,103 +316,210 @@ const CarAndBikeRentals = () => {
           </div>
         </div>
       </div>
-      <div className='text-center mt-5 text-gray-700 font-bold font-serif text-4xl'>Cars</div>
       {/* 4 wheeler Vehicle Listings */}
-      <div className="max-w-6xl mx-auto py-16 px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {(activeTab === 'cars' ? cars : bikes).map((vehicle, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="h-48 bg-white">
-                <img 
-                  src={
-                    vehicle.imgURL
-                  }
-                  alt={vehicle.name}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex justify-between items-center mb-4">
-                  <h3 className="text-xl font-semibold">{vehicle.name}</h3>
-                  <span className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm">
-                    {vehicle.category}
-                  </span>
-                </div>
-                <ul className="space-y-2 mb-4">
-                  {vehicle.features.map((feature, idx) => (
-                    <li key={idx} className="text-gray-600 flex items-center">
-                      <span className="w-2 h-2 bg-red-400 rounded-full mr-2"></span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <div className="flex justify-between items-center">
-                  <span className="text-2xl font-bold text-red-600">{vehicle.price}</span>
-                  <button 
-                    className={`px-4 py-2 rounded-lg font-semibold ${
-                      vehicle.available 
-                        ? 'bg-red-600 text-white hover:bg-red-700' 
-                        : 'bg-gray-200 text-gray-500 cursor-not-allowed'
-                    }`}
-                    disabled={!vehicle.available}
-                  >
-                    {vehicle.available ? 'Book Now' : 'Not Available'}
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      {/* 3 wheeler Vehicle Listings */}
-      <div className='text-center mt-5 text-gray-700 font-bold font-serif text-4xl'>Tom-Tom & Autos</div>
-    
+      {activeTab === 'cars' && (
+        <>
+          <div className='text-center mt-5 text-gray-700 font-bold font-serif text-4xl'>Cars</div>
           <div className="max-w-6xl mx-auto py-16 px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {(activeTab === 'cars' ? auto : bikes).map((vehicle, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="h-48 bg-white">
-                <img 
-                  src={
-                    vehicle.imgURL
-                  }
-                  alt={vehicle.name}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex justify-between items-center mb-4">
-                  <h3 className="text-xl font-semibold">{vehicle.name}</h3>
-                  <span className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm">
-                    {vehicle.category}
-                  </span>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {cars.map((vehicle, index) => (
+                <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+                  <div className="h-48 bg-white">
+                    <img 
+                      src={vehicle.imgURL}
+                      alt={vehicle.name}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <div className="flex justify-between items-center mb-4">
+                      <h3 className="text-xl font-semibold">{vehicle.name}</h3>
+                      <span className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm">
+                        {vehicle.category}
+                      </span>
+                    </div>
+                    {/* <ul className="space-y-2 mb-4">
+                      {vehicle.features.map((feature, idx) => (
+                        <li key={idx} className="text-gray-600 Version 1 of 2flex items-center">
+                          <span className="w-2 h-2 bg-red-400 rounded-full mr-2"></span>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul> */}
+                    <div className="flex justify-between items-center">
+                      {/* <span className="text-2xl font-bold text-red-600">{vehicle.price}</span> */}
+                      {/* <button 
+                        className={`px-4 py-2 rounded-lg font-semibold ${
+                          vehicle.available 
+                            ? 'bg-red-600 text-white hover:bg-red-700' 
+                            : 'bg-gray-200 text-gray-500 cursor-not-allowed'
+                        }`}
+                        disabled={!vehicle.available}
+                      >
+                        {vehicle.available ? 'Book Now' : 'Not Available'}
+                      </button> */}
+                      <a href={`tel:${vehicle.number}`} className="flex items-center text-red-600 hover:text-red-800">
+                  <Phone className="w-4 h-4 mr-2" />
+                  {vehicle.contact}
+                </a>
+                      
+                    </div>
+                  </div>
                 </div>
-                <ul className="space-y-2 mb-4">
-                  {vehicle.features.map((feature, idx) => (
-                    <li key={idx} className="text-gray-600 flex items-center">
-                      <span className="w-2 h-2 bg-red-400 rounded-full mr-2"></span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <div className="flex justify-between items-center">
-                  <span className="text-2xl font-bold text-red-600">{vehicle.price}</span>
-                  <button 
-                    className={`px-4 py-2 rounded-lg font-semibold ${
-                      vehicle.available 
-                        ? 'bg-red-600 text-white hover:bg-red-700' 
-                        : 'bg-gray-200 text-gray-500 cursor-not-allowed'
-                    }`}
-                    disabled={!vehicle.available}
-                  >
-                    {vehicle.available ? 'Book Now' : 'Not Available'}
-                  </button>
-                </div>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          <div className='text-center mt-5 text-gray-700 font-bold font-serif text-4xl'>Tom-Tom & Autos</div>
+          <div className="max-w-6xl mx-auto py-16 px-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {auto.map((vehicle, index) => (
+                <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+                  <div className="h-48 bg-white">
+                    <img 
+                      src={vehicle.imgURL}
+                      alt={vehicle.name}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <div className="flex justify-between items-center mb-4">
+                      <h3 className="text-xl font-semibold">{vehicle.name}</h3>
+                      <span className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm">
+                        {vehicle.category}
+                      </span>
+                    </div>
+                    {/* <ul className="space-y-2 mb-4">
+                      {vehicle.features.map((feature, idx) => (
+                        <li key={idx} className="text-gray-600 flex items-center">
+                          <span className="w-2 h-2 bg-red-400 rounded-full mr-2"></span>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul> */}
+                    <div className="flex justify-between items-center">
+                      {/* <span className="text-2xl font-bold text-red-600">{vehicle.price}</span> */}
+                      {/* <button 
+                        className={`px-4 py-2 rounded-lg font-semibold ${
+                          vehicle.available 
+                            ? 'bg-red-600 text-white hover:bg-red-700' 
+                            : 'bg-gray-200 text-gray-500 cursor-not-allowed'
+                        }`}
+                        disabled={!vehicle.available}
+                      >
+                        {vehicle.available ? 'Book Now' : 'Not Available'}
+                      </button> */}
+                      <a href={`tel:${vehicle.number}`} className="flex items-center text-red-600 hover:text-red-800">
+                        <Phone className="w-4 h-4 mr-2" />
+                        {vehicle.contact}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className='text-center mt-5 text-gray-700 font-bold font-serif text-4xl'>Travellers</div>
+          <div className="max-w-6xl mx-auto py-16 px-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {traveller.map((vehicle, index) => (
+                <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+                  <div className="h-48 bg-white">
+                    <img 
+                      src={vehicle.imgURL}
+                      alt={vehicle.name}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <div className="flex justify-between items-center mb-4">
+                      <h3 className="text-xl font-semibold">{vehicle.name}</h3>
+                      <span className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm">
+                        {vehicle.category}
+                      </span>
+                    </div>
+                    {/* <ul className="space-y-2 mb-4">
+                      {vehicle.features.map((feature, idx) => (
+                        <li key={idx} className="text-gray-600 flex items-center">
+                          <span className="w-2 h-2 bg-red-400 rounded-full mr-2"></span>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul> */}
+                    <div className="flex justify-between items-center">
+                      {/* <span className="text-2xl font-bold text-red-600">{vehicle.price}</span> */}
+                      {/* <button 
+                        className={`px-4 py-2 rounded-lg font-semibold ${
+                          vehicle.available 
+                            ? 'bg-red-600 text-white hover:bg-red-700' 
+                            : 'bg-gray-200 text-gray-500 cursor-not-allowed'
+                        }`}
+                        disabled={!vehicle.available}
+                      >
+                        {vehicle.available ? 'Book Now' : 'Not Available'}
+                      </button> */}
+                      <a href={`tel:${vehicle.number}`} className="flex items-center text-red-600 hover:text-red-800">
+                        <Phone className="w-4 h-4 mr-2" />
+                        {vehicle.contact}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </>
+      )}
+
+         {/* 2 wheeler Vehicle Listings */}
+         {activeTab === 'bikes' && (
+        <div className="max-w-6xl mx-auto py-16 px-4">
+          <div className='text-center mt-5 text-gray-700 font-bold font-serif text-4xl mb-12'>2 Wheeler Bikes</div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {bikes.map((vehicle, index) => (
+              <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+                <div className="h-48 bg-white">
+                  <img 
+                    src={vehicle.imgURL}
+                    alt={vehicle.name}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div className="p-6">
+                  <div className="flex justify-between items-center mb-4">
+                    <h3 className="text-xl font-semibold">{vehicle.name}</h3>
+                    <span className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm">
+                      {vehicle.category}
+                    </span>
+                  </div>
+                  <ul className="space-y-2 mb-4">
+                    {vehicle.features.map((feature, idx) => (
+                      <li key={idx} className="text-gray-600 flex items-center">
+                        <span className="w-2 h-2 bg-red-400 rounded-full mr-2"></span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="flex justify-between items-center">
+                    <span className="text-2xl font-bold text-red-600">{vehicle.price}</span>
+                    <button 
+                      className={`px-4 py-2 rounded-lg font-semibold ${
+                        vehicle.available 
+                          ? 'bg-red-600 text-white hover:bg-red-700' 
+                          : 'bg-gray-200 text-gray-500 cursor-not-allowed'
+                      }`}
+                      disabled={!vehicle.available}
+                    >
+                      {vehicle.available ? 'Book Now' : 'Not Available'}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Services Section */}
       <div className="bg-red-50 py-16 px-4">
