@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect} from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import the carousel styles
 import RestaurantCard from './RestaurantCard';
@@ -11,6 +11,10 @@ import RestaurantWebsite from './RestaurantWebsite';
 const Browse = () => {
 
   const [selectedRestaurant, setSelectedRestaurant] = useState(null);
+    // Add this useEffect to scroll to top when component mounts or id changes
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
 
   const restaurants = [
     {

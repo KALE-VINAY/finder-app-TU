@@ -32,7 +32,7 @@ const LandingPage = () => {
     // },
     {
       title: "Vehicle Rentals",
-      description: "cars, bikes, Autos and Travellers ",
+      description: "cars, bikes, Autos and Travellers are available for booking ",
       icon: <Car className="w-6 h-6" />,
       path: "/car-and-bike-rentals",
       color: "bg-red-500"
@@ -71,7 +71,7 @@ const LandingPage = () => {
             <p className="text-xl md:text-2xl text-gray-300 mb-8">
               Your one-stop destination for all campus services
             </p>
-            <div className="flex items-center justify-center space-x-4">
+            {/* <div className="flex items-center justify-center space-x-4">
               <div className="flex items-center space-x-2 text-gray-300">
                 <MapPin className="w-5 h-5" />
                 <span>Campus Wide</span>
@@ -84,7 +84,7 @@ const LandingPage = () => {
                 <Phone className="w-5 h-5" />
                 <span>Support</span>
               </div>
-            </div>
+            </div> */}
           </div>
 
         
