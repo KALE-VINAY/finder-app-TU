@@ -143,7 +143,7 @@ const Mainheader = () => {
   return (
     <div className='relative w-full px-4 py-3 bg-transparent z-10 flex flex-wrap justify-between items-center'>
       <h1 className='text-xl '>
-  TU services
+  TU Finder app
   </h1>
       {/* <img className="w-16 md:w-24 bg-black" src="main_logo.png" alt="logo" /> */}
       <h1 className='text-5xl sm:block bg-gradient-to-b from-white md:block lg:block xl:block font-serif text-center hidden'>
