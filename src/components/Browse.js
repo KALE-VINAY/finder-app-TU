@@ -270,7 +270,7 @@ const Browse = () => {
 
   return (
     <div >
-      <Header />
+      {/* <Header /> */}
       
       {/* Video Background with Overlay */}
       
