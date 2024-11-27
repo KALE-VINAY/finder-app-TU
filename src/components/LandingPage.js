@@ -12,6 +12,7 @@ import {
   Phone,
   Clock
 } from 'lucide-react';
+import Mainheader from './Mainheader';
 
 const LandingPage = () => {
   const services = [
@@ -54,6 +55,7 @@ const LandingPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
+      <Mainheader/>
       {/* Hero Section */}
       <div className="relative">
         {/* Background Pattern - Using CSS grid pattern instead of image */}
