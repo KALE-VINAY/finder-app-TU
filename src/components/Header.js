@@ -156,8 +156,8 @@ const Header = () => {
           <div className='flex items-center ml-2'>
             <img 
               alt="usericon" 
-              src={user?.photoURL} 
-              className='h-10 w-10 rounded-full' 
+              src='https://tse4.mm.bing.net/th?id=OIP.vimlzIZtL-hZyrHwIJOApAHaFB&pid=Api&P=0&h=180' 
+              className='h-10 w-12 bg-transparent rounded-full' 
             />
             <button 
               onClick={handleSignOut} 

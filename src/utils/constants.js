@@ -1,6 +1,8 @@
 export const LOGO = "https://img.freepik.com/premium-vector/food-logo-design-vector-white-background_1277164-14861.jpg?w=740";
 
 export const USER_AVATER ="https://tse4.mm.bing.net/th?id=OIP.Zk9O2lnVmvKoT5GukRJ8ogHaIU&pid=Api&P=0&h=180";
+export const USER_AVATER1 ="https://i.pinimg.com/originals/5e/78/05/5e7805b70109b9648bdc6377d6042c4c.png";
+
 
 export const API_OPTIONS = {
     method: 'GET',
