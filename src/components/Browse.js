@@ -336,7 +336,7 @@ const Browse = () => {
         </div>
       
       
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

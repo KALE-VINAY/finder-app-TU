@@ -566,7 +566,7 @@ const CarAndBikeRentals = () => {
       )}
 
       {/* Services Section */}
-      <div className="bg-red-50 py-16 px-4">
+      {/* <div className="bg-red-50 py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -581,16 +581,16 @@ const CarAndBikeRentals = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Booking Process */}
-      <div className="max-w-6xl mx-auto py-16 px-4">
+      <div className="max-w-6xl bg-red-50 mb-10 mx-auto py-16 px-4">
         <h2 className="text-3xl font-bold text-center mb-12">How to Book</h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {[
             { icon: <Calendar />, title: "Choose Date" },
             { icon: <Car />, title: "Select Vehicle" },
-            { icon: <DollarSign />, title: "Make Payment" },
+            { icon: <DollarSign />, title: "Make a Best Deal" },
             { icon: <MapPin />, title: "Get Vehicle" }
           ].map((step, index) => (
             <div key={index} className="text-center">
@@ -604,7 +604,7 @@ const CarAndBikeRentals = () => {
       </div>
 
       {/* Contact Section */}
-      <div className="bg-gray-900 text-white py-16 px-4">
+      {/* <div className="bg-gray-900 text-white py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center md:text-left">
@@ -640,7 +640,7 @@ const CarAndBikeRentals = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-4 px-4 border-t border-gray-800">
