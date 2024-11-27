@@ -213,9 +213,9 @@ const RestaurantWebsite = () => {
       maplink: 'https://maps.app.goo.gl/7wGZdkk5eKapkRccA',
       contact1: 9707525721,
       contact2: 9365419001,
-      imageUrl1: "/srishti1.jpg" ,
-      imageUrl2: "/srishti2.jpg",
-      imageUrl3 : "/srishti2.jpg",
+      imageUrl1: "/GShotel1.png" ,
+      imageUrl2: "/GShotel.png",
+      imageUrl3 : "/GShotel1.png",
     },
   };
 
