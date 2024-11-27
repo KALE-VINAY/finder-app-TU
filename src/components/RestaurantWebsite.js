@@ -297,14 +297,14 @@ const RestaurantWebsite = () => {
         <h2 className="text-lg font-semibold mb-4">Contact Details</h2>
         <div className="grid grid-cols-2 gap-4 max-w-xl">
           <div className="border rounded-lg p-4">
-          <a href={`tel:${contact1.number}`} className="flex items-center text-red-600 hover:text-red-800">
+          <a href={`tel:${contact1.contact1}`} className="flex items-center text-red-600 hover:text-red-800">
                   <Phone className="w-4 h-4 mr-2" />
                   {contact1}
                 </a>
           </div>
           {contact2 && (
             <div className="border rounded-lg p-4">
-              <a href={`tel:${contact2.number}`} className="flex items-center text-red-600 hover:text-red-800">
+              <a href={`tel:${contact2.contact2}`} className="flex items-center text-red-600 hover:text-red-800">
                   <Phone className="w-4 h-4 mr-2" />
                   {contact2}
                 </a>
