@@ -104,6 +104,15 @@ const CarAndBikeRentals = () => {
 
   const auto = [
     {
+      name: "Hasiku Islam Tom Tom TU",
+      category: "Luxury",
+      price: "$120/day",
+      features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
+      available: false ,
+      contact:'6900782852',
+      imgURL:"https://tse4.mm.bing.net/th?id=OIP.SxvGoj3jsfuYk4RYObogdQHaHa&pid=Api&P=0&h=180",
+    },
+    {
       name: "Kalam Auto",
       category: "Sedan",
       price: "₹/day",
@@ -141,6 +150,7 @@ const CarAndBikeRentals = () => {
       imgURL:"https://tse4.mm.bing.net/th?id=OIP.SxvGoj3jsfuYk4RYObogdQHaHa&pid=Api&P=0&h=180",
     }
     ,
+    
     // {
     //   name: "Mercedes C-Class",
     //   category: "Luxury",
