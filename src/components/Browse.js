@@ -7,6 +7,7 @@ import Footer from './Footer';
 import Hostel from './Hostel';
 import { Link } from 'react-router-dom';
 import RestaurantWebsite from './RestaurantWebsite';
+import axios from 'axios';
 
 const Browse = () => {
 
@@ -287,6 +288,54 @@ const Browse = () => {
     'https://media.istockphoto.com/id/922783734/photo/assorted-indian-recipes-food-various.jpg?s=2048x2048&w=is&k=20&c=1B9sUUPUsoVBAMCsk461nPRix-YIo74i8LgSWSkhCOE=',
   ];
 
+  const [books, setBooks] = useState([]);
+  // const [loading, setLoading] = useState(false);
+  // const [showType, setShowType] = useState('table');
+
+  // useEffect(() => {
+  //   // setLoading(true);
+  //   axios
+  //     .get('https://shop-status-zenu.onrender.com/books')
+  //     .then((response) => {
+  //       setBooks(response.data.data);
+  //       // setLoading(false);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //       // setLoading(false);
+  //     });
+  // }, []);
+
+
+  // Fetch hostel data from backend
+  useEffect(() => {
+    const fetchHostelData = async () => {
+      try {
+        // Replace with your actual backend API endpoint
+        const response = await axios.get('https://shop-status-zenu.onrender.com/books');
+        
+        // Assuming the backend returns an array of hostel objects
+        setBooks(response.data.data);
+        // setLoading(false);
+      } catch (err) {
+        // setError('Failed to fetch hostel data');
+        // setLoading(false);
+        console.error('Fetching hostel data error:', err);
+      }
+    };
+
+    // Initial fetch
+    fetchHostelData();
+
+    // Optional: Set up real-time updates via WebSocket or periodic polling
+    const intervalId = setInterval(fetchHostelData, 30000); // Fetch every 30 seconds
+
+    // Cleanup interval on component unmount
+    return () => clearInterval(intervalId);
+  }, []);
+
+
+
   return (
     <div >
       {/* <Header /> */}
@@ -348,8 +397,8 @@ const Browse = () => {
           <h2 className='font-serif font-bold text-gray-800 mb-5 text-2xl text-center'>Coming Soon ... </h2>
           <div className="  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           
-            {hostels.map((hostel, index) => (
-              <Hostel key={index} {...hostel} />
+            {books.map((hostel, index) => (
+              <Hostel key={index} {...hostel}  />
             ))}
           </div>
         </div>
