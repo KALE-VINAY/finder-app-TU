@@ -144,6 +144,10 @@ const BusSchedule = () => {
   const [activeTab, setActiveTab] = useState('ASTCToUni');
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
+  useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTime(new Date());
     }, 60000); // Update every minute
