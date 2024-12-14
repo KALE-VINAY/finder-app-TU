@@ -46,7 +46,7 @@ const LandingPage = () => {
     },
     {
       title: "Bus Timings",
-      description: "cars, bikes, Autos and Travellers are available for booking ",
+      description: "University Bus Timings",
       icon: <Car className="w-6 h-6" />,
       path: "/bus-timings",
       color: "bg-red-500"
