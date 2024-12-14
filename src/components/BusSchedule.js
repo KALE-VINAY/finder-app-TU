@@ -146,7 +146,7 @@ const BusSchedule = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTime(new Date());
@@ -193,17 +193,7 @@ const BusSchedule = () => {
     <div className="p-4 bg-gray-100 min-h-screen">
       <h1 className="text-2xl font-bold mb-4 text-center">University Bus Schedule</h1>
       <div className="flex justify-center gap-4">
-            <button 
-              className={`px-8 py-3 rounded-full font-semibold transition-colors ${
-                activeTab === 'UniToASTC' 
-                  ? 'bg-white text-red-600' 
-                  : 'bg-transparent border-2 border-white'
-              }`}
-              onClick={() => setActiveTab('UniToASTC')}
-            >
-              {/* <Car className="inline-block mr-2 w-5 h-5" /> */}
-              University TO ASTC
-            </button>
+            
             <button 
               className={`px-8 py-3 rounded-full font-semibold transition-colors ${
                 activeTab === 'ASTCToUni' 
@@ -214,6 +204,17 @@ const BusSchedule = () => {
             >
               {/* <Bike className="inline-block mr-2 w-5 h-5" /> */}
               ASTC TO University
+            </button>
+            <button 
+              className={`px-8 py-3 rounded-full font-semibold transition-colors ${
+                activeTab === 'UniToASTC' 
+                  ? 'bg-white text-red-600' 
+                  : 'bg-transparent border-2 border-white'
+              }`}
+              onClick={() => setActiveTab('UniToASTC')}
+            >
+              {/* <Car className="inline-block mr-2 w-5 h-5" /> */}
+              University TO ASTC
             </button>
           </div>
           {activeTab === 'ASTCToUni' && (
