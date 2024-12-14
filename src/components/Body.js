@@ -12,6 +12,7 @@ import TravelAndTours from './TravelAndTours';
 import CarAndBikeRentals from './CarAndBikeRentals';
 import MedicalServices from './MedicalServices';
 import SportsJersey from './SportsJersey';
+import BusSchedule from './BusSchedule';
 
 
 const Body = () => {
@@ -50,6 +51,10 @@ const appRouter =createBrowserRouter(
         {
           path:"/landing-page",
           element: <LandingPage />
+        },
+        {
+          path:"/bus-timings",
+          element: <BusSchedule/>
         }
     ]);
 

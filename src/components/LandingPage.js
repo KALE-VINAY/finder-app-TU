@@ -44,6 +44,13 @@ const LandingPage = () => {
       path: "/medical-services",
       color: "bg-green-500"
     },
+    {
+      title: "Bus Timings",
+      description: "cars, bikes, Autos and Travellers are available for booking ",
+      icon: <Car className="w-6 h-6" />,
+      path: "/bus-timings",
+      color: "bg-red-500"
+    },
     // {
     //   title: "Sports Jersey & Department T-Shirts",
     //   description: "Custom jerseys and college merchandise",
