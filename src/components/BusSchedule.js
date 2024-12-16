@@ -193,7 +193,7 @@ const BusSchedule = () => {
   return (
     <div className="p-4 bg-gray-100 min-h-screen">
       <h1 className="text-2xl font-bold mb-4 text-center">University Bus Schedule</h1>
-      <div className="flex justify-center gap-4">
+      <div className="flex justify-center gap-4 my-5">
             
             <button 
               className={`px-8 py-3 rounded-full font-semibold transition-colors ${
@@ -259,13 +259,13 @@ const BusSchedule = () => {
       {activeTab === 'UniToASTC' && (
           <>
       <div className="mb-6">
-        <h2 className="text-xl font-semibold">Upcoming Buses</h2>
+        <h2 className="text-xl font-semibold my-5">Today's Upcoming Buses</h2>
         {upcomingBuses.length > 0 ? (
           <ul className="mt-2">
             {upcomingBuses.map((bus, index) => (
               <li
                 key={index}
-                className="flex justify-between p-2 bg-white shadow-md rounded-lg mb-2"
+                className="flex justify-between gap-1 p-2 bg-white shadow-md rounded-lg mb-2"
               >
                 <span>{bus.time}</span>
                 <span>{bus.route}</span>
@@ -279,7 +279,7 @@ const BusSchedule = () => {
       </div>
 
       <div>
-        <h2 className="text-xl font-semibold">Today Bus Schedule</h2>
+        <h2 className="text-xl font-semibold my-5">Today Bus Schedule</h2>
         <ul className="mt-2">
           {getTodaySchedule().map((bus, index) => (
             <li
