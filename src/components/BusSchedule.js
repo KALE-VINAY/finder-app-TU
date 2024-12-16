@@ -87,6 +87,7 @@ const weekdayScheduleASTCToUni = [
     { time: "11:00 AM", route: "Tribeni, Base Hospital, Parowa, Dolabari", from: "ASTC", to: "Campus" },
     { time: "2:30 PM", route: "Tribeni, Base Hospital, Parowa, Dolabari", from: "ASTC", to: "Campus" },
     { time: "4:00 PM", route: "Tribeni, Base Hospital, Parowa, Dolabari", from: "ASTC", to: "Campus" },
+    { time: "7:00 PM", route: "Tribeni, Base Hospital, Parowa, Dolabari", from: "ASTC", to: "Campus" },
     { time: "8:00 PM", route: "Tribeni, Base Hospital, Parowa, Dolabari", from: "ASTC", to: "Campus" },
 
 ];
