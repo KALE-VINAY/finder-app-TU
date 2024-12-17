@@ -97,78 +97,165 @@
 // export default Header
 
 
-import React from 'react'
-import { useEffect } from 'react';
-import { getAuth, signOut } from "firebase/auth";
-import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { auth } from '../utils/firebase';
-import { onAuthStateChanged } from 'firebase/auth';
-import { addUser , removeUser } from '../utils/userSlice';
-import { LOGO, SUPPORTED_LANGUAGES } from '../utils/constants';
+// import React from 'react'
+// import { useEffect } from 'react';
+// import { getAuth, signOut } from "firebase/auth";
+// import { useNavigate } from 'react-router-dom';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { auth } from '../utils/firebase';
+// import { onAuthStateChanged } from 'firebase/auth';
+// import { addUser , removeUser } from '../utils/userSlice';
+// import { LOGO, SUPPORTED_LANGUAGES } from '../utils/constants';
 
 
 
-const Header = () => {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const user = useSelector(store => store.user);
+// const Header = () => {
+//   // const dispatch = useDispatch();
+//   // const navigate = useNavigate();
+//   const user = useSelector(store => store.user);
 
 
-  const handleSignOut = () => {
-    const auth = getAuth();
-    signOut(auth).then(() => {
-      // Successfully signed out
-    }).catch((error) => {
-      navigate("/error");
-    });
-  };
+//   // const handleSignOut = () => {
+//   //   const auth = getAuth();
+//   //   signOut(auth).then(() => {
+//   //     // Successfully signed out
+//   //   }).catch((error) => {
+//   //     navigate("/error");
+//   //   });
+//   // };
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        const { uid, email, displayName, photoURL } = user;
-        dispatch(addUser({ uid, email, displayName, photoURL }));
-        navigate("/browse");
-      } else {
-        dispatch(removeUser());
-        navigate("/");
-      }
-    });
-    return () => unsubscribe();
-  }, [navigate, dispatch]);
+//   // useEffect(() => {
+//   //   const unsubscribe = onAuthStateChanged(auth, (user) => {
+//   //     if (user) {
+//   //       const { uid, email, displayName, photoURL } = user;
+//   //       dispatch(addUser({ uid, email, displayName, photoURL }));
+//   //       navigate("/browse");
+//   //     } else {
+//   //       dispatch(removeUser());
+//   //       navigate("/");
+//   //     }
+//   //   });
+//   //   return () => unsubscribe();
+//   // }, [navigate, dispatch]);
 
-  // bg-gradient-to-b from-black
+//   // bg-gradient-to-b from-black
 
-  return (
-    <div className='relative w-full px-4 py-3 bg-transparent z-10 flex flex-wrap justify-between items-center'>
+//   return (
+//     <div className='relative w-full px-4 py-3 bg-transparent z-10 flex flex-wrap justify-between items-center'>
       
-      <img className="w-16 md:w-24 " src="food_logo_f.png" alt="logo" />
-      <h1 className='text-5xl sm:block bg-gradient-to-b from-white md:block lg:block xl:block font-serif text-center hidden'>
-  TU Food App
-</h1>
+//       <img className="w-16 md:w-24 " src="food_logo_f.png" alt="logo" />
+//       <h1 className='text-5xl sm:block bg-gradient-to-b from-white md:block lg:block xl:block font-serif text-center hidden'>
+//   TU Food App
+// </h1>
 
-      {user && (
-        <div className='flex flex-wrap items-center'>
+//       {user && (
+//         <div className='flex flex-wrap items-center'>
           
        
 
-          <div className='flex items-center ml-2'>
-            <img 
-              alt="usericon" 
-              src='https://tse4.mm.bing.net/th?id=OIP.vimlzIZtL-hZyrHwIJOApAHaFB&pid=Api&P=0&h=180' 
-              className='h-10 w-12 bg-transparent rounded-full' 
-            />
-            <button 
-              onClick={handleSignOut} 
-              className='ml-2 text-black font-bold'>
-              Sign Out
-            </button>
-          </div>
-        </div>
-      )}
-    </div>
-  )
-}
+//           <div className='flex items-center ml-2'>
+//             <img 
+//               alt="usericon" 
+//               src='https://tse4.mm.bing.net/th?id=OIP.vimlzIZtL-hZyrHwIJOApAHaFB&pid=Api&P=0&h=180' 
+//               className='h-10 w-12 bg-transparent rounded-full' 
+//             />
+//             {/* <button 
+//               onClick={handleSignOut} 
+//               className='ml-2 text-black font-bold'>
+//               Sign Out
+//             </button> */}
+//           </div>
+//         </div>
+//       )}
+//     </div>
+//   )
+// }
 
-export default Header
+// export default Header
+
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const user = useSelector((store) => store.user);
+
+  return (
+    <header className="relative w-full px-4 py-3 bg-transparent  z-10">
+      <div className="container mx-auto flex justify-between items-center">
+        {/* Logo */}
+        <div className="flex items-center">
+          <img className="w-16 md:w-24" src="food_logo_f.png" alt="logo" />
+          <h1 className="hidden md:block ml-4 text-2xl md:text-4xl font-serif font-bold text-gray-800">
+            TU Food App
+          </h1>
+        </div>
+
+        {/* Hamburger Menu for Mobile */}
+        <button
+          className="md:hidden text-gray-800 focus:outline-none"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-8 w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"}
+            />
+          </svg>
+        </button>
+
+        {/* Navbar Links */}
+        <nav
+          className={`${
+            isMenuOpen ? "block mt-3" : "hidden"
+          } absolute md:relative  top-16 md:top-0 left-0 w-full md:w-auto bg-gray-500 md:bg-transparent md:flex flex-col md:flex-row items-center`}
+        >
+          <Link
+            className="block text-lg font-medium text-gray-800 hover:text-green-900 px-4 py-2"
+            to="/"
+          >
+            Home
+          </Link>
+          <Link
+            className="block text-lg font-medium text-gray-800 hover:text-green-900 px-4 py-2"
+            to="/browse"
+          >
+            Browse Restaurants
+          </Link>
+          <Link
+            className="block text-lg font-medium text-gray-800 hover:text-green-900 px-4 py-2"
+            to="/car-and-bike-rentals"
+          >
+            Car & Bike Rentals
+          </Link>
+          <Link
+            className="block text-lg font-medium text-gray-800 hover:text-green-900 px-4 py-2"
+            to="/medical-services"
+          >
+            Medical Services
+          </Link>
+          <Link
+            className="block text-lg font-medium text-gray-800 hover:text-green-900 px-4 py-2"
+            to="/bus-timings"
+          >
+            Bus Schedule
+          </Link>
+
+          {/* User Section */}
+        
+        </nav>
+      </div>
+    </header>
+  );
+};
+
+export default Header;

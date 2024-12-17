@@ -11,6 +11,8 @@ import {
   DollarSign, 
   MapPin 
 } from 'lucide-react';
+import Mainheader from './Mainheader';
+import HeaderRent from './HeaderRent';
 
 const CarAndBikeRentals = () => {
   const [activeTab, setActiveTab] = useState('cars');
@@ -334,6 +336,10 @@ const CarAndBikeRentals = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-red-50 to-white">
+
+      {/* <Mainheader/> */}
+      <HeaderRent/>
+
       {/* Hero Section */}
       <div className="bg-red-600 text-white py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">

@@ -8,6 +8,7 @@ import Hostel from './Hostel';
 import { Link } from 'react-router-dom';
 import RestaurantWebsite from './RestaurantWebsite';
 import axios from 'axios';
+import HeaderRent from './HeaderRent';
 
 const Browse = () => {
 
@@ -337,75 +338,79 @@ const Browse = () => {
 
 
   return (
-    <div >
-      {/* <Header /> */}
+    <> 
+    <Header />
+    {/* <HeaderRent/> */}
+    <div className='' >
+    
+    
+    {/* Video Background with Overlay */}
+    
       
-      {/* Video Background with Overlay */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="fixed mb-24 inset-0 w-full h-full object-cover opacity-80"
+        >
+          <source src="https://videos.pexels.com/video-files/4253149/4253149-uhd_1440_2732_25fps.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+     
       
-        
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="fixed mb-24 inset-0 w-full h-full object-cover opacity-80"
+      <div className="relative  container mx-auto px-4 py-8">
+        {/* Carousel Section
+        <div className="mb-8 shadow-lg rounded-lg overflow-hidden">
+          <Carousel 
+            showThumbs={false} 
+            autoPlay 
+            infiniteLoop 
+            interval={3000} 
+            className="max-h-[400px]"
           >
-            <source src="https://videos.pexels.com/video-files/4253149/4253149-uhd_1440_2732_25fps.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-       
+            {carouselImages.map((image, index) => (
+              <div key={index} className="h-[300px] md:h-[400px]">
+                <img 
+                  src={image} 
+                  alt={`Carousel ${index + 1}`} 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ))}
+          </Carousel>
+        </div> */}
         
-        <div className="relative z-10 container mx-auto px-4 py-8">
-          {/* Carousel Section
-          <div className="mb-8 shadow-lg rounded-lg overflow-hidden">
-            <Carousel 
-              showThumbs={false} 
-              autoPlay 
-              infiniteLoop 
-              interval={3000} 
-              className="max-h-[400px]"
-            >
-              {carouselImages.map((image, index) => (
-                <div key={index} className="h-[300px] md:h-[400px]">
-                  <img 
-                    src={image} 
-                    alt={`Carousel ${index + 1}`} 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ))}
-            </Carousel>
-          </div> */}
-          
 
-          {/* Restaurants Section */}
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-gray-800 mb-8 uppercase tracking-wider">
-            Restaurants near TU
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {restaurants.map((restaurant) => (
-              <Link key={restaurant.id} to={`/restaurant/${restaurant.id}`} className="transform transition-all hover:scale-105">
-                <RestaurantCard {...restaurant} />
-              </Link>
-            ))}
-          </div>
-
-          {/* Hostels Section */}
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-gray-800 my-12 uppercase tracking-wider">
-            Hostel Canteens in TU
-          </h2>
-          <h2 className='font-serif font-bold text-gray-800 mb-5 text-2xl text-center'>Coming Soon ... </h2>
-          <div className="  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          
-            {books.map((hostel, index) => (
-              <Hostel key={index} {...hostel}  />
-            ))}
-          </div>
+        {/* Restaurants Section */}
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-gray-800 mb-8 uppercase tracking-wider">
+          Restaurants near TU
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {restaurants.map((restaurant) => (
+            <Link key={restaurant.id} to={`/restaurant/${restaurant.id}`} className="transform transition-all hover:scale-105">
+              <RestaurantCard {...restaurant} />
+            </Link>
+          ))}
         </div>
-      
-      
-      {/* <Footer /> */}
-    </div>
+
+        {/* Hostels Section */}
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-gray-800 my-12 uppercase tracking-wider">
+          Hostel Canteens in TU
+        </h2>
+        <h2 className='font-serif font-bold text-gray-800 mb-5 text-2xl text-center'>Coming Soon ... </h2>
+        <div className="  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        
+          {books.map((hostel, index) => (
+            <Hostel key={index} {...hostel}  />
+          ))}
+        </div>
+      </div>
+    
+    
+    {/* <Footer /> */}
+  </div></>
+   
   );
 };
 

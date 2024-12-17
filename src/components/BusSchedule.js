@@ -69,6 +69,7 @@
 
 // export default BusSchedule;
 import React, { useState, useEffect } from 'react';
+import HeaderRent from './HeaderRent';
 
 // Example holiday dates
 const holidays = [
@@ -191,59 +192,43 @@ const BusSchedule = () => {
   
 
   return (
+    <>
+     <HeaderRent/>
     <div className="p-4 bg-gray-100 min-h-screen">
-      <h1 className="text-2xl font-bold mb-4 text-center">University Bus Schedule</h1>
-      <div className="flex justify-center gap-4 my-5">
-            
-            <button 
-              className={`px-8 py-3 rounded-full font-semibold transition-colors ${
-                activeTab === 'ASTCToUni' 
-                  ? 'bg-white text-red-600' 
-                  : 'bg-transparent border-2 border-white'
-              }`}
-              onClick={() => setActiveTab('ASTCToUni')}
-            >
-              {/* <Bike className="inline-block mr-2 w-5 h-5" /> */}
-              ASTC TO University
-            </button>
-            <button 
-              className={`px-8 py-3 rounded-full font-semibold transition-colors ${
-                activeTab === 'UniToASTC' 
-                  ? 'bg-white text-red-600' 
-                  : 'bg-transparent border-2 border-white'
-              }`}
-              onClick={() => setActiveTab('UniToASTC')}
-            >
-              {/* <Car className="inline-block mr-2 w-5 h-5" /> */}
-              University TO ASTC
-            </button>
-          </div>
-          {activeTab === 'ASTCToUni' && (
-          <>
-      <div className="mb-6">
-        <h2 className="text-xl font-semibold">Upcoming Buses</h2>
-        {upcomingBuses.length > 0 ? (
-          <ul className="mt-2">
-            {upcomingBuses.map((bus, index) => (
-              <li
-                key={index}
-                className="flex justify-between p-2 bg-white shadow-md rounded-lg mb-2"
-              >
-                <span>{bus.time}</span>
-                <span>{bus.route}</span>
-                <span>{bus.from} ➔ {bus.to}</span>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p className="mt-2 text-gray-500">No upcoming buses.</p>
-        )}
-      </div>
-
-      <div>
-        <h2 className="text-xl font-semibold">Today Bus Schedule</h2>
+    
+    <h1 className="text-2xl font-bold my-4 text-center">University Bus Schedule</h1>
+    <div className="flex justify-center gap-4 my-5">
+          
+          <button 
+            className={`px-8 py-3 rounded-full font-semibold transition-colors ${
+              activeTab === 'ASTCToUni' 
+                ? 'bg-white text-red-600' 
+                : 'bg-transparent border-2 border-white'
+            }`}
+            onClick={() => setActiveTab('ASTCToUni')}
+          >
+            {/* <Bike className="inline-block mr-2 w-5 h-5" /> */}
+            ASTC TO University
+          </button>
+          <button 
+            className={`px-8 py-3 rounded-full font-semibold transition-colors ${
+              activeTab === 'UniToASTC' 
+                ? 'bg-white text-red-600' 
+                : 'bg-transparent border-2 border-white'
+            }`}
+            onClick={() => setActiveTab('UniToASTC')}
+          >
+            {/* <Car className="inline-block mr-2 w-5 h-5" /> */}
+            University TO ASTC
+          </button>
+        </div>
+        {activeTab === 'ASTCToUni' && (
+        <>
+    <div className="mb-6">
+      <h2 className="text-xl font-semibold">Upcoming Buses</h2>
+      {upcomingBuses.length > 0 ? (
         <ul className="mt-2">
-          {getTodaySchedule().map((bus, index) => (
+          {upcomingBuses.map((bus, index) => (
             <li
               key={index}
               className="flex justify-between p-2 bg-white shadow-md rounded-lg mb-2"
@@ -254,47 +239,68 @@ const BusSchedule = () => {
             </li>
           ))}
         </ul>
-      </div>
-      </>)}
-      {activeTab === 'UniToASTC' && (
-          <>
-      <div className="mb-6">
-        <h2 className="text-xl font-semibold my-5">Today's Upcoming Buses</h2>
-        {upcomingBuses.length > 0 ? (
-          <ul className="mt-2">
-            {upcomingBuses.map((bus, index) => (
-              <li
-                key={index}
-                className="flex justify-between gap-1 p-2 bg-white shadow-md rounded-lg mb-2"
-              >
-                <span>{bus.time}</span>
-                <span>{bus.route}</span>
-                <span>{bus.from} ➔ {bus.to}</span>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p className="mt-2 text-gray-500">No upcoming buses.</p>
-        )}
-      </div>
-
-      <div>
-        <h2 className="text-xl font-semibold my-5">Today Bus Schedule</h2>
-        <ul className="mt-2">
-          {getTodaySchedule().map((bus, index) => (
-            <li
-              key={index}
-              className="flex justify-between p-2 bg-white shadow-md rounded-lg mb-2"
-            >
-              <span>{bus.time}</span>
-              <span>{bus.route}</span>
-              <span>{bus.from} ➔ {bus.to}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-      </>)}
+      ) : (
+        <p className="mt-2 text-gray-500">No upcoming buses.</p>
+      )}
     </div>
+
+    <div>
+      <h2 className="text-xl font-semibold">Today Bus Schedule</h2>
+      <ul className="mt-2">
+        {getTodaySchedule().map((bus, index) => (
+          <li
+            key={index}
+            className="flex justify-between p-2 bg-white shadow-md rounded-lg mb-2"
+          >
+            <span>{bus.time}</span>
+            <span>{bus.route}</span>
+            <span>{bus.from} ➔ {bus.to}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+    </>)}
+    {activeTab === 'UniToASTC' && (
+        <>
+    <div className="mb-6">
+      <h2 className="text-xl font-semibold my-5">Today's Upcoming Buses</h2>
+      {upcomingBuses.length > 0 ? (
+        <ul className="mt-2">
+          {upcomingBuses.map((bus, index) => (
+            <li
+              key={index}
+              className="flex justify-between gap-1 p-2 bg-white shadow-md rounded-lg mb-2"
+            >
+              <span>{bus.time}</span>
+              <span>{bus.route}</span>
+              <span>{bus.from} ➔ {bus.to}</span>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className="mt-2 text-gray-500">No upcoming buses.</p>
+      )}
+    </div>
+
+    <div>
+      <h2 className="text-xl font-semibold my-5">Today Bus Schedule</h2>
+      <ul className="mt-2">
+        {getTodaySchedule().map((bus, index) => (
+          <li
+            key={index}
+            className="flex justify-between p-2 bg-white shadow-md rounded-lg mb-2"
+          >
+            <span>{bus.time}</span>
+            <span>{bus.route}</span>
+            <span>{bus.from} ➔ {bus.to}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+    </>)}
+  </div>
+    </>
+    
   );
 };
 

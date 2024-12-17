@@ -1,5 +1,6 @@
 import React, { useState ,useEffect } from 'react';
 import { Plane, Map, Phone, Mail, Clock, Star, ChevronRight } from 'lucide-react';
+import Mainheader from './Mainheader';
 
 const TravelAndTours = () => {
   const [selectedDestination, setSelectedDestination] = useState(0);
@@ -52,6 +53,8 @@ const TravelAndTours = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white text-gray-800">
+
+      <Mainheader/>
       {/* Hero Section */}
       <div className="bg-blue-600 text-white py-20 px-4">
         <div className="max-w-6xl mx-auto text-center">

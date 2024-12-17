@@ -27,7 +27,7 @@ const HostelCanteenList = () => {
     fetchHostelData();
 
     // Optional: Set up real-time updates via WebSocket or periodic polling
-    const intervalId = setInterval(fetchHostelData, 30000); // Fetch every 30 seconds
+    const intervalId = setInterval(fetchHostelData, 10000); // Fetch every 30 seconds
 
     // Cleanup interval on component unmount
     return () => clearInterval(intervalId);
