@@ -182,7 +182,7 @@ const Header = () => {
   const user = useSelector((store) => store.user);
 
   return (
-    <header className="relative w-full px-4 py-3 bg-transparent  z-10">
+    <header className="relative w-full px-4 py-3 bg-white  z-10">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">

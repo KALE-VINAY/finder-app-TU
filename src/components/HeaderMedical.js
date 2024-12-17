@@ -41,34 +41,34 @@ const HeaderMedical = () => {
         <nav
           className={`${
             isMenuOpen ? "block p-4" : "hidden"
-          } absolute md:relative top-16 md:top-0 left-0 w-full md:w-auto bg-white md:bg-transparent md:flex flex-col md:flex-row gap-4 items-center`}
+          } absolute md:relative  top-16 md:top-0 left-0 w-full md:w-auto bg-white md:bg-transparent md:flex flex-col md:flex-row items-center`}
         >
           <Link
-            className="text-lg font-medium text-green-700 hover:text-green-900 px-4 py-2"
+            className="text-lg  block font-medium text-green-700 hover:text-green-900 px-4 py-2"
             to="/landing-page"
           >
             Home
           </Link>
           <Link
-            className="text-lg font-medium text-green-700 hover:text-green-900 px-4 py-2"
+            className="text-lg  block font-medium text-green-700 hover:text-green-900 px-4 py-2"
             to="/car-and-bike-rentals"
           >
             Vehicle Rentals
           </Link>
           <Link
-            className="text-lg font-medium text-green-700 hover:text-green-900 px-4 py-2"
+            className="text-lg  block font-medium text-green-700 hover:text-green-900 px-4 py-2"
             to="/medical-services"
           >
             Medical Services
           </Link>
           <Link
-            className="text-lg font-medium text-green-700 hover:text-green-900 px-4 py-2"
+            className="text-lg block  font-medium text-green-700 hover:text-green-900 px-4 py-2"
             to="/bus-timings"
           >
             Bus Schedule
           </Link>
           <Link
-            className="text-lg font-medium text-green-700 hover:text-green-900 px-4 py-2"
+            className="text-lg block font-medium text-green-700 hover:text-green-900 px-4 py-2"
             to="/Browse"
           >
             Restaurants & Canteens

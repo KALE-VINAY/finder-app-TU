@@ -42,31 +42,31 @@ const HeaderRent = () => {
           } absolute md:relative top-16 md:top-0 left-0 w-full md:w-auto   md:bg-transparent md:flex flex-col md:flex-row gap-4 items-center md:gap-6 px-6 md:px-0`}
         >
           <Link
-            className="text-lg font-semibold hover:bg-red-600 px-4 py-2 rounded-md"
+            className="text-lg block  font-semibold hover:bg-red-400 px-4 py-2 rounded-md"
             to="/landing-page"
           >
             Home
           </Link>
           <Link
-            className="text-lg font-semibold hover:bg-red-600 px-4 py-2 rounded-md"
+            className="text-lg  block font-semibold hover:bg-red-600 px-4 py-2 rounded-md"
             to="/car-and-bike-rentals"
           >
             Vehicle Rentals
           </Link>
           <Link
-            className="text-lg font-semibold hover:bg-red-600 px-4 py-2 rounded-md"
+            className="text-lg  block font-semibold hover:bg-red-600 px-4 py-2 rounded-md"
             to="/medical-services"
           >
             Medical Services
           </Link>
           <Link
-            className="text-lg font-semibold hover:bg-red-600 px-4 py-2 rounded-md"
+            className="text-lg  block font-semibold hover:bg-red-600 px-4 py-2 rounded-md"
             to="/bus-timings"
           >
             Bus Schedule
           </Link>
           <Link
-            className="text-lg font-semibold hover:bg-red-600 px-4 py-2 rounded-md"
+            className="text-lg block  font-semibold hover:bg-red-600 px-4 py-2 rounded-md"
             to="/Browse"
           >
             Restaurants & Canteens
