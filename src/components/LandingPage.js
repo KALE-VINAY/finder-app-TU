@@ -94,8 +94,6 @@ const LandingPage = () => {
             </div> */}
           </div>
 
-        
-
           {/* Services Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {services.map((service, index) => (
@@ -117,9 +115,6 @@ const LandingPage = () => {
                   </div>
                 </div>
               </Link>
-
-              
-
              
             ))}
           </div>
