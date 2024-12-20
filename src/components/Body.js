@@ -106,7 +106,7 @@ const Body = () => {
       path: '/travel-and-tours',
       element: (
         <ProtectedRoute>
-          <TravelAndTours />
+          <TravelAndTours/>
         </ProtectedRoute>
       ),
     },

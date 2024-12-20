@@ -23,13 +23,6 @@ const LandingPage = () => {
       path: "/browse",
       color: "bg-orange-500"
     },
-    // {
-    //   title: "Travel & Tours",
-    //   description: "Explore exciting destinations and tour packages",
-    //   icon: <Plane className="w-6 h-6" />,
-    //   path: "/travel-and-tours",
-    //   color: "bg-blue-500"
-    // },
     {
       title: "Vehicle Rentals",
       description: "cars, bikes, Autos and Travellers are available for booking ",
@@ -57,7 +50,14 @@ const LandingPage = () => {
       icon: <Shirt className="w-6 h-6" />,
       path: "/sports-jersey",
       color: "bg-purple-500"
-    }
+    },
+     {
+      title: "Travel & Tours",
+      description: "Explore exciting destinations and tour packages",
+      icon: <Plane className="w-6 h-6" />,
+      path: "/travel-and-tours",
+      color: "bg-blue-500"
+    },
   ];
 
   return (

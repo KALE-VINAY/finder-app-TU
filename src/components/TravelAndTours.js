@@ -13,24 +13,46 @@ const TravelAndTours = () => {
     {
       title: "TAWANG",
       price: "$1,299",
-      duration: "7 days",
-      description: "Experience the magic of Bali's beaches and culture",
-      imgUrl: '/tours/tawang1.jpg'
+      duration: "3 days",
+      description: "Discover the breathtaking snow mountain landscapes",
+      imgUrl: '/tours/tawang2.jpg',
+      phContact1:'9101962877',
+      // phContact2:'',
     },
+    // {
+    //   title: "Meghalaya ",
+    //   price: "$2,499",
+    //   duration: "10 days",
+    //   description: "Discover the breathtaking mountain landscapes",
+    //   imgUrl: '/tours/meghalaya.jpg'
+    // },
     {
-      title: "Meghalaya ",
-      price: "$2,499",
-      duration: "10 days",
-      description: "Discover the breathtaking mountain landscapes",
-      imgUrl: '/tours/meghalaya.jpg'
-    },
-    {
-      title: "DZUKOU VALLY",
+      title: "ROING",
       price: "$1,799",
       duration: "8 days",
-      description: "Island hopping in crystal clear waters",
-      imgUrl: '/tours/DZUKOU.jpg'
-    }
+      description: "Discover the breathtaking mountain landscapes",
+      imgUrl: '/tours/roing.jpg',
+      phContact1:'9706218186',
+      // phContact2:'',
+    },
+    // {
+    //   title: "DZUKOU VALLY",
+    //   price: "$1,799",
+    //   duration: "8 days",
+    //   description: "Island hopping in crystal clear waters",
+    //   imgUrl: '/tours/DZUKOU.jpg',
+    //   phContact1:'',
+    //   // phContact2:'',
+    // }
+    {
+      title: "CHIGU CAMP ANINI",
+      price: "$1,799",
+      duration: "8 days",
+      description: "Discover the breathtaking mountain landscapes",
+      imgUrl: '/tours/Anini.jpg',
+      phContact1:'7099036358',
+      // phContact2:'',
+    },
   ];
 
   const services = [
@@ -54,15 +76,15 @@ const TravelAndTours = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white text-gray-800">
 
-      <Mainheader/>
+      {/* <Mainheader/> */}
       {/* Hero Section */}
       <div className="bg-blue-600 text-white py-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Discover Your Next Adventure</h1>
           <p className="text-xl mb-8">Explore the world with our premium travel packages</p>
-          <button className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition-colors">
+          {/* <button className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition-colors">
             Start Planning
-          </button>
+          </button> */}
         </div>
       </div>
 
@@ -82,9 +104,9 @@ const TravelAndTours = () => {
                   alt={dest.title}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute top-4 right-4 bg-white px-4 py-1 rounded-full font-semibold">
+                {/* <div className="absolute top-4 right-4 bg-white px-4 py-1 rounded-full font-semibold">
                   {dest.price}
-                </div>
+                </div> */}
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">{dest.title}</h3>
@@ -92,7 +114,10 @@ const TravelAndTours = () => {
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-gray-500">{dest.duration}</span>
                   <button className="flex items-center text-blue-600 hover:text-blue-700">
-                    Learn More <ChevronRight className="w-4 h-4 ml-1" />
+                    <a href={`tel:${dest.phContact1}`} className="flex items-center text-blue-700 hover:text-red-500">
+                      <Phone className="w-4 h-4 mr-2" />
+                      {dest.phContact1}
+                    </a>
                   </button>
                 </div>
               </div>
@@ -101,7 +126,7 @@ const TravelAndTours = () => {
         </div>
       </div>
 
-      {/* Services Section */}
+      {/* Services Section
       <div className="bg-blue-50 py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
@@ -117,9 +142,9 @@ const TravelAndTours = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
-      {/* Contact Section */}
+      {/* Contact Section
       <div className="max-w-6xl mx-auto py-16 px-4">
         <div className="bg-white rounded-xl shadow-lg p-8">
           <h2 className="text-3xl font-bold text-center mb-8">Contact Us</h2>
@@ -165,14 +190,14 @@ const TravelAndTours = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-8 px-4">
+      {/* <footer className="bg-gray-800 text-white py-8 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <p>&copy; 2024 Travel & Tours. All rights reserved.</p>
         </div>
-      </footer>
+      </footer> */}
     </div>
   );
 };
