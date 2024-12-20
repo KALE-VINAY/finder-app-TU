@@ -51,13 +51,13 @@ const LandingPage = () => {
       path: "/bus-timings",
       color: "bg-red-500"
     },
-    // {
-    //   title: "Sports Jersey & Department T-Shirts",
-    //   description: "Custom jerseys and college merchandise",
-    //   icon: <Shirt className="w-6 h-6" />,
-    //   path: "/sports-jersey",
-    //   color: "bg-purple-500"
-    // }
+    {
+      title: "Sports Jersey & Department T-Shirts",
+      description: "Custom jerseys and college merchandise",
+      icon: <Shirt className="w-6 h-6" />,
+      path: "/sports-jersey",
+      color: "bg-purple-500"
+    }
   ];
 
   return (

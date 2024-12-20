@@ -1,11 +1,11 @@
 import React ,{useEffect} from 'react';
 import { Phone, Mail, MapPin, ShoppingCart } from 'lucide-react';
 
-const ProductCard = ({ title, price, description, imagePlaceholder }) => (
+const ProductCard = ({ title, price, description, imagePlaceholder, phNumber }) => (
   <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
     <div className="aspect-square w-full bg-gray-100">
       <img
-        src={`/api/placeholder/${imagePlaceholder}`}
+        src={`${imagePlaceholder}`}
         alt={title}
         className="w-full h-full object-cover"
       />
@@ -13,10 +13,14 @@ const ProductCard = ({ title, price, description, imagePlaceholder }) => (
     <div className="p-4">
       <h4 className="font-semibold text-lg mb-2">{title}</h4>
       <p className="text-gray-600 text-sm mb-2">{description}</p>
-      <p className="text-yellow-800 font-bold">${price}</p>
+      {/* <p className="text-yellow-800 font-bold">${price}</p> */}
       <button className="mt-2 w-full bg-yellow-500 text-white py-2 rounded hover:bg-yellow-600 transition-colors flex items-center justify-center gap-2">
-        <ShoppingCart size={16} />
-        Add to Cart
+        {/* <ShoppingCart size={16} /> */}
+       <a href={`tel:${phNumber}`} className="flex items-center text-red-600 hover:text-red-800">
+                        <Phone className="w-4 h-4 mr-2" />
+                        {phNumber}
+                      </a>
+
       </button>
     </div>
   </div>
@@ -34,16 +38,25 @@ const SportsJersey = () => {
       title: "Sports Jerseys",
       items: [
         {
-          title: "Basketball Jersey",
+          title: "NB Sports Jersey",
           price: "49.99",
-          description: "Official university basketball team jersey",
-          imagePlaceholder: "400/400"
+          description: "All Sports team jersey",
+          imagePlaceholder: "https://tse2.mm.bing.net/th?id=OIP.uL1o9UiXA3E8JSMhxAAmLgHaIj&pid=Api&P=0&h=180",
+          phNumber:'9435119142',
         },
         {
-          title: "Football Jersey",
+          title: "SD Sports Jersey",
           price: "54.99",
-          description: "Premium quality football team jersey",
-          imagePlaceholder: "400/400"
+          description: "Premium quality All Sports team jersey",
+          imagePlaceholder: "https://tse1.mm.bing.net/th?id=OIP.amxWuPg3tjksQ8MttjF6KwHaHa&pid=Api&P=0&h=180",
+          phNumber:'9864070455',
+        },
+        {
+          title: "Champion Sports",
+          price: "54.99",
+          description: "All kinds of Sports wear ,Track Suits, Costumes , Lower ,T shirts ,Shorts and team jersey",
+          imagePlaceholder: "https://www.thechampioninternational.com/wp-content/uploads/2023/11/Untitled-design-2023-11-06T094527.268-300x300.jpg",
+          phNumber:'7988428729',
         }
       ]
     },
@@ -54,33 +67,33 @@ const SportsJersey = () => {
           title: "Engineering Dept",
           price: "24.99",
           description: "Computer Science department special edition",
-          imagePlaceholder: "400/400"
+          imagePlaceholder: "https://tse2.mm.bing.net/th?id=OIP.Emyz1F6OlL_1XRGF0bkAdQHaHa&pid=Api&P=0&h=180"
         },
         {
           title: "Business School",
           price: "24.99",
           description: "Business administration department t-shirt",
-          imagePlaceholder: "400/400"
+          imagePlaceholder: "https://tse4.mm.bing.net/th?id=OIP.YpGZOXxgwZSfXUEMC5G6dAHaHa&pid=Api&P=0&h=180"
         }
       ]
     },
-    {
-      title: "University Apparel",
-      items: [
-        {
-          title: "Classic Hoodie",
-          price: "39.99",
-          description: "Comfortable university logo hoodie",
-          imagePlaceholder: "400/400"
-        },
-        {
-          title: "Campus T-Shirt",
-          price: "19.99",
-          description: "Classic university logo t-shirt",
-          imagePlaceholder: "400/400"
-        }
-      ]
-    }
+    // {
+    //   title: "University Apparel",
+    //   items: [
+    //     {
+    //       title: "Classic Hoodie",
+    //       price: "39.99",
+    //       description: "Comfortable university logo hoodie",
+    //       imagePlaceholder: "400/400"
+    //     },
+    //     {
+    //       title: "Campus T-Shirt",
+    //       price: "19.99",
+    //       description: "Classic university logo t-shirt",
+    //       imagePlaceholder: "400/400"
+    //     }
+    //   ]
+    // }
   ];
 
   return (
@@ -109,7 +122,7 @@ const SportsJersey = () => {
           </section>
         ))}
 
-        {/* Contact Information */}
+        {/* Contact Information
         <section className="bg-white rounded-lg shadow-md p-6 mt-8">
           <h2 className="text-2xl font-semibold mb-6 text-yellow-900 border-b-2 border-yellow-200 pb-2">
             Contact Information
@@ -143,18 +156,18 @@ const SportsJersey = () => {
             <p>Saturday: 10:00 AM - 4:00 PM</p>
             <p>Sunday: Closed</p>
           </div>
-        </section>
+        </section> */}
       </main>
 
       {/* Footer */}
-      <footer className="bg-yellow-800 text-yellow-100 py-6 px-4 mt-12">
+      {/* <footer className="bg-yellow-800 text-yellow-100 py-6 px-4 mt-12">
         <div className="max-w-6xl mx-auto text-center">
           <p>© 2024 University Store. All rights reserved.</p>
           <p className="mt-2 text-sm">
             Questions? Contact our support team for assistance.
           </p>
         </div>
-      </footer>
+      </footer> */}
     </div>
   );
 };
