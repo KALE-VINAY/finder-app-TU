@@ -9,6 +9,9 @@ import { Link } from 'react-router-dom';
 import RestaurantWebsite from './RestaurantWebsite';
 import axios from 'axios';
 import HeaderRent from './HeaderRent';
+import CanteenList from './CanteenList';
+import { fetchCanteens } from '../api/fetchCanteens';
+
 
 const Browse = () => {
 
@@ -17,6 +20,10 @@ const Browse = () => {
     useEffect(() => {
       window.scrollTo(0, 0);
     }, []);
+
+  const [canteens, setCanteens] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const restaurants = [
     {
@@ -310,26 +317,37 @@ const Browse = () => {
 
   // Fetch hostel data from backend
   useEffect(() => {
-    const fetchHostelData = async () => {
-      try {
-        // Replace with your actual backend API endpoint
-        const response = await axios.get('https://shop-status-zenu.onrender.com/books');
-        
-        // Assuming the backend returns an array of hostel objects
-        setBooks(response.data.data);
-        // setLoading(false);
-      } catch (err) {
-        // setError('Failed to fetch hostel data');
-        // setLoading(false);
-        console.error('Fetching hostel data error:', err);
-      }
-    };
+    // const fetchHostelData = async () => {
+    //   try {
+    //     // Replace with your actual backend API endpoint
+    //     // const response = await axios.get('https://shop-status-zenu.onrender.com/books');
+    //     const response = await fetchCanteens();
+ 
+    //     // Assuming the backend returns an array of hostel objects
+    //     setBooks(response.data.data);
+    //     // setLoading(false);
+    //   } catch (err) {
+    //     // setError('Failed to fetch hostel data');
+    //     // setLoading(false);
+    //     console.error('Fetching hostel data error:', err);
+    //   }
+    // };
+     const fetchData = async () => {
+          try {
+            const data = await fetchCanteens();
+            setCanteens(data);
+          } catch (err) {
+            setError('Failed to fetch canteen data.');
+          } finally {
+            setLoading(false);
+          }
+        };
 
     // Initial fetch
-    fetchHostelData();
-
+    // fetchHostelData();
+    fetchData();
     // Optional: Set up real-time updates via WebSocket or periodic polling
-    const intervalId = setInterval(fetchHostelData, 30000); // Fetch every 30 seconds
+    const intervalId = setInterval(fetchData , 10000); // Fetch every 30 seconds
 
     // Cleanup interval on component unmount
     return () => clearInterval(intervalId);
@@ -399,12 +417,24 @@ const Browse = () => {
           Hostel Canteens in TU
         </h2>
         <h2 className='font-serif font-bold text-gray-800 mb-5 text-2xl text-center'>Coming Soon ... </h2>
-        <div className="  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {/* <div className="  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         
           {books.map((hostel, index) => (
             <Hostel key={index} {...hostel}  />
           ))}
+        </div> */}
+        {/* <CanteenList/> */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      {canteens.map((canteen, index) => (
+        <div
+          key={canteen.id}
+          className="p-4 border border-gray-200 rounded shadow"
+        >
+          <h2 className="text-lg font-bold">{canteen.name}</h2>
+          <p>Status: {canteen.status}</p>
         </div>
+      ))}
+    </div>
       </div>
     
     
