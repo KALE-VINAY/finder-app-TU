@@ -12,7 +12,7 @@ const HeaderMedical = () => {
         {/* Logo */}
         <div className="flex items-center space-x-4">
           <h1 className="text-2xl md:text-3xl font-serif font-bold text-green-700">
-            TU Services
+            TU Medical Services
           </h1>
         </div>
 
@@ -40,7 +40,7 @@ const HeaderMedical = () => {
         {/* Navbar Links */}
         <nav
           className={`${
-            isMenuOpen ? "block p-4" : "hidden"
+            isMenuOpen ? "block p-4 mt-2" : "hidden"
           } absolute md:relative  top-16 md:top-0 left-0 w-full md:w-auto bg-white md:bg-transparent md:flex flex-col md:flex-row items-center`}
         >
           <Link

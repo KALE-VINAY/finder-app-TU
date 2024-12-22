@@ -40,10 +40,12 @@ const MedicalServices = () => {
   };
 
   const emergencyContacts = [
-    { title: "TU Campus Ambulance", number: "7002366254" },
-    { title: "Emergency Doctor TU", number: "9954449470" },
+    { title: "TU Campus Ambulance", number: "7002366254", number2:" 8927913848 " },
+    { title: "Emergency Doctor TU", number: "9957184358 " ,number2:" 9864340580" },
+    { title: "Emergency Contacts TU", number: " 9601835117 ", number2:"   9954449470" },
+
     { title: "Kanaklata Civil Hospital", number: "03712221494" },
-    { title: "Tezpur Fire Service", number: " 101  , 20101" }
+    { title: "Tezpur Fire Service", number: " 101  ",number2: " 20101" }
   ];
 
   return (
@@ -69,8 +71,17 @@ const MedicalServices = () => {
              <div key={index} className="flex items-center justify-between p-3 bg-white rounded-lg shadow-sm">
                <span className="font-medium text-gray-700">{contact.title}</span>
                <a href={`tel:${contact.number}`} className="flex items-center text-red-600 hover:text-red-800">
-                 <Phone className="w-4 h-4 mr-2" />
+                 <Phone className="w-4 h-4 mx-1 " />
                  {contact.number}
+                 {/* <Phone className="w-4 h-4 mr-2" /> */}
+                 {/* {contact.number2} */}
+               </a>
+               
+               <a href={`tel:${contact.number2}`} className="flex items-center text-red-600 hover:text-red-800">
+                 <Phone className="w-4 h-4 mx-2 " />
+                 {/* {contact.number} */}
+                 {/* <Phone className="w-4 h-4 mr-2" /> */}
+                 {contact.number2}
                </a>
              </div>
            ))}
@@ -94,14 +105,14 @@ const MedicalServices = () => {
          </div>
          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
            <div className="p-4 bg-green-50 rounded-lg">
-             <div className="font-semibold mb-2 text-green-700">April - September</div>
+             <div className="font-semibold mb-2 text-green-700">April - September  weekdays</div>
              <div className="flex items-center text-green-600">
                <Clock className="w-4 h-4 mr-2" />
                {healthCenterTimings.weekdays}
              </div>
            </div>
            <div className="p-4 bg-green-50 rounded-lg">
-             <div className="font-semibold mb-2 text-green-700">October - March </div>
+             <div className="font-semibold mb-2 text-green-700">October - March  weekdays </div>
              <div className="flex items-center text-green-600">
                <Clock className="w-4 h-4 mr-2" />
                {healthCenterTimings.weekends}

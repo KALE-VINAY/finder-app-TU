@@ -79,6 +79,7 @@ import MedicalServices from './MedicalServices';
 import SportsJersey from './SportsJersey';
 import BusSchedule from './BusSchedule';
 import ProtectedRoute from './ProtectedRoute'; // Import ProtectedRoute
+import CycleMarketplace from './CycleMarketplace';
 
 const Body = () => {
   const appRouter = createBrowserRouter([
@@ -147,6 +148,14 @@ const Body = () => {
       element: (
         <ProtectedRoute>
           <BusSchedule />
+        </ProtectedRoute>
+      ),
+    },
+    {
+      path: '/cycle-sale',
+      element: (
+        <ProtectedRoute>
+          <CycleMarketplace/>
         </ProtectedRoute>
       ),
     },

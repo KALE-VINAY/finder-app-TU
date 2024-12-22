@@ -235,6 +235,42 @@ const RestaurantWebsite = () => {
       imageUrl2: "/essential_food1.jpg",
       imageUrl3 : "/essential_food.jpg",
     },
+    13: {
+      name: 'Chetry Catering',
+      cuisines: 'Fast food restaurant',
+      price: '₹150 for one',
+      rating: 4.3,
+      time: '36 min',
+      discount: '40% OFF',
+      imageUrl: 'https://media.istockphoto.com/id/1442604378/photo/food-photos-various-entrees-appetizers-deserts-etc.jpg?s=612x612&w=0&k=20&c=WUCuJ2L2VKlrsIsXVnYX1HoG5rZM8K6ISeiE1liMBq4=',
+      promoted: false,
+      iframe : "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3564.511878273082!2d92.8335486754745!3d26.696089476776873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3744eb254a078c07%3A0x8ff094b13b51d188!2sSRISHTI%20RESTAURANT!5e0!3m2!1sen!2sin!4v1731004026537!5m2!1sen!2sin",
+      maplink: 'https://maps.app.goo.gl/gLiTcH5XEii5tBUS9',
+      contact1: 7635850112,
+      contact2: 9707525721,
+      imageUrl1: "/srishti1.jpg" ,
+      imageUrl2: "/srishti2.jpg",
+      imageUrl3 : "/srishti2.jpg",
+    },
+  
+    14: {
+      name: 'Gobin Hotel',
+      cuisines: 'Fast food restaurant',
+      price: '₹150 for one',
+      rating: 4.3,
+      time: '36 min',
+      discount: '40% OFF',
+      imageUrl: 'https://media.istockphoto.com/id/1442604378/photo/food-photos-various-entrees-appetizers-deserts-etc.jpg?s=612x612&w=0&k=20&c=WUCuJ2L2VKlrsIsXVnYX1HoG5rZM8K6ISeiE1liMBq4=',
+      promoted: false,
+      iframe : "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3564.511878273082!2d92.8335486754745!3d26.696089476776873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3744eb254a078c07%3A0x8ff094b13b51d188!2sSRISHTI%20RESTAURANT!5e0!3m2!1sen!2sin!4v1731004026537!5m2!1sen!2sin",
+      maplink: 'https://maps.app.goo.gl/gLiTcH5XEii5tBUS9',
+      contact1: 9085375391,
+      contact2: 6002705354,
+      imageUrl1: "/srishti1.jpg" ,
+      imageUrl2: "/srishti2.jpg",
+      imageUrl3 : "/srishti2.jpg",
+    },
+
   };
 
   // Fetch the restaurant data based on ID
