@@ -2,6 +2,7 @@
 
 import { Provider } from 'react-redux';
 import './App.css';
+import { AuthProvider } from './contexts/AuthContext';
 import Body from './components/Body'; 
 import appStore from './utils/appStore';
 
@@ -11,7 +12,9 @@ function App() {
   return (
   
     <Provider store={appStore}>
+        <AuthProvider>
     <Body/>
+    </AuthProvider>
   </Provider>
     
   );

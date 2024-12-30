@@ -80,6 +80,8 @@ import SportsJersey from './SportsJersey';
 import BusSchedule from './BusSchedule';
 import ProtectedRoute from './ProtectedRoute'; // Import ProtectedRoute
 import CycleMarketplace from './CycleMarketplace';
+import CycleList from './CycleList';
+import SellCycleForm from './SellCycleForm';
 
 const Body = () => {
   const appRouter = createBrowserRouter([
@@ -155,7 +157,17 @@ const Body = () => {
       path: '/cycle-sale',
       element: (
         <ProtectedRoute>
-          <CycleMarketplace/>
+          {/* <CycleMarketplace/> */}
+          <CycleList/>
+        </ProtectedRoute>
+      ),
+    },
+    {
+      path: '/cycle-sell',
+      element: (
+        <ProtectedRoute>
+          {/* <CycleMarketplace/> */}
+          <SellCycleForm/>
         </ProtectedRoute>
       ),
     },
