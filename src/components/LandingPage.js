@@ -65,13 +65,13 @@ const LandingPage = () => {
       path: "/cycle-sale",
       color: "bg-blue-500"
     },
-    {
-      title: "sell your Cycle  ",
-      description: "Get the best priced cycles for sale in TU",
-      icon: <Plane className="w-6 h-6" />,
-      path: "/cycle-sell",
-      color: "bg-blue-500"
-    },
+    // {
+    //   title: "sell your Cycle  ",
+    //   description: "Get the best priced cycles for sale in TU",
+    //   icon: <Plane className="w-6 h-6" />,
+    //   path: "/cycle-sell",
+    //   color: "bg-blue-500"
+    // },
   ];
 
   return (

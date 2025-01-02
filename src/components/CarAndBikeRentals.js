@@ -278,6 +278,15 @@ const CarAndBikeRentals = () => {
       imgURL:"https://tse4.mm.bing.net/th?id=OIP.k9upQd40jih0M56dBUHu1wHaE8&pid=Api&P=0&h=180",
     },
     {
+      name: "scooty(Near TU)",
+      category: "Sports",
+      price: "$40/day",
+      features: ["300cc", "ABS", "Digital Console"],
+      available: true ,
+      contact:'9085112235',
+      imgURL:"https://tse3.mm.bing.net/th?id=OIP.Z3msQ-LtqXGop03wp2LBjwHaGo&pid=Api&P=0&h=180",
+    },
+    {
       name: "Access scooty",
       category: "Sports",
       price: "$40/day",
