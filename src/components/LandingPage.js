@@ -11,7 +11,7 @@ import {
   MapPin,
   Phone,
   Clock,
-  UserPlus,UsersRound,Bike
+  UserPlus,UsersRound,Bike,Bus
 } from 'lucide-react';
 import Mainheader from './Mainheader';
 
@@ -41,7 +41,7 @@ const LandingPage = () => {
     {
       title: "Bus Timings",
       description: "University Bus Timings",
-      icon: <Car className="w-6 h-6" />,
+      icon: <Bus className="w-6 h-6" />,
       path: "/bus-timings",
       color: "bg-red-500"
     },
