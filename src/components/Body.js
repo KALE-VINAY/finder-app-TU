@@ -82,6 +82,7 @@ import ProtectedRoute from './ProtectedRoute'; // Import ProtectedRoute
 import CycleMarketplace from './CycleMarketplace';
 import CycleList from './CycleList';
 import SellCycleForm from './SellCycleForm';
+import UniversityClubs from './UniversityClubs';
 
 const Body = () => {
   const appRouter = createBrowserRouter([
@@ -168,6 +169,15 @@ const Body = () => {
         <ProtectedRoute>
           {/* <CycleMarketplace/> */}
           <SellCycleForm/>
+        </ProtectedRoute>
+      ),
+    },
+    {
+      path: '/tu-clubs',
+      element: (
+        <ProtectedRoute>
+          {/* <CycleMarketplace/> */}
+          <UniversityClubs/>
         </ProtectedRoute>
       ),
     },

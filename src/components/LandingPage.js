@@ -10,7 +10,8 @@ import {
   ArrowRight,
   MapPin,
   Phone,
-  Clock
+  Clock,
+  UserPlus,UsersRound,Bike
 } from 'lucide-react';
 import Mainheader from './Mainheader';
 
@@ -61,17 +62,17 @@ const LandingPage = () => {
     {
       title: "Cycles for Sale ",
       description: "Get the best priced cycles for sale in TU",
-      icon: <Plane className="w-6 h-6" />,
+      icon: <Bike className="w-6 h-6" />,
       path: "/cycle-sale",
-      color: "bg-blue-500"
+      color: "bg-green-500"
     },
-    // {
-    //   title: "sell your Cycle  ",
-    //   description: "Get the best priced cycles for sale in TU",
-    //   icon: <Plane className="w-6 h-6" />,
-    //   path: "/cycle-sell",
-    //   color: "bg-blue-500"
-    // },
+    {
+      title: "University Clubs  ",
+      description: "Get the best priced cycles for sale in TU",
+      icon: <UsersRound className="w-6 h-6" />,
+      path: "/tu-clubs",
+      color: "bg-red-500"
+    },
   ];
 
   return (
