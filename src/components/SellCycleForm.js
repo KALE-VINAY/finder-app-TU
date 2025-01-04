@@ -63,7 +63,7 @@ const SellCycleForm = () => {
       <h2 className="text-3xl font-bold mb-6">Sell Your Cycle</h2>
       <form onSubmit={handleSubmit} className="max-w-lg">
         <div className="mb-4">
-          <label className="block text-gray-700 mb-2">Brand</label>
+          <label className="block text-gray-700 mb-2">Description</label>
           <input
             type="text"
             value={formData.brand}

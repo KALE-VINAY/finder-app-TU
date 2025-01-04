@@ -246,7 +246,7 @@ const MedicalServices = () => {
                     {contact.number2 && (
                       <a href={`tel:${contact.number2}`} className="flex items-center text-red-600 hover:text-red-800 text-sm sm:text-base">
                         <Phone className="w-4 h-4 mr-1" />
-                        {contact.number2}
+                        {/* {contact.number2} */}Call
                       </a>
                     )}
                   </div>
