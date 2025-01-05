@@ -424,7 +424,8 @@ const CarAndBikeRentals = () => {
                       </button> */}
                       <a href={`tel:${vehicle.contact}`} className="flex items-center text-red-600 hover:text-red-800">
                   <Phone className="w-4 h-4 mr-2" />
-                  {vehicle.contact}
+                  {/* {vehicle.contact} */}
+                  Call Now
                 </a>
                       
                     </div>
@@ -475,7 +476,8 @@ const CarAndBikeRentals = () => {
                       </button> */}
                       <a href={`tel:${vehicle.contact}`} className="flex items-center text-red-600 hover:text-red-800">
                         <Phone className="w-4 h-4 mr-2" />
-                        {vehicle.contact}
+                        {/* {vehicle.contact} */}
+                        Call Now
                       </a>
                     </div>
                   </div>
@@ -525,7 +527,8 @@ const CarAndBikeRentals = () => {
                       </button> */}
                       <a href={`tel:${vehicle.contact}`} className="flex items-center text-red-600 hover:text-red-800">
                         <Phone className="w-4 h-4 mr-2" />
-                        {vehicle.contact}
+                        {/* {vehicle.contact} */}
+                        Call Now
                       </a>
                     </div>
                   </div>
@@ -579,7 +582,8 @@ const CarAndBikeRentals = () => {
                     </button> */}
                       <a href={`tel:${vehicle.contact}`} className="flex items-center text-red-600 hover:text-red-800">
                         <Phone className="w-4 h-4 mr-2" />
-                        {vehicle.contact}
+                        {/* {vehicle.contact} */}
+                        Call Now
                       </a>
 
                   </div>

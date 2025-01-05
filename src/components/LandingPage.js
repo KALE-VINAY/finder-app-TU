@@ -1,6 +1,10 @@
-import React from 'react';
+import React ,{useState} from 'react';
 import { Link } from 'react-router-dom';
 // import GoogleAd from './GoogleAd';
+import Modal from './Modal';
+import TermsOfService from './TermsOfService';
+import PrivacyPolicy from './PrivacyPolicy';
+
 import { 
   Utensils, 
   Plane, 
@@ -16,6 +20,9 @@ import {
 import Mainheader from './Mainheader';
 
 const LandingPage = () => {
+    // Add state for modals
+    const [showTerms, setShowTerms] = useState(false);
+    const [showPrivacy, setShowPrivacy] = useState(false);
   const services = [
     {
       title: "Restaurants & Hostel Canteens",
@@ -138,7 +145,7 @@ const LandingPage = () => {
 
      
 
-      {/* Footer */}
+      {/* Footer
       <footer className="border-t border-gray-800 mt-20">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
@@ -158,7 +165,50 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
+      </footer> */}
+        {/* Footer */}
+        <footer className="border-t border-gray-800 mt-20">
+        <div className="container mx-auto px-4 py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-400 text-sm">
+              © 2024 Campus Services. All rights reserved.
+            </p>
+            <div className="flex space-x-6 mt-4 md:mt-0">
+              <button 
+                onClick={() => setShowTerms(true)} 
+                className="text-gray-400 hover:text-orange-400 transition-colors"
+              >
+                Terms of Service
+              </button>
+              <button 
+                onClick={() => setShowPrivacy(true)} 
+                className="text-gray-400 hover:text-orange-400 transition-colors"
+              >
+                Privacy Policy
+              </button>
+              <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors">
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
       </footer>
+        {/* Add Modals */}
+        <Modal 
+            isOpen={showTerms} 
+            onClose={() => setShowTerms(false)}
+          >
+            <TermsOfService />
+          </Modal>
+
+          <Modal 
+            isOpen={showPrivacy} 
+            onClose={() => setShowPrivacy(false)}
+          >
+            <PrivacyPolicy />
+          </Modal>
+
+
     </div>
   );
 };

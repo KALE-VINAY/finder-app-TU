@@ -11,7 +11,7 @@ const HeaderRent = () => {
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         {/* Logo or Title */}
         <h1 className="text-3xl md:text-5xl font-serif font-bold">
-         Rentals Services
+         Transport 
         </h1>
 
         {/* Hamburger Menu for Mobile */}
