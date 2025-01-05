@@ -83,6 +83,9 @@ import CycleMarketplace from './CycleMarketplace';
 import CycleList from './CycleList';
 import SellCycleForm from './SellCycleForm';
 import UniversityClubs from './UniversityClubs';
+import ProductList from './ProductList';
+import SellProductForm from './SellProductForm';
+import RequestProductForm from './RequestProductForm';
 
 const Body = () => {
   const appRouter = createBrowserRouter([
@@ -169,6 +172,33 @@ const Body = () => {
         <ProtectedRoute>
           {/* <CycleMarketplace/> */}
           <SellCycleForm/>
+        </ProtectedRoute>
+      ),
+    },
+    {
+      path: '/buy-sell',
+      element: (
+        <ProtectedRoute>
+          {/* <CycleMarketplace/> */}
+          <ProductList/>
+        </ProtectedRoute>
+      ),
+    },
+    {
+      path: '/product-form',
+      element: (
+        <ProtectedRoute>
+          {/* <CycleMarketplace/> */}
+          <SellProductForm/>
+        </ProtectedRoute>
+      ),
+    },
+    {
+      path: '/request-form',
+      element: (
+        <ProtectedRoute>
+          {/* <CycleMarketplace/> */}
+          <RequestProductForm/>
         </ProtectedRoute>
       ),
     },

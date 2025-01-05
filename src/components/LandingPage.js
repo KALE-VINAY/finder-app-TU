@@ -74,6 +74,27 @@ const LandingPage = () => {
       color: "bg-green-500"
     },
     {
+      title: "Buy and Sell ",
+      description: "Buy and Request an item from the University Students",
+      icon: <Bike className="w-6 h-6" />,
+      path: "/buy-sell",
+      color: "bg-green-500"
+    },
+    // {
+    //   title: "product sell form ",
+    //   description: "Buy and Request an item from the University Students",
+    //   icon: <Bike className="w-6 h-6" />,
+    //   path: "/product-form",
+    //   color: "bg-green-500"
+    // },
+    // {
+    //   title: "request sell form ",
+    //   description: "Buy and Request an item from the University Students",
+    //   icon: <Bike className="w-6 h-6" />,
+    //   path: "/request-form",
+    //   color: "bg-green-500"
+    // },
+    {
       title: "University Clubs  ",
       description: "Get the best priced cycles for sale in TU",
       icon: <UsersRound className="w-6 h-6" />,

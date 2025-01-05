@@ -186,6 +186,38 @@ const UniversityClubs = () => {
         category: "Science",
         memberCount: 200
       },
+      {
+        name: "TU Book Club",
+        description: "Dive into the world of literature with book discussions, author meetups, and group reading sessions. Perfect for avid readers and literary enthusiasts.",
+        logo: "/api/placeholder/100/100",
+        whatsappLink: "https://chat.whatsapp.com/LRBb7alvjXP5R8G5kJ6yFw",
+        category: "Literature",
+        memberCount: 200
+      },
+      {
+        name: "TU Poetry Club ✍🏼✨",
+        description: "Celebrate the art of poetry with open mic nights, creative writing workshops, and poetry slams. A haven for budding poets and wordsmiths.",
+        logo: "/api/placeholder/100/100",
+        whatsappLink: "https://chat.whatsapp.com/FIh5aUwZJ0N732jVqFoBsr",
+        category: "Arts",
+        memberCount: 200
+      },
+      {
+        name: "LITERARY CLUB, TU",
+        description: "Foster a love for language and storytelling with literary debates, writing competitions, and creative showcases. A community for literary minds.",
+        logo: "/api/placeholder/100/100",
+        whatsappLink: "https://chat.whatsapp.com/Huadq4uzQOf4mVfnUhd9Uf",
+        category: "Literature",
+        memberCount: 200
+      },
+      {
+        name: "DEBATE CLUB, TU",
+        description: "Sharpen your public speaking and critical thinking skills through engaging debates, speech contests, and panel discussions. A platform for articulate minds.",
+        logo: "/api/placeholder/100/100",
+        whatsappLink: "https://chat.whatsapp.com/HxspeHcj8wrBBHYXdx4xMs",
+        category: "Public Speaking",
+        memberCount: 200
+      }
   ];
 
   const categories = ['All', ...new Set(clubs.map(club => club.category))];

@@ -13,6 +13,7 @@
     "axios": "^1.7.8",
     "buffer": "^6.0.3",
     "crypto-browserify": "^3.12.1",
+    "date-fns": "^4.1.0",
     "dotenv": "^16.4.7",
     "firebase": "^11.1.0",
     "lucide-react": "^0.454.0",
@@ -27,6 +28,7 @@
     "swiper": "^11.1.14",
     "util": "^0.12.5",
     "web-vitals": "^2.1.4"
+    
   },
   "scripts": {
     "start": "react-scripts start",
