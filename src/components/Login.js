@@ -255,7 +255,7 @@ import { BG_URL, USER_AVATER } from '../utils/constants';
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
-
+  const [loading, setLoading] = useState(false); // Loading state
   const [errorMessage , setErrorMessage] = useState(null);
   const [showValidationHints, setShowValidationHints] = useState(false);
 
@@ -266,6 +266,7 @@ const Login = () => {
   const name = useRef(null);  
 
   const handleGoogleSignIn = async () => {
+    setLoading(true); // Start loading
     try {
       const provider = new GoogleAuthProvider();
       const result = await signInWithPopup(auth, provider);
@@ -281,6 +282,8 @@ const Login = () => {
       navigate("/landing-page");
     } catch (error) {
       setErrorMessage(error.code + " - " + error.message);
+    } finally {
+      setLoading(false); // Stop loading
     }
   };
 
@@ -290,49 +293,41 @@ const Login = () => {
     setShowValidationHints(false);
   };
   
-  const handleButtonClick = ()=> {
-    const message = checkValideData(email.current.value , password.current.value);
-    
+  const handleButtonClick = async () => {
+    const message = checkValideData(email.current.value, password.current.value);
     setErrorMessage(message);
- 
-    if (message){
+
+    if (message) {
       setShowValidationHints(true);
       return;
-    } 
-
-    if(!isSignInForm){
-      createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
-        .then((userCredential) => {
-          const user = userCredential.user;
-          
-          updateProfile(user, {
-            displayName: name.current.value , 
-            photoURL: USER_AVATER,
-          }).then(() => {
-            const { uid , email , displayName , photoURL } = auth.currentUser;
-            dispatch(addUser({uid:uid , email:email , displayName:displayName ,photoURL:photoURL }));
-          }).catch((error) => {
-            setErrorMessage(error.message)
-          });
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          setErrorMessage(errorCode +"-"+errorMessage);
-        });
     }
-    else{
-      signInWithEmailAndPassword(auth, email.current.value, password.current.value)
-        .then((userCredential) => {
-          const user = userCredential.user;
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          setErrorMessage(errorCode+"-"+errorMessage);
+
+    setLoading(true); // Start loading
+
+    try {
+      if (!isSignInForm) {
+        const userCredential = await createUserWithEmailAndPassword(auth, email.current.value, password.current.value);
+        const user = userCredential.user;
+
+        await updateProfile(user, {
+          displayName: name.current.value,
+          photoURL: USER_AVATER,
         });
+
+        const { uid, email: userEmail, displayName, photoURL } = auth.currentUser;
+        dispatch(addUser({ uid, email: userEmail, displayName, photoURL }));
+      } else {
+        const userCredential = await signInWithEmailAndPassword(auth, email.current.value, password.current.value);
+        const user = userCredential.user;
+        // Handle sign-in success if needed
+      }
+    } catch (error) {
+      setErrorMessage(error.code + " - " + error.message);
+    } finally {
+      setLoading(false); // Stop loading
     }
   };
+
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {

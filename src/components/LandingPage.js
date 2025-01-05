@@ -15,7 +15,7 @@ import {
   MapPin,
   Phone,
   Clock,
-  UserPlus,UsersRound,Bike,Bus
+  UserPlus,UsersRound,Bike,Bus,Tag, DollarSign
 } from 'lucide-react';
 import Mainheader from './Mainheader';
 
@@ -71,12 +71,12 @@ const LandingPage = () => {
       description: "Get the best priced cycles for sale in TU",
       icon: <Bike className="w-6 h-6" />,
       path: "/cycle-sale",
-      color: "bg-green-500"
+      color: "bg-orange-500"
     },
     {
       title: "Buy and Sell ",
       description: "Buy and Request an item from the University Students",
-      icon: <Bike className="w-6 h-6" />,
+      icon: <DollarSign className="w-6 h-6" />,
       path: "/buy-sell",
       color: "bg-green-500"
     },

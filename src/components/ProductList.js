@@ -135,6 +135,7 @@
 
 // export default ProductList;
 
+
 import React, { useState, useEffect } from 'react';
 import { db } from '../firebase/firebaseConfig.js';
 import { collection, query, onSnapshot, orderBy, where } from 'firebase/firestore';
@@ -215,18 +216,27 @@ const ProductList = () => {
     );
   }
 
+  const displayedItems =
+    viewMode === 'products'
+      ? showUserListings
+        ? products.filter((item) => item.userId === currentUser?.uid)
+        : products
+      : showUserListings
+      ? requests.filter((item) => item.userId === currentUser?.uid)
+      : requests;
+
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
         <h2 className="text-3xl font-bold">
-          {viewMode === 'products' ? 'Campus Marketplace' : 'Product Requests  by Students'}
+          {viewMode === 'products' ? 'Campus Marketplace' : 'Product Requests by Students'}
         </h2>
         <div className="flex flex-wrap gap-4">
           <button
             onClick={() => setViewMode(viewMode === 'products' ? 'requests' : 'products')}
             className="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600 transition-colors"
           >
-            {viewMode === 'products' ? 'Product Requests ' : 'Campus Marketplace'}
+            {viewMode === 'products' ? 'View Requests' : 'View Products'}
           </button>
           {currentUser && (
             <button
@@ -247,17 +257,19 @@ const ProductList = () => {
         </div>
       </div>
 
-      {(viewMode === 'products' ? products : requests).length === 0 ? (
+      {displayedItems.length === 0 ? (
         <div className="text-center py-10">
           <p className="text-gray-600 text-lg">
             {showUserListings
-              ? `You haven't ${viewMode === 'products' ? 'listed' : 'requested'} any items yet`
-              : `No ${viewMode === 'products' ? 'products' : 'requests'} available`}
+              ? `You haven't ${
+                  viewMode === 'products' ? 'listed any products' : 'made any requests'
+                } yet.`
+              : `No ${viewMode === 'products' ? 'products' : 'requests'} available.`}
           </p>
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {(viewMode === 'products' ? products : requests).map((item) => (
+          {displayedItems.map((item) => (
             <ProductCard
               key={item.id}
               item={item}
