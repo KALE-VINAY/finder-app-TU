@@ -18,6 +18,7 @@ import {
   UserPlus,UsersRound,Bike,Bus,Tag, DollarSign
 } from 'lucide-react';
 import Mainheader from './Mainheader';
+import ContactModal from './ContactModal';
 
 const LandingPage = () => {
     // Add state for modals
@@ -207,9 +208,9 @@ const LandingPage = () => {
               >
                 Privacy Policy
               </button>
-              <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors">
-                Contact Us
-              </a>
+              {/* <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors"> */}
+              <ContactModal/>
+              {/* </a> */}
             </div>
           </div>
         </div>
