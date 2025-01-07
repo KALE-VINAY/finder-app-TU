@@ -216,7 +216,7 @@ const Header = () => {
         {/* Navbar Links */}
         <nav
           className={`${
-            isMenuOpen ? "block mt-5" : "hidden"
+            isMenuOpen ? "block mt-5 " : "hidden"
           } absolute md:relative  top-16 md:top-0 left-0 w-full md:w-auto bg-gray-500 md:bg-transparent md:flex flex-col md:flex-row items-center`}
         >
           <Link

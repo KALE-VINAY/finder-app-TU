@@ -7,7 +7,7 @@ const TermsOfService = () => {
     { 
       id: 'notice', 
       title: '1. Important Notice - Unofficial Website',
-      content: 'This website is a personal project and is NOT an official website of [University Name]. This is an independent platform created by a student to aggregate information about services around the university area. We are not affiliated with, endorsed by, or connected to the university administration in any official capacity.'
+      content: 'This website is a personal project and is NOT an official website of Tezpur University. This is an independent platform created by a student to aggregate information about services around the university area. We are not affiliated with, endorsed by, or connected to the university administration in any official capacity.'
     },
     {
       id: 'disclaimer',

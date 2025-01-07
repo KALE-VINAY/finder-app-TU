@@ -91,125 +91,125 @@ const Body = () => {
   const appRouter = createBrowserRouter([
     {
       path: '/',
-      element: <LandingPage />
+      element: <Login/>
       ,
     },
     {
       path: '/browse',
       element: (
-        // <ProtectedRoute>
+        <ProtectedRoute>
           <Browse />
-        // </ProtectedRoute>
+         </ProtectedRoute>
       ),
     },
     {
       path: '/restaurant/:id',
       element: (
-        // <ProtectedRoute>
+         <ProtectedRoute>
           <RestaurantWebsite />
-        // </ProtectedRoute>
+         </ProtectedRoute>
       ),
     },
     {
       path: '/travel-and-tours',
       element: (
-        // <ProtectedRoute>
+         <ProtectedRoute>
           <TravelAndTours/>
-        // </ProtectedRoute>
+         </ProtectedRoute>
       ),
     },
     {
       path: '/car-and-bike-rentals',
       element: (
-        // <ProtectedRoute>
+         <ProtectedRoute>
           <CarAndBikeRentals />
-        // </ProtectedRoute>
+        /</ProtectedRoute>
       ),
     },
     {
       path: '/medical-services',
       element: (
-        // <ProtectedRoute>
+         <ProtectedRoute>
           <MedicalServices />
-        // </ProtectedRoute>
+         </ProtectedRoute>
       ),
     },
     {
       path: '/sports-jersey',
       element: (
-        // <ProtectedRoute>
+         <ProtectedRoute>
           <SportsJersey />
-        // </ProtectedRoute>
+         </ProtectedRoute>
       ),
     },
     {
       path: '/landing-page',
       element: (
-        // <ProtectedRoute>
+         <ProtectedRoute>
           <LandingPage />
-        // </ProtectedRoute>
+         </ProtectedRoute>
       ),
     },
     {
       path: '/bus-timings',
       element: (
-        // <ProtectedRoute>
+         <ProtectedRoute>
           <BusSchedule />
-        // </ProtectedRoute>
+         </ProtectedRoute>
       ),
     },
     {
       path: '/cycle-sale',
       element: (
-        // <ProtectedRoute>
+         <ProtectedRoute>
           
           <CycleList/>
-        // </ProtectedRoute>
+         </ProtectedRoute>
       ),
     },
     {
       path: '/cycle-sell',
       element: (
-        // <ProtectedRoute>
+         <ProtectedRoute>
        
           <SellCycleForm/>
-        // </ProtectedRoute>
+         </ProtectedRoute>
       ),
     },
     {
       path: '/buy-sell',
       element: (
-        // <ProtectedRoute>
+         <ProtectedRoute>
        
           <ProductList/>
-        // </ProtectedRoute>
+         </ProtectedRoute>
       ),
     },
     {
       path: '/product-form',
       element: (
-        // <ProtectedRoute>
+         <ProtectedRoute>
         
           <SellProductForm/>
-        // </ProtectedRoute>
+         </ProtectedRoute>
       ),
     },
     {
       path: '/request-form',
       element: (
-        // <ProtectedRoute>
+         <ProtectedRoute>
         
           <RequestProductForm/>
-        // </ProtectedRoute>
+         </ProtectedRoute>
       ),
     },
     {
       path: '/tu-clubs',
       element: (
-        // <ProtectedRoute>
+         <ProtectedRoute>
           
           <UniversityClubs/>
-        // </ProtectedRoute>
+         </ProtectedRoute>
       ),
     },
   ]);
