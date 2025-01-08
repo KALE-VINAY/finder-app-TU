@@ -495,7 +495,7 @@ import HeaderRent from './HeaderRent';
 import CanteenList from './CanteenList';
 import { fetchCanteens } from '../api/fetchCanteens';
 import { useSelector } from 'react-redux';
-
+import { ChevronUp } from 'lucide-react';
 
 const Browse = () => {
   const [selectedView, setSelectedView] = useState('restaurants'); // 'restaurants' or 'hostels'
@@ -503,6 +503,7 @@ const Browse = () => {
   const [canteens, setCanteens] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [showScrollButton, setShowScrollButton] = useState(false);
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const user = useSelector((store) => store.user);
@@ -511,6 +512,24 @@ const Browse = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+   // Add this useEffect to handle scroll button visibility
+   useEffect(() => {
+    const handleScroll = () => {
+      const scrollThreshold = 300; // Show button after scrolling 300px
+      setShowScrollButton(window.scrollY > scrollThreshold);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
 
   const restaurants = [
     {
@@ -920,19 +939,19 @@ const Browse = () => {
         </video>
 
 {/* Toggle Buttons Container */}
-<div className="sticky top-0 z-10 w-full py-2 mb-4 sm:py-4 backdrop-blur-md bg-white/30">
+<div className="sticky top-0 z-10 w-full py-2 mb-4 backdrop-blur-md bg-white/30">
   <div className="max-w-[90%] sm:max-w-md mx-auto">
-    <div className="p-1.5 sm:p-2 bg-white/80 rounded-lg sm:rounded-xl shadow-lg flex flex-col sm:flex-row justify-center gap-2 sm:gap-3">
+    <div className="p-1.5 bg-white/80 rounded-lg shadow-lg flex justify-center gap-2">
       <button
         onClick={() => setSelectedView('restaurants')}
-        className={`w-full sm:flex-1 px-3 sm:px-6 py-2 sm:py-3 rounded-md sm:rounded-lg font-medium sm:font-bold text-xs sm:text-sm transition-all transform hover:scale-105 ${
+        className={`flex-1 px-2 sm:px-6 py-1.5 sm:py-3 rounded-md font-medium text-xs sm:text-sm transition-all transform hover:scale-105 ${
           selectedView === 'restaurants'
             ? 'bg-gradient-to-r from-gray-600 to-gray-700 text-white shadow-lg'
             : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
         }`}
       >
         <span className="flex items-center justify-center gap-1 sm:gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5" viewBox="0 0 20 20" fill="currentColor">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 sm:h-5 sm:w-5" viewBox="0 0 20 20" fill="currentColor">
             <path fillRule="evenodd" d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12z" clipRule="evenodd"/>
           </svg>
           <span className="whitespace-nowrap">Restaurants</span>
@@ -941,14 +960,14 @@ const Browse = () => {
       
       <button
         onClick={() => setSelectedView('hostels')}
-        className={`w-full sm:flex-1 px-3 sm:px-6 py-2 sm:py-3 rounded-md sm:rounded-lg font-medium sm:font-bold text-xs sm:text-sm transition-all transform hover:scale-105 ${
+        className={`flex-1 px-2 sm:px-6 py-1.5 sm:py-3 rounded-md font-medium text-xs sm:text-sm transition-all transform hover:scale-105 ${
           selectedView === 'hostels'
             ? 'bg-gradient-to-r from-gray-600 to-gray-700 text-white shadow-lg'
             : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
         }`}
       >
         <span className="flex items-center justify-center gap-1 sm:gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5" viewBox="0 0 20 20" fill="currentColor">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 sm:h-5 sm:w-5" viewBox="0 0 20 20" fill="currentColor">
             <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
           </svg>
           <span className="whitespace-nowrap">Hostel Canteens</span>
@@ -998,6 +1017,17 @@ const Browse = () => {
             </>
           )}
         </div>
+      {/* Scroll to Top Button */}
+      {showScrollButton && (
+          <button
+            onClick={scrollToTop}
+            className="fixed bottom-8 right-8 bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 transition-all duration-300 z-50"
+            aria-label="Scroll to top"
+          >
+            <ChevronUp className="h-6 w-6" />
+          </button>
+        )}
+
       </div>
     </>
   );

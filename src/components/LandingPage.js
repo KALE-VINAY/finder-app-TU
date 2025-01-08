@@ -53,20 +53,7 @@ const LandingPage = () => {
       path: "/bus-timings",
       color: "bg-red-500"
     },
-    {
-      title: "Sports Jersey & Department T-Shirts",
-      description: "Custom jerseys and college merchandise",
-      icon: <Shirt className="w-6 h-6" />,
-      path: "/sports-jersey",
-      color: "bg-purple-500"
-    },
-     {
-      title: "Travel & Tours",
-      description: "Explore exciting destinations and tour packages",
-      icon: <Plane className="w-6 h-6" />,
-      path: "/travel-and-tours",
-      color: "bg-blue-500"
-    },
+    
     {
       title: "Cycles for Sale ",
       description: "Get the best priced cycles for sale in TU",
@@ -80,6 +67,27 @@ const LandingPage = () => {
       icon: <DollarSign className="w-6 h-6" />,
       path: "/buy-sell",
       color: "bg-green-500"
+    },
+    {
+      title: "University Clubs  ",
+      description: "Get the best priced cycles for sale in TU",
+      icon: <UsersRound className="w-6 h-6" />,
+      path: "/tu-clubs",
+      color: "bg-red-500"
+    },
+    {
+      title: "Sports Jersey & Department T-Shirts",
+      description: "Custom jerseys and college merchandise",
+      icon: <Shirt className="w-6 h-6" />,
+      path: "/sports-jersey",
+      color: "bg-purple-500"
+    },
+     {
+      title: "Travel & Tours",
+      description: "Explore exciting destinations and tour packages",
+      icon: <Plane className="w-6 h-6" />,
+      path: "/travel-and-tours",
+      color: "bg-blue-500"
     },
     // {
     //   title: "product sell form ",
@@ -95,13 +103,7 @@ const LandingPage = () => {
     //   path: "/request-form",
     //   color: "bg-green-500"
     // },
-    {
-      title: "University Clubs  ",
-      description: "Get the best priced cycles for sale in TU",
-      icon: <UsersRound className="w-6 h-6" />,
-      path: "/tu-clubs",
-      color: "bg-red-500"
-    },
+    
   ];
 
   return (

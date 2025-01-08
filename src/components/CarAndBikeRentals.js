@@ -7,20 +7,39 @@ import {
   Mail, 
   Clock, 
   Shield, 
-  Wrench, // Changed from Tool
+  Wrench, 
   DollarSign, 
-  MapPin 
+  MapPin ,ChevronUp
 } from 'lucide-react';
-import Mainheader from './Mainheader';
+
 import HeaderRent from './HeaderRent';
 
 const CarAndBikeRentals = () => {
   const [activeTab, setActiveTab] = useState('cars');
+  const [showScrollButton, setShowScrollButton] = useState(false);
 
-   // Add this useEffect to scroll to top when component mounts or id changes
+   
    useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+   
+     useEffect(() => {
+      const handleScroll = () => {
+        const scrollThreshold = 300; 
+        setShowScrollButton(window.scrollY > scrollThreshold);
+      };
+  
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+    
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    };
 
   const cars = [
     {
@@ -153,35 +172,6 @@ const CarAndBikeRentals = () => {
     }
     ,
     
-    // {
-    //   name: "Mercedes C-Class",
-    //   category: "Luxury",
-    //   price: "$120/day",
-    //   features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
-    //   available: false ,
-    //   contact:'',
-    //   imgURL:"https://tse4.mm.bing.net/th?id=OIP.Nz-6xNa6rBQR0dC641EogAAAAA&pid=Api&P=0&h=180",
-    // }
-    // ,
-    // {
-    //   name: "Mercedes C-Class",
-    //   category: "Luxury",
-    //   price: "$120/day",
-    //   features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
-    //   available: false ,
-    //   contact:'',
-    //   imgURL:"https://tse3.mm.bing.net/th?id=OIP.QEthQt0VZO561CKHw7mBFwHaEh&pid=Api&P=0&h=180",
-    // }
-    // ,
-    // {
-    //   name: "Mercedes C-Class",
-    //   category: "Luxury",
-    //   price: "$120/day",
-    //   features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
-    //   available: false ,
-    //   contact:'',
-    //   imgURL:"https://tse3.mm.bing.net/th?id=OIP.kqbwEYB0r6iqjj72yXmaiQHaFj&pid=Api&P=0&h=180",
-    // }
   ];
 
 
@@ -225,35 +215,6 @@ const CarAndBikeRentals = () => {
       imgURL:"https://tse3.mm.bing.net/th?id=OIP.Lfz8yaFZ3YLRmV03g4NvsgHaEM&pid=Api&P=0&h=180",
     }
     ,
-    // {
-    //   name: "Mercedes C-Class",
-    //   category: "Luxury",
-    //   price: "$120/day",
-    //   features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
-    //   available: false ,
-    //   contact:'',
-    //   imgURL:"https://tse2.mm.bing.net/th?id=OIP.N2AUzQrnZPN0gyBvOyPs2AHaEj&pid=Api&P=0&h=180",
-    // }
-    // ,
-    // {
-    //   name: "Mercedes C-Class",
-    //   category: "Luxury",
-    //   price: "$120/day",
-    //   features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
-    //   available: false ,
-    //   contact:'',
-    //   imgURL:"https://tse4.mm.bing.net/th?id=OIP.niwv-TXiVl1RN_cSpWv_mQHaEa&pid=Api&P=0&h=180",
-    // }
-    // ,
-    // {
-    //   name: "Mercedes C-Class",
-    //   category: "Luxury",
-    //   price: "$120/day",
-    //   features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
-    //   available: false ,
-    //   contact:'',
-    //   imgURL:"https://tse2.mm.bing.net/th?id=OIP.hNa-zjopEP8wUSYCvFFKlgHaEj&pid=Api&P=0&h=180",
-    // }
   ];
 
 
@@ -342,6 +303,7 @@ const CarAndBikeRentals = () => {
       description: "Convenient doorstep delivery"
     }
   ];
+  
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-red-50 to-white">
@@ -671,12 +633,24 @@ const CarAndBikeRentals = () => {
         </div>
       </div> */}
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-4 px-4 border-t border-gray-800">
-        <div className="max-w-6xl mx-auto text-center">
-          <p>&copy; 2024 Car & Bike Rentals. All rights reserved.</p>
-        </div>
-      </footer>
+{/* Footer */}
+<footer className="bg-gray-900 text-white py-4 px-4 border-t border-gray-800">
+  <div className="max-w-6xl mx-auto text-center">
+    <p>&copy; 2024 Car & Bike Rentals. All rights reserved.</p>
+  </div>
+</footer>
+{/* Scroll to Top Button */}
+{showScrollButton && (
+  <button
+    onClick={scrollToTop}
+    className="fixed bottom-8 right-8 bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 transition-all duration-300 z-50"
+    aria-label="Scroll to top"
+  >
+    <ChevronUp className="h-6 w-6" />
+  </button>
+)}
+
+
     </div>
   );
 };
