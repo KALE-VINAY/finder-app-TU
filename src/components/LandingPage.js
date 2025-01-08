@@ -102,12 +102,12 @@ const LandingPage = () => {
     //   icon: <Bike className="w-6 h-6" />,
     //   path: "/request-form",
     //   color: "bg-green-500"
-    // },
+    // },  this ====>  "min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white"
     
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
+    <div className="min-h-screen  bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
       <Mainheader/>
       {/* Hero Section */}
       <div className="relative">
