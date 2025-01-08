@@ -142,13 +142,15 @@ const Mainheader = () => {
 
   return (
     <div className='relative w-full px-4 py-3 bg-transparent z-10 flex flex-wrap justify-between items-center'>
-      <h1 className='text-xl '>
-      TU One Stop 
-  </h1>
-      {/* <img className="w-16 md:w-24 bg-black" src="main_logo.png" alt="logo" /> */}
-      <h1 className='text-5xl sm:block bg-gradient-to-b from-white md:block lg:block xl:block font-serif text-center hidden'>
-  
+      < div className='flex flex-row '>
+      <img className="h-10 w-10  bg-black rounded" src="tuonestop.png" alt="logo" />
+      <h1 className='text-xl md:text-3xl sm:block mt-1 ml-3 md:block lg:block xl:block font-serif text-center hidden'>
+      TU One Stop
 </h1>
+  </div>
+      
+
+    
 
       {user && (
         <div className='flex flex-wrap items-center'>
