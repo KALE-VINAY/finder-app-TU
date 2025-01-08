@@ -3,6 +3,7 @@ import { db, storage } from '../firebase/firebaseConfig';
 import { deleteDoc, doc } from 'firebase/firestore';
 import { ref, deleteObject } from 'firebase/storage';
 import { Phone } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa'; // Importing WhatsApp icon
 
 // Utility function to calculate "time ago"
 const calculateTimeAgo = (createdAt) => {
@@ -60,7 +61,7 @@ const CycleCard = ({ cycle, isOwner }) => {
         className="w-full h-48 object-fill"
       />
       <div className="p-4">
-      <div className="flex justify-between items-center mb-2">
+        <div className="flex justify-between items-center mb-2">
           <h3 className="text-xl font-semibold">{cycle.modelName}</h3>
           <p className="text-gray-600 mb-2"> {timeAgo}</p>
         </div>
@@ -69,14 +70,29 @@ const CycleCard = ({ cycle, isOwner }) => {
           <p className="text-gray-600 mb-2">{cycle.brand}</p>
         </div>
         <p className="text-gray-600 mb-2">Price: ₹{cycle.price}</p>
-        
-        <a
-          href={`tel:${cycle.contactNumber}`}
-          className="flex items-center text-red-600 hover:text-red-800 text-sm sm:text-base"
-        >
-          <Phone className="w-4 h-4 mr-1" />
-          Call Now
-        </a>
+
+        <div className="flex items-center space-x-4">
+          {/* Call Now Button */}
+          <a
+            href={`tel:${cycle.contactNumber}`}
+            className="flex items-center text-red-600 hover:text-red-800 text-sm sm:text-base"
+          >
+            <Phone className="w-4 h-4 mr-1" />
+            Call Now
+          </a>
+
+          {/* WhatsApp Button */}
+          <a
+            href={`https://wa.me/91${cycle.contactNumber}?text=Hello%20there,%20I%27m%20interested%20in%20your%20product%20${cycle.modelName}.`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center text-green-600 hover:text-green-800 text-sm sm:text-base"
+          >
+            <FaWhatsapp className="w-4 h-4 mr-1" />
+            Message
+          </a>
+        </div>
+
         {isOwner && (
           <button
             onClick={handleDelete}
