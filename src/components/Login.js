@@ -329,20 +329,40 @@ const Login = () => {
   };
 
 
+  // useEffect(() => {
+  //   const unsubscribe = onAuthStateChanged(auth, (user) => {
+  //     if (user) {
+  //       const { uid, email, displayName, photoURL } = user;
+  //       dispatch(addUser({ uid, email, displayName, photoURL }));
+  //       navigate("/landing-page");
+  //     } else {
+  //       dispatch(removeUser());
+  //       navigate("/");
+  //     }
+  //   });
+  //   return () => unsubscribe();
+  // }, [navigate, dispatch]);
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         const { uid, email, displayName, photoURL } = user;
-        dispatch(addUser({ uid, email, displayName, photoURL }));
-        navigate("/landing-page");
+        const userData = { uid, email, displayName, photoURL };
+        dispatch(addUser(userData));
+        
+        // Get redirect path from localStorage or default to landing page
+        const redirectPath = localStorage.getItem('redirectPath') || '/landing-page';
+        localStorage.removeItem('redirectPath'); // Clean up
+        navigate(redirectPath);
       } else {
         dispatch(removeUser());
-        navigate("/");
+        if (window.location.pathname !== '/') {
+          navigate('/');
+        }
       }
     });
+    
     return () => unsubscribe();
   }, [navigate, dispatch]);
-
   return (
     <div className="relative min-h-screen flex items-center justify-center">
       {/* Background Image */}

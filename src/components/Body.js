@@ -86,6 +86,11 @@ import UniversityClubs from './UniversityClubs';
 import ProductList from './ProductList';
 import SellProductForm from './SellProductForm';
 import RequestProductForm from './RequestProductForm';
+import { useEffect } from 'react';
+import { auth } from '../firebase/firebaseConfig';
+import { useDispatch } from 'react-redux';
+import { addUser ,removeUser } from '../utils/userSlice';
+
 
 const Body = () => {
   const appRouter = createBrowserRouter([
@@ -213,6 +218,15 @@ const Body = () => {
       ),
     },
   ]);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    // Check if user exists in localStorage on initial load
+    const storedUser = localStorage.getItem('user');
+    if (storedUser && !auth.currentUser) {
+      const userData = JSON.parse(storedUser);
+      dispatch(addUser(userData));
+    }
+  }, []);
 
   return (
     <div>
