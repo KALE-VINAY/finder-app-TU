@@ -229,7 +229,7 @@ const BusSchedule = () => {
         </h1>
         <button
           onClick={handleDownloadPDF}
-          className="flex items-center gap-2 bg-blue-600 text-white px-3 py-1.5 md:px-4 md:py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm md:text-base"
+          className="flex items-center gap-2 bg-red-500 text-white px-3 py-1.5 md:px-4 md:py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm md:text-base"
         >
           <Download className="w-4 h-4 md:w-5 md:h-5" />
           Bus Schedule PDF
