@@ -285,7 +285,7 @@ const BusSchedule = () => {
 
       {selectedDate.toDateString() === currentTime.toDateString() && upcomingBuses.length > 0 && (
         <div className="mb-4 md:mb-6">
-          <h2 className="text-lg md:text-xl font-semibold mb-2">Upcoming Buses</h2>
+          <h2 className="text-lg md:text-xl font-semibold mb-2">Today's Upcoming Buses</h2>
           <ul className="space-y-2">
             {upcomingBuses.map((bus, index) => (
               <BusScheduleItem key={index} bus={bus} />
