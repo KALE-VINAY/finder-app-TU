@@ -128,7 +128,7 @@ const ProductCard = ({ item, isOwner, type, formatDate }) => {
         <img
           src={item.imageUrl}
           alt={item.name}
-          className={`w-full h-48 object-cover ${imageLoaded ? '' : 'hidden'}`}
+          className={`w-full h-48 object-fill ${imageLoaded ? '' : 'hidden'}`}
           onLoad={() => setImageLoaded(true)}
           onError={() => setImageError(true)}
         />
