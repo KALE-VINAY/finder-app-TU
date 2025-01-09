@@ -18,13 +18,6 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_FIREBASE_APP_ID,
  measurementId: "G-6QRYHF0WVY"
 
-//  apiKey: "AIzaSyBqTdVtijvqiJedPHV-Gt5_g8zUxUc5ums",
-//  authDomain: "canteen-status-ce975.firebaseapp.com",
-//  projectId: "canteen-status-ce975",
-//  storageBucket: "canteen-status-ce975.firebasestorage.app",
-//  messagingSenderId: "1070293970453",
-//  appId: "1:1070293970453:web:504c308f534ee766c7281c",
-// measurementId: "G-6QRYHF0WVY"
 
 };
 
