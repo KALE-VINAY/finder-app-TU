@@ -10,21 +10,21 @@ import { getStorage } from 'firebase/storage';
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-//   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-//   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-//   projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-//   storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-//   messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-//   appId: process.env.REACT_APP_FIREBASE_APP_ID,
-//  measurementId: "G-6QRYHF0WVY"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+ measurementId: "G-6QRYHF0WVY"
 
- apiKey: "AIzaSyBqTdVtijvqiJedPHV-Gt5_g8zUxUc5ums",
- authDomain: "canteen-status-ce975.firebaseapp.com",
- projectId: "canteen-status-ce975",
- storageBucket: "canteen-status-ce975.firebasestorage.app",
- messagingSenderId: "1070293970453",
- appId: "1:1070293970453:web:504c308f534ee766c7281c",
-measurementId: "G-6QRYHF0WVY"
+//  apiKey: "AIzaSyBqTdVtijvqiJedPHV-Gt5_g8zUxUc5ums",
+//  authDomain: "canteen-status-ce975.firebaseapp.com",
+//  projectId: "canteen-status-ce975",
+//  storageBucket: "canteen-status-ce975.firebasestorage.app",
+//  messagingSenderId: "1070293970453",
+//  appId: "1:1070293970453:web:504c308f534ee766c7281c",
+// measurementId: "G-6QRYHF0WVY"
 
 };
 
