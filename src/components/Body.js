@@ -128,7 +128,7 @@ const Body = () => {
       element: (
          <ProtectedRoute>
           <CarAndBikeRentals />
-        /</ProtectedRoute>
+        </ProtectedRoute>
       ),
     },
     {
