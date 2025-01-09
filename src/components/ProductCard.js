@@ -155,11 +155,11 @@ const ProductCard = ({ item, isOwner, type, formatDate }) => {
         )}
 
         {/* Contact Buttons in a Single Row */}
-        <div className="flex items-center justify-between mt-4 space-x-2">
+        <div className="flex items-center  mt-4 space-x-2">
           {/* Call Now Button */}
           <a
             href={`tel:${item.contactNumber}`}
-            className="flex items-center bg-red-100 text-red-600 px-2 py-1 rounded-md hover:bg-red-200 text-xs sm:text-sm"
+            className="flex items-center  text-red-600 px-2 py-1 rounded-md hover:bg-red-200 "
           >
             <Phone className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
             Call
@@ -168,7 +168,7 @@ const ProductCard = ({ item, isOwner, type, formatDate }) => {
           {/* Mail Button */}
           <a
             href={`mailto:${item.email}`}
-            className="flex items-center bg-blue-100 text-blue-600 px-2 py-1 rounded-md hover:bg-blue-200 text-xs sm:text-sm"
+            className="flex items-center  text-blue-600 px-2 py-1 rounded-md hover:bg-blue-200 "
           >
             <Mail className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
             Email
@@ -179,7 +179,7 @@ const ProductCard = ({ item, isOwner, type, formatDate }) => {
             href={`https://wa.me/91${item.contactNumber}?text=Hello%20there,%20I%27m%20interested%20in%20your%20product%20${item.name}.`}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center bg-green-100 text-green-600 px-2 py-1 rounded-md hover:bg-green-200 text-xs sm:text-sm"
+            className="flex items-center  text-green-600 px-2 py-1 rounded-md hover:bg-green-200 "
           >
             <FaWhatsapp className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
             WhatsApp
