@@ -14,11 +14,11 @@ const ProductCard = ({ title, price, description, imagePlaceholder, phNumber }) 
       <h4 className="font-semibold text-lg mb-2">{title}</h4>
       <p className="text-gray-600 text-sm mb-2">{description}</p>
       {/* <p className="text-yellow-800 font-bold">${price}</p> */}
-      <button className="mt-2 w-full bg-yellow-500 text-white py-2 rounded hover:bg-yellow-600 transition-colors flex items-center justify-center gap-2">
+      <button className="mt-3 w-full bg-yellow-500 text-white py-2 rounded hover:bg-yellow-600 transition-colors flex items-center justify-center gap-2">
         {/* <ShoppingCart size={16} /> */}
        <a href={`tel:${phNumber}`} className="flex items-center text-red-600 hover:text-red-800">
                         <Phone className="w-4 h-4 mr-2" />
-                        {phNumber}
+                        {/* {phNumber} */} Call Now
                       </a>
 
       </button>
@@ -40,21 +40,21 @@ const SportsJersey = () => {
         {
           title: "NB Sports Jersey",
           price: "49.99",
-          description: "All Sports team jersey",
+          description: "Premium quality sports jerseys for all teams and athletes, delivering excellence in every stitch - call now to place your order.",
           imagePlaceholder: "https://tse2.mm.bing.net/th?id=OIP.uL1o9UiXA3E8JSMhxAAmLgHaIj&pid=Api&P=0&h=180",
           phNumber:'9435119142',
         },
         {
           title: "SD Sports Jersey",
           price: "54.99",
-          description: "Premium quality All Sports team jersey",
+          description: "Top-tier custom sports jerseys crafted with premium materials, perfect for teams seeking professional-grade uniforms and apparel.",
           imagePlaceholder: "https://tse1.mm.bing.net/th?id=OIP.amxWuPg3tjksQ8MttjF6KwHaHa&pid=Api&P=0&h=180",
           phNumber:'9864070455',
         },
         {
           title: "Champion Sports",
           price: "54.99",
-          description: "All kinds of Sports wear ,Track Suits, Costumes , Lower ,T shirts ,Shorts and team jersey",
+          description: "Complete range of premium sportswear including track suits, team jerseys, t-shirts, shorts, training bottoms, and performance gear for athletes and teams.",
           imagePlaceholder: "https://www.thechampioninternational.com/wp-content/uploads/2023/11/Untitled-design-2023-11-06T094527.268-300x300.jpg",
           phNumber:'7988428729',
         }

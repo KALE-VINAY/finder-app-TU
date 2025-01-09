@@ -217,7 +217,55 @@ const UniversityClubs = () => {
         whatsappLink: "https://chat.whatsapp.com/HxspeHcj8wrBBHYXdx4xMs",
         category: "Public Speaking",
         memberCount: 200
-      }
+      },
+    {
+      name: "Adventure Club",
+      description: "Experience thrilling outdoor activities including hiking, rock climbing, mountain biking, and camping. Learn survival skills and explore nature while building leadership and teamwork abilities.",
+      logo: "/api/placeholder/100/100",
+      whatsappLink: "https://chat.whatsapp.com/EirVN7rKEb62aCgZz7KwHT",
+      category: "Adventure",
+      memberCount: 150
+    },
+    {
+      name: "Robotics Club",
+      description: "Design, build, and program robots through hands-on projects. Learn about electronics, mechanics, and automation while participating in robotics competitions and workshops.",
+      logo: "/api/placeholder/100/100",
+      whatsappLink: "https://chat.whatsapp.com/GrdSyCv0MFtJ20j60oudzn",
+      category: "Technology",
+      memberCount: 95
+    },
+    {
+      name: "Open Knowledge Club",
+      description: "Share and gain knowledge across various disciplines through discussions, presentations, and collaborative learning. A platform for intellectual exchange and interdisciplinary exploration.",
+      logo: "/api/placeholder/100/100",
+      whatsappLink: "https://chat.whatsapp.com/JUzSYUe6zz9K7VKCCEciqM",
+      category: "Education",
+      memberCount: 110
+    },
+    {
+      name: "Book Club",
+      description: "Connect with fellow book lovers, engage in literary discussions, and explore diverse genres. Regular book reviews, reading sessions, and literary events.",
+      logo: "/api/placeholder/100/100",
+      whatsappLink: "https://chat.whatsapp.com/LRBb7alvjXP5R8G5kJ6yFw",
+      category: "Literature",
+      memberCount: 75
+    },
+    {
+      name: "Philately Club",
+      description: "Discover the fascinating world of stamp collecting. Learn about postal history, rare stamps, and collection techniques. Regular exhibitions and stamp exchange meets.",
+      logo: "/api/placeholder/100/100",
+      whatsappLink: "https://chat.whatsapp.com/Kov4ZvWczTJIZJm9j2lSKV",
+      category: "Collectibles",
+      memberCount: 45
+    },
+    {
+      name: "Biodiversity Club",
+      description: "Explore and preserve local flora and fauna. Participate in nature walks, conservation projects, and environmental awareness campaigns. Learn about ecosystems and sustainability.",
+      logo: "/api/placeholder/100/100",
+      whatsappLink: "https://chat.whatsapp.com/IcTEFr4WwjAE60S1W83crA",
+      category: "Environment",
+      memberCount: 88
+    },
   ];
 
   const categories = ['All', ...new Set(clubs.map(club => club.category))];
@@ -330,7 +378,7 @@ const UniversityClubs = () => {
         )}
 
         {/* Footer Note */}
-        <div className="text-center mt-12 space-y-2">
+        {/* <div className="text-center mt-12 space-y-2">
           <p className="text-gray-600">Can't find what you're looking for?</p>
           <p className="text-gray-600">
             Contact the Student Affairs Office to learn about
@@ -338,7 +386,7 @@ const UniversityClubs = () => {
               starting your own club!
             </span>
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
   );
