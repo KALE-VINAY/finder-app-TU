@@ -105,7 +105,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { auth } from '../utils/firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 import { addUser , removeUser } from '../utils/userSlice';
-import { LOGO, SUPPORTED_LANGUAGES } from '../utils/constants';
+// import { LOGO, SUPPORTED_LANGUAGES } from '../utils/constants';
 
 
 

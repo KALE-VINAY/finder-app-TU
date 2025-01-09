@@ -84,32 +84,30 @@
 
 // export default ProductCard;
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { db } from '../firebase/firebaseConfig';
 import { doc, deleteDoc } from 'firebase/firestore';
 import { Phone, Mail } from 'lucide-react';
-import { FaWhatsapp } from 'react-icons/fa'; // Importing WhatsApp icon
-
+import { FaWhatsapp } from 'react-icons/fa';
 
 const ProductCard = ({ item, isOwner, type, formatDate }) => {
-  const [imageLoaded, setImageLoaded] = useState(false); // Track image loading state
-  const [imageError, setImageError] = useState(false); // Track image load error
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
       if (!imageLoaded) {
-        setImageError(true); // Trigger error state if image does not load within 40 seconds
+        setImageError(true);
       }
-    }, 40000); // 40 seconds timeout
+    }, 40000);
 
-    return () => clearTimeout(timeout); // Cleanup timeout
+    return () => clearTimeout(timeout);
   }, [imageLoaded]);
 
   const handleDelete = async () => {
     const confirmation = window.confirm('Are you sure you want to delete this item?');
     if (confirmation) {
       try {
-        await deleteDoc(doc(db, type, item.id)); // `type` determines if it's "products" or "requests"
+        await deleteDoc(doc(db, type, item.id));
         alert('Item deleted successfully.');
       } catch (error) {
         console.error('Error deleting document:', error);
@@ -130,12 +128,11 @@ const ProductCard = ({ item, isOwner, type, formatDate }) => {
         <img
           src={item.imageUrl}
           alt={item.name}
-          className={`w-full h-48 object-fill ${imageLoaded ? '' : 'hidden'}`}
-          onLoad={() => setImageLoaded(true)} // Set image as loaded when it finishes loading
-          onError={() => setImageError(true)} // Set error state if image fails to load
+          className={`w-full h-48 object-cover ${imageLoaded ? '' : 'hidden'}`}
+          onLoad={() => setImageLoaded(true)}
+          onError={() => setImageError(true)}
         />
       ) : (
-        // Fallback: Display alt text when image fails to load
         <div className="w-full h-48 flex items-center justify-center bg-gray-200 text-gray-500 text-lg font-medium">
           {item.name} image fails to load
         </div>
@@ -156,29 +153,25 @@ const ProductCard = ({ item, isOwner, type, formatDate }) => {
             Budget: ₹{item.priceRange.min} - ₹{item.priceRange.max}
           </p>
         )}
-        {/* <div className="mt-4">
-          <p className="text-sm text-gray-500">Contact: {item.contactNumber}</p>
-          {item.email && (
-            <p className="text-sm text-gray-500">Email: {item.email}</p>
-          )}
-        </div> */}
 
-        <div className="flex items-center mt-4 space-x-4">
+        {/* Contact Buttons in a Single Row */}
+        <div className="flex items-center justify-between mt-4 space-x-2">
           {/* Call Now Button */}
           <a
             href={`tel:${item.contactNumber}`}
-            className="flex items-center text-red-600 hover:text-red-800 text-sm sm:text-base"
+            className="flex items-center bg-red-100 text-red-600 px-2 py-1 rounded-md hover:bg-red-200 text-xs sm:text-sm"
           >
-            <Phone className="w-4 h-4 mr-1" />
-            Call Now
+            <Phone className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
+            Call
           </a>
-          {/* Call Now Button */}
+
+          {/* Mail Button */}
           <a
-            href={`tel:${item.email}`}
-            className="flex items-center text-blue-600 hover:text-violet-800 text-sm sm:text-base"
+            href={`mailto:${item.email}`}
+            className="flex items-center bg-blue-100 text-blue-600 px-2 py-1 rounded-md hover:bg-blue-200 text-xs sm:text-sm"
           >
-            <Mail className="w-4 h-4 mr-1" />
-            Call Now
+            <Mail className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
+            Email
           </a>
 
           {/* WhatsApp Button */}
@@ -186,10 +179,10 @@ const ProductCard = ({ item, isOwner, type, formatDate }) => {
             href={`https://wa.me/91${item.contactNumber}?text=Hello%20there,%20I%27m%20interested%20in%20your%20product%20${item.name}.`}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center text-green-600 hover:text-green-800 text-sm sm:text-base"
+            className="flex items-center bg-green-100 text-green-600 px-2 py-1 rounded-md hover:bg-green-200 text-xs sm:text-sm"
           >
-            <FaWhatsapp className="w-4 h-4 mr-1" />
-            Message
+            <FaWhatsapp className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
+            WhatsApp
           </a>
         </div>
 
