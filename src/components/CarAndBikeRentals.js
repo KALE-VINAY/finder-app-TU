@@ -1,15 +1,13 @@
-import React, { useState , useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Car, 
-  Bike, 
+  Bike,
   Calendar, 
-  Phone, 
-  Mail, 
-  Clock, 
-  Shield, 
-  Wrench, 
+  Phone,
   DollarSign, 
-  MapPin ,ChevronUp
+  MapPin,
+  ChevronUp,
+  Bus,Truck
 } from 'lucide-react';
 
 import HeaderRent from './HeaderRent';
@@ -17,30 +15,27 @@ import HeaderRent from './HeaderRent';
 const CarAndBikeRentals = () => {
   const [activeTab, setActiveTab] = useState('cars');
   const [showScrollButton, setShowScrollButton] = useState(false);
-
    
-   useEffect(() => {
+  useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
    
-     useEffect(() => {
-      const handleScroll = () => {
-        const scrollThreshold = 300; 
-        setShowScrollButton(window.scrollY > scrollThreshold);
-      };
-  
-      window.addEventListener('scroll', handleScroll);
-      return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-    
-    const scrollToTop = () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollThreshold = 300; 
+      setShowScrollButton(window.scrollY > scrollThreshold);
     };
 
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+    
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
   const cars = [
     {
       name: "Innova",
@@ -286,70 +281,96 @@ const CarAndBikeRentals = () => {
     }
   ];
 
-  const services = [
-    {
-      icon: <Shield className="w-6 h-6" />,
-      title: "Insurance Coverage",
-      description: "Comprehensive insurance for worry-free rides"
-    },
-    {
-      icon: <Wrench className="w-6 h-6" />, // Changed from Tool to Wrench
-      title: "24/7 Maintenance",
-      description: "Round-the-clock technical support"
-    },
-    {
-      icon: <MapPin className="w-6 h-6" />,
-      title: "Pickup & Drop",
-      description: "Convenient doorstep delivery"
-    }
-  ];
+//   const services = [
+//     {
+//       icon: <Shield className="w-6 h-6" />,
+//       title: "Insurance Coverage",
+//       description: "Comprehensive insurance for worry-free rides"
+//     },
+//     {
+//       icon: <Wrench className="w-6 h-6" />, // Changed from Tool to Wrench
+//       title: "24/7 Maintenance",
+//       description: "Round-the-clock technical support"
+//     },
+//     {
+//       icon: <MapPin className="w-6 h-6" />,
+//       title: "Pickup & Drop",
+//       description: "Convenient doorstep delivery"
+//     }
+//   ];
   
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-red-50 to-white">
-
-      {/* <Mainheader/> */}
       <HeaderRent/>
 
-      {/* Hero Section */}
-      <div className="bg-red-600 text-white py-16 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Vehicle Rentals</h1>
-          <p className="text-xl mb-8">Explore our fleet of cars, auto, travellers and bikes for your next journey</p>
-          <div className="flex justify-center gap-4">
-            <button 
-              className={`px-8 py-3 rounded-full font-semibold transition-colors ${
-                activeTab === 'cars' 
-                  ? 'bg-white text-red-600' 
-                  : 'bg-transparent border-2 border-white'
-              }`}
-              onClick={() => setActiveTab('cars')}
-            >
-              <Car className="inline-block mr-2 w-5 h-5" />
-              4 & 3 wheeler
-            </button>
-            <button 
-              className={`px-8 py-3 rounded-full font-semibold transition-colors ${
-                activeTab === 'bikes' 
-                  ? 'bg-white text-red-600' 
-                  : 'bg-transparent border-2 border-white'
-              }`}
-              onClick={() => setActiveTab('bikes')}
-            >
-              <Bike className="inline-block mr-2 w-5 h-5" />
-              2 wheeler
-            </button>
-          </div>
-        </div>
-      </div>
-      {/* 4 wheeler Vehicle Listings */}
-      {activeTab === 'cars' && (
-        <>
-          <div className='text-center mt-5 text-gray-700 font-bold font-serif text-4xl'>Cars</div>
-          <div className="max-w-6xl mx-auto py-16 px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+   {/* Hero Section with Updated Navigation */}
+<div className="bg-red-600 text-white py-8 md:py-12 px-4">
+  <div className="max-w-6xl mx-auto text-center">
+    <h1 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6">Vehicle Rentals</h1>
+    <p className="text-lg md:text-xl mb-6 md:mb-8">Choose from our wide range of vehicles for your next journey</p>
+    
+    {/* Updated Navigation Buttons with Responsive Sizing */}
+    <div className="grid grid-cols-2 md:flex md:flex-wrap justify-center gap-3 md:gap-4 max-w-sm md:max-w-none mx-auto">
+      <button 
+        className={`px-3 md:px-6 py-2 md:py-3 text-sm md:text-base rounded-full font-semibold transition-all transform hover:scale-105 ${
+          activeTab === 'cars' 
+            ? 'bg-white text-red-600 shadow-lg' 
+            : 'bg-transparent border-2 border-white hover:bg-white/10'
+        }`}
+        onClick={() => setActiveTab('cars')}
+      >
+        <Car className="inline-block mr-1 md:mr-2 w-4 h-4 md:w-5 md:h-5" />
+        <span className="whitespace-nowrap">Cars</span>
+      </button>
+      
+      <button 
+        className={`px-3 md:px-6 py-2 md:py-3 text-sm md:text-base rounded-full font-semibold transition-all transform hover:scale-105 ${
+          activeTab === 'auto' 
+            ? 'bg-white text-red-600 shadow-lg' 
+            : 'bg-transparent border-2 border-white hover:bg-white/10'
+        }`}
+        onClick={() => setActiveTab('auto')}
+      >
+        <Truck className="inline-block mr-1 md:mr-2 w-4 h-4 md:w-5 md:h-5" />
+        <span className="whitespace-nowrap">Auto</span>
+      </button>
+      
+      <button 
+        className={`px-3 md:px-6 py-2 md:py-3 text-sm md:text-base rounded-full font-semibold transition-all transform hover:scale-105 ${
+          activeTab === 'traveller' 
+            ? 'bg-white text-red-600 shadow-lg' 
+            : 'bg-transparent border-2 border-white hover:bg-white/10'
+        }`}
+        onClick={() => setActiveTab('traveller')}
+      >
+        <Bus className="inline-block mr-1 md:mr-2 w-4 h-4 md:w-5 md:h-5" />
+        <span className="whitespace-nowrap">Travellers</span>
+      </button>
+      
+      <button 
+        className={`px-3 md:px-6 py-2 md:py-3 text-sm md:text-base rounded-full font-semibold transition-all transform hover:scale-105 ${
+          activeTab === 'bikes' 
+            ? 'bg-white text-red-600 shadow-lg' 
+            : 'bg-transparent border-2 border-white hover:bg-white/10'
+        }`}
+        onClick={() => setActiveTab('bikes')}
+      >
+        <Bike className="inline-block mr-1 md:mr-2 w-4 h-4 md:w-5 md:h-5" />
+        <span className="whitespace-nowrap">Bikes</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+      {/* Vehicle Listings */}
+      <div className="max-w-6xl mx-auto py-12 px-4">
+        {/* Cars Section */}
+        {activeTab === 'cars' && (
+          <div>
+            <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Available Cars</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {cars.map((vehicle, index) => (
-                <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+                <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                   <div className="h-48 bg-white">
                     <img 
                       src={vehicle.imgURL}
@@ -358,50 +379,25 @@ const CarAndBikeRentals = () => {
                     />
                   </div>
                   <div className="p-6">
-                    <div className="flex justify-between items-center mb-4">
-                      <h3 className="text-xl font-semibold">{vehicle.name}</h3>
-                      <span className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm">
-                        {/* {vehicle.category} */}
-                      </span>
-                    </div>
-                    {/* <ul className="space-y-2 mb-4">
-                      {vehicle.features.map((feature, idx) => (
-                        <li key={idx} className="text-gray-600 Version 1 of 2flex items-center">
-                          <span className="w-2 h-2 bg-red-400 rounded-full mr-2"></span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul> */}
-                    <div className="flex justify-between items-center">
-                      {/* <span className="text-2xl font-bold text-red-600">{vehicle.price}</span> */}
-                      {/* <button 
-                        className={`px-4 py-2 rounded-lg font-semibold ${
-                          vehicle.available 
-                            ? 'bg-red-600 text-white hover:bg-red-700' 
-                            : 'bg-gray-200 text-gray-500 cursor-not-allowed'
-                        }`}
-                        disabled={!vehicle.available}
-                      >
-                        {vehicle.available ? 'Book Now' : 'Not Available'}
-                      </button> */}
-                      <a href={`tel:${vehicle.contact}`} className="flex items-center text-red-600 hover:text-red-800">
-                  <Phone className="w-4 h-4 mr-2" />
-                  {/* {vehicle.contact} */}
-                  Call Now
-                </a>
-                      
-                    </div>
+                    <h3 className="text-xl font-semibold mb-4">{vehicle.name}</h3>
+                    <a href={`tel:${vehicle.contact}`} className="inline-flex items-center text-red-600 hover:text-red-800 font-medium">
+                      <Phone className="w-4 h-4 mr-2" />
+                      Call Now
+                    </a>
                   </div>
                 </div>
               ))}
             </div>
           </div>
+        )}
 
-          <div className='text-center mt-5 text-gray-700 font-bold font-serif text-4xl'>Tom-Tom & Autos</div>
-          <div className="max-w-6xl mx-auto py-16 px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Auto & Tom-Tom Section */}
+        {activeTab === 'auto' && (
+          <div>
+            <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Available Autos & Tom-Toms</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {auto.map((vehicle, index) => (
-                <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+                <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                   <div className="h-48 bg-white">
                     <img 
                       src={vehicle.imgURL}
@@ -410,49 +406,25 @@ const CarAndBikeRentals = () => {
                     />
                   </div>
                   <div className="p-6">
-                    <div className="flex justify-between items-center mb-4">
-                      <h3 className="text-xl font-semibold">{vehicle.name}</h3>
-                      <span className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm">
-                        {/* {vehicle.category} */}
-                      </span>
-                    </div>
-                    {/* <ul className="space-y-2 mb-4">
-                      {vehicle.features.map((feature, idx) => (
-                        <li key={idx} className="text-gray-600 flex items-center">
-                          <span className="w-2 h-2 bg-red-400 rounded-full mr-2"></span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul> */}
-                    <div className="flex justify-between items-center">
-                      {/* <span className="text-2xl font-bold text-red-600">{vehicle.price}</span> */}
-                      {/* <button 
-                        className={`px-4 py-2 rounded-lg font-semibold ${
-                          vehicle.available 
-                            ? 'bg-red-600 text-white hover:bg-red-700' 
-                            : 'bg-gray-200 text-gray-500 cursor-not-allowed'
-                        }`}
-                        disabled={!vehicle.available}
-                      >
-                        {vehicle.available ? 'Book Now' : 'Not Available'}
-                      </button> */}
-                      <a href={`tel:${vehicle.contact}`} className="flex items-center text-red-600 hover:text-red-800">
-                        <Phone className="w-4 h-4 mr-2" />
-                        {/* {vehicle.contact} */}
-                        Call Now
-                      </a>
-                    </div>
+                    <h3 className="text-xl font-semibold mb-4">{vehicle.name}</h3>
+                    <a href={`tel:${vehicle.contact}`} className="inline-flex items-center text-red-600 hover:text-red-800 font-medium">
+                      <Phone className="w-4 h-4 mr-2" />
+                      Call Now
+                    </a>
                   </div>
                 </div>
               ))}
             </div>
           </div>
+        )}
 
-          <div className='text-center mt-5 text-gray-700 font-bold font-serif text-4xl'>Travellers</div>
-          <div className="max-w-6xl mx-auto py-16 px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Traveller Section */}
+        {activeTab === 'traveller' && (
+          <div>
+            <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Available Travellers</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {traveller.map((vehicle, index) => (
-                <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+                <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                   <div className="h-48 bg-white">
                     <img 
                       src={vehicle.imgURL}
@@ -461,130 +433,57 @@ const CarAndBikeRentals = () => {
                     />
                   </div>
                   <div className="p-6">
-                    <div className="flex justify-between items-center mb-4">
-                      <h3 className="text-xl font-semibold">{vehicle.name}</h3>
-                      <span className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm">
-                        {/* {vehicle.category} */}
-                      </span>
-                    </div>
-                    {/* <ul className="space-y-2 mb-4">
-                      {vehicle.features.map((feature, idx) => (
-                        <li key={idx} className="text-gray-600 flex items-center">
-                          <span className="w-2 h-2 bg-red-400 rounded-full mr-2"></span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul> */}
-                    <div className="flex justify-between items-center">
-                      {/* <span className="text-2xl font-bold text-red-600">{vehicle.price}</span> */}
-                      {/* <button 
-                        className={`px-4 py-2 rounded-lg font-semibold ${
-                          vehicle.available 
-                            ? 'bg-red-600 text-white hover:bg-red-700' 
-                            : 'bg-gray-200 text-gray-500 cursor-not-allowed'
-                        }`}
-                        disabled={!vehicle.available}
-                      >
-                        {vehicle.available ? 'Book Now' : 'Not Available'}
-                      </button> */}
-                      <a href={`tel:${vehicle.contact}`} className="flex items-center text-red-600 hover:text-red-800">
-                        <Phone className="w-4 h-4 mr-2" />
-                        {/* {vehicle.contact} */}
-                        Call Now
-                      </a>
-                    </div>
+                    <h3 className="text-xl font-semibold mb-4">{vehicle.name}</h3>
+                    <a href={`tel:${vehicle.contact}`} className="inline-flex items-center text-red-600 hover:text-red-800 font-medium">
+                      <Phone className="w-4 h-4 mr-2" />
+                      Call Now
+                    </a>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-        </>
-      )}
+        )}
 
-         {/* 2 wheeler Vehicle Listings */}
-         {activeTab === 'bikes' && (
-        <div className="max-w-6xl mx-auto py-16 px-4">
-          <div className='text-center mt-5 text-gray-700 font-bold font-serif text-4xl mb-12'>2 Wheeler Bikes</div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {bikes.map((vehicle, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
-                <div className="h-48 bg-white">
-                  <img 
-                    src={vehicle.imgURL}
-                    alt={vehicle.name}
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <div className="p-6">
-                  <div className="flex justify-between items-center mb-4">
-                    <h3 className="text-xl font-semibold">{vehicle.name}</h3>
-                    <span className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm">
-                      {/* {vehicle.category} */}
-                    </span>
+        {/* Bikes Section */}
+        {activeTab === 'bikes' && (
+          <div>
+            <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Available Bikes</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {bikes.map((vehicle, index) => (
+                <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                  <div className="h-48 bg-white">
+                    <img 
+                      src={vehicle.imgURL}
+                      alt={vehicle.name}
+                      className="w-full h-full object-contain"
+                    />
                   </div>
-                  {/* <ul className="space-y-2 mb-4">
-                    {vehicle.features.map((feature, idx) => (
-                      <li key={idx} className="text-gray-600 flex items-center">
-                        <span className="w-2 h-2 bg-red-400 rounded-full mr-2"></span>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul> */}
-                  <div className="flex justify-between items-center">
-                    {/* <span className="text-2xl font-bold text-red-600">{vehicle.price}</span> */}
-                    {/* <button 
-                      className={`px-4 py-2 rounded-lg font-semibold ${
-                        vehicle.available 
-                          ? 'bg-red-600 text-white hover:bg-red-700' 
-                          : 'bg-gray-200 text-gray-500 cursor-not-allowed'
-                      }`}
-                      disabled={!vehicle.available}
-                    >
-                      {vehicle.available ? 'Book Now' : 'Not Available'}
-                    </button> */}
-                      <a href={`tel:${vehicle.contact}`} className="flex items-center text-red-600 hover:text-red-800">
-                        <Phone className="w-4 h-4 mr-2" />
-                        {/* {vehicle.contact} */}
-                        Call Now
-                      </a>
-
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold mb-4">{vehicle.name}</h3>
+                    <a href={`tel:${vehicle.contact}`} className="inline-flex items-center text-red-600 hover:text-red-800 font-medium">
+                      <Phone className="w-4 h-4 mr-2" />
+                      Call Now
+                    </a>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      )}
-
-      {/* Services Section */}
-      {/* <div className="bg-red-50 py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
-                <div className="text-red-600 flex justify-center mb-4">
-                  {service.icon}
-                </div>
-                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div> */}
+        )}
+      </div>
 
       {/* Booking Process */}
-      <div className="max-w-6xl bg-red-50 mb-10 mx-auto py-16 px-4">
+      <div className="max-w-6xl mx-auto py-16 px-4 bg-red-50 rounded-xl mb-10">
         <h2 className="text-3xl font-bold text-center mb-12">How to Book</h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
-            { icon: <Calendar />, title: "Choose Date" },
-            { icon: <Car />, title: "Select Vehicle" },
-            { icon: <DollarSign />, title: "Make a Best Deal" },
-            { icon: <MapPin />, title: "Get Vehicle" }
+            { icon: <Calendar className="w-6 h-6" />, title: "Choose Date" },
+            { icon: <Car className="w-6 h-6" />, title: "Contact Vehicle" },
+            { icon: <DollarSign className="w-6 h-6" />, title: "Make a Best Deal" },
+            { icon: <MapPin className="w-6 h-6" />, title: "Get Vehicle" }
           ].map((step, index) => (
-            <div key={index} className="text-center">
+            <div key={index} className="text-center bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all">
               <div className="text-red-600 flex justify-center mb-4">
                 {step.icon}
               </div>
@@ -594,63 +493,23 @@ const CarAndBikeRentals = () => {
         </div>
       </div>
 
-      {/* Contact Section */}
-      {/* <div className="bg-gray-900 text-white py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center md:text-left">
-              <h3 className="text-xl font-bold mb-4">Contact Us</h3>
-              <div className="space-y-4">
-                <p className="flex items-center justify-center md:justify-start">
-                  <Phone className="w-5 h-5 mr-3" />
-                  +1 (555) 123-4567
-                </p>
-                <p className="flex items-center justify-center md:justify-start">
-                  <Mail className="w-5 h-5 mr-3" />
-                  rentals@example.com
-                </p>
-                <p className="flex items-center justify-center md:justify-start">
-                  <Clock className="w-5 h-5 mr-3" />
-                  24/7 Support Available
-                </p>
-              </div>
-            </div>
-            <div className="text-center md:text-left">
-              <h3 className="text-xl font-bold mb-4">Business Hours</h3>
-              <div className="space-y-2">
-                <p>Monday - Friday: 8:00 AM - 8:00 PM</p>
-                <p>Saturday: 9:00 AM - 6:00 PM</p>
-                <p>Sunday: 10:00 AM - 4:00 PM</p>
-              </div>
-            </div>
-            <div className="text-center md:text-left">
-              <h3 className="text-xl font-bold mb-4">Location</h3>
-              <p>123 Rental Street</p>
-              <p>Downtown Area</p>
-              <p>City, State 12345</p>
-            </div>
-          </div>
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-4 px-4 border-t border-gray-800">
+        <div className="max-w-6xl mx-auto text-center">
+          <p>&copy; 2024 Vehicle Rentals. All rights reserved.</p>
         </div>
-      </div> */}
+      </footer>
 
-{/* Footer */}
-<footer className="bg-gray-900 text-white py-4 px-4 border-t border-gray-800">
-  <div className="max-w-6xl mx-auto text-center">
-    <p>&copy; 2024 Car & Bike Rentals. All rights reserved.</p>
-  </div>
-</footer>
-{/* Scroll to Top Button */}
-{showScrollButton && (
-  <button
-    onClick={scrollToTop}
-    className="fixed bottom-8 right-8 bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 transition-all duration-300 z-50"
-    aria-label="Scroll to top"
-  >
-    <ChevronUp className="h-6 w-6" />
-  </button>
-)}
-
-
+      {/* Scroll to Top Button */}
+      {showScrollButton && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 bg-red-600 text-white p-3 rounded-full shadow-lg hover:bg-red-700 transition-all duration-300 z-50"
+          aria-label="Scroll to top"
+        >
+          <ChevronUp className="h-6 w-6" />
+        </button>
+      )}
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React ,{useEffect} from 'react';
-import { Phone, Mail, MapPin, ShoppingCart } from 'lucide-react';
+import { Phone } from 'lucide-react';
 
 const ProductCard = ({ title, price, description, imagePlaceholder, phNumber }) => (
   <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
