@@ -73,7 +73,7 @@ const SellCycleForm = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 mb-2">Model Name</label>
+          <label className="block text-gray-700 mb-2">Name & Model </label>
           <input
             type="text"
             value={formData.modelName}
@@ -103,7 +103,7 @@ const SellCycleForm = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 mb-2">Cycle Image</label>
+          <label className="block text-gray-700 mb-2">Cycle Image  (upload image with size less than 1MB )</label>
           <input
             type="file"
             accept="image/*"

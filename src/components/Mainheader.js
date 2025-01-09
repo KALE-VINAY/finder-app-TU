@@ -141,10 +141,10 @@ const Mainheader = () => {
   // bg-gradient-to-b from-black
 
   return (
-    <div className='relative w-full px-4 py-1 bg-transparent z-10 flex flex-wrap justify-between items-center'>
+    <div className='relative w-full px-4 py-1 md:py-4 bg-transparent z-10 flex flex-wrap justify-between items-center'>
       <div className='flex flex-row '>
           <img className="h-14 w-16 -ml-2 md:ml-0  rounded" src="tuonestop.png" alt="logo" />
-          <h1 className='text-xl md:text-3xl sm:block mt-1 ml-3 md:block lg:block xl:block font-serif text-center hidden'>
+          <h1 className='text-xl md:text-3xl sm:block mt-1 md:mt-3 ml-3 md:block lg:block xl:block font-serif text-center hidden'>
           TU One Stop
           </h1>
       </div>

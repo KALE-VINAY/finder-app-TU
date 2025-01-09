@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { db, storage } from '../firebase/firebaseConfig';
 import { deleteDoc, doc } from 'firebase/firestore';
 import { ref, deleteObject } from 'firebase/storage';
@@ -34,6 +34,19 @@ const calculateTimeAgo = (createdAt) => {
 };
 
 const CycleCard = ({ cycle, isOwner }) => {
+  const [imageLoaded, setImageLoaded] = useState(false); // Track image loading state
+  const [imageError, setImageError] = useState(false); // Track image loading error
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      if (!imageLoaded) {
+        setImageError(true); // Trigger error if image does not load within 40 seconds
+      }
+    }, 40000); // 40 seconds timeout
+
+    return () => clearTimeout(timeout); // Cleanup timeout
+  }, [imageLoaded]);
+
   const handleDelete = async () => {
     if (window.confirm('Are you sure you want to delete this listing?')) {
       try {
@@ -55,15 +68,32 @@ const CycleCard = ({ cycle, isOwner }) => {
 
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
-      <img
-        src={cycle.imageUrl}
-        alt={cycle.modelName}
-        className="w-full h-48 object-fill"
-      />
+      {/* Skeleton Loader */}
+      {!imageLoaded && !imageError && (
+        <div className="w-full h-48 bg-gray-400 animate-pulse"></div>
+      )}
+
+      {/* Image */}
+      {!imageError ? (
+        <img
+          src={cycle.imageUrl}
+          alt={cycle.modelName}
+          className={`w-full h-48 object-fill ${imageLoaded ? '' : 'hidden'}`}
+          onLoad={() => setImageLoaded(true)} // Set image as loaded when it finishes loading
+          onError={() => setImageError(true)} // Set error if image fails to load
+        />
+      ) : (
+        // Display alt text when image fails to load
+        <div className="w-full h-48 flex items-center justify-center bg-gray-200 text-gray-500 text-lg font-medium">
+          {/* {cycle.modelName}  */}
+          image failed to load
+        </div>
+      )}
+
       <div className="p-4">
         <div className="flex justify-between items-center mb-2">
           <h3 className="text-xl font-semibold">{cycle.modelName}</h3>
-          <p className="text-gray-600 mb-2"> {timeAgo}</p>
+          <p className="text-gray-600 mb-2">{timeAgo}</p>
         </div>
         <div className="flex flex-wrap">
           <p className="text-gray-600 mr-2 mb-0">Description: </p>
