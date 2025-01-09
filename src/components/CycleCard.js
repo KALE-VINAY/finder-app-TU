@@ -85,7 +85,6 @@ const CycleCard = ({ cycle, isOwner }) => {
       ) : (
         // Display alt text when image fails to load
         <div className="w-full h-48 flex items-center justify-center bg-gray-200 text-gray-500 text-lg font-medium">
-          {/* {cycle.modelName}  */}
           image failed to load
         </div>
       )}
@@ -101,27 +100,30 @@ const CycleCard = ({ cycle, isOwner }) => {
         </div>
         <p className="text-gray-600 mb-2">Price: ₹{cycle.price}</p>
 
-        <div className="flex items-center space-x-4">
-          {/* Call Now Button */}
-          <a
-            href={`tel:${cycle.contactNumber}`}
-            className="flex items-center text-red-600 hover:text-red-800 text-sm sm:text-base"
-          >
-            <Phone className="w-4 h-4 mr-1" />
-            Call Now
-          </a>
+        {/* Contact Buttons */}
+        {!isOwner && (
+          <div className="flex items-center space-x-4">
+            {/* Call Now Button */}
+            <a
+              href={`tel:${cycle.contactNumber}`}
+              className="flex items-center text-red-600 hover:text-red-800 text-sm sm:text-base"
+            >
+              <Phone className="w-4 h-4 mr-1" />
+              Call Now
+            </a>
 
-          {/* WhatsApp Button */}
-          <a
-            href={`https://wa.me/91${cycle.contactNumber}?text=Hello%20there,%20I%27m%20interested%20in%20your%20product%20${cycle.modelName}.`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center text-green-600 hover:text-green-800 text-sm sm:text-base"
-          >
-            <FaWhatsapp className="w-4 h-4 mr-1" />
-            Message
-          </a>
-        </div>
+            {/* WhatsApp Button */}
+            <a
+              href={`https://wa.me/91${cycle.contactNumber}?text=Hello%20there,%20I%27m%20interested%20in%20your%20product%20${cycle.modelName}.`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center text-green-600 hover:text-green-800 text-sm sm:text-base"
+            >
+              <FaWhatsapp className="w-4 h-4 mr-1" />
+              Message
+            </a>
+          </div>
+        )}
 
         {isOwner && (
           <button

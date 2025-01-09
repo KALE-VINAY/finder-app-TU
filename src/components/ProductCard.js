@@ -141,9 +141,7 @@ const ProductCard = ({ item, isOwner, type, formatDate }) => {
       <div className="p-4">
         <div className="flex justify-between items-start mb-2">
           <h3 className="text-xl font-semibold">{item.name}</h3>
-          <span className="text-sm text-gray-500">
-            {formatDate(item.createdAt)}
-          </span>
+          <span className="text-sm text-gray-500">{formatDate(item.createdAt)}</span>
         </div>
         <p className="text-gray-600 mb-2">{item.description}</p>
         {type === 'products' ? (
@@ -155,36 +153,38 @@ const ProductCard = ({ item, isOwner, type, formatDate }) => {
         )}
 
         {/* Contact Buttons in a Single Row */}
-        <div className="flex items-center  mt-4 space-x-2">
-          {/* Call Now Button */}
-          <a
-            href={`tel:${item.contactNumber}`}
-            className="flex items-center  text-red-600 px-2 py-1 rounded-md hover:bg-red-200 "
-          >
-            <Phone className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
-            Call
-          </a>
+        {!isOwner && (
+          <div className="flex items-center mt-4 space-x-2">
+            {/* Call Now Button */}
+            <a
+              href={`tel:${item.contactNumber}`}
+              className="flex items-center text-red-600 px-2 py-1 rounded-md hover:bg-red-200 "
+            >
+              <Phone className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
+              Call
+            </a>
 
-          {/* Mail Button */}
-          <a
-            href={`mailto:${item.email}`}
-            className="flex items-center  text-blue-600 px-2 py-1 rounded-md hover:bg-blue-200 "
-          >
-            <Mail className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
-            Email
-          </a>
+            {/* Mail Button */}
+            <a
+              href={`mailto:${item.email}`}
+              className="flex items-center text-blue-600 px-2 py-1 rounded-md hover:bg-blue-200 "
+            >
+              <Mail className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
+              Email
+            </a>
 
-          {/* WhatsApp Button */}
-          <a
-            href={`https://wa.me/91${item.contactNumber}?text=Hello%20there,%20I%27m%20interested%20in%20your%20product%20${item.name}.`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center  text-green-600 px-2 py-1 rounded-md hover:bg-green-200 "
-          >
-            <FaWhatsapp className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
-            WhatsApp
-          </a>
-        </div>
+            {/* WhatsApp Button */}
+            <a
+              href={`https://wa.me/91${item.contactNumber}?text=Hello%20there,%20I%27m%20interested%20in%20your%20product%20${item.name}.`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center text-green-600 px-2 py-1 rounded-md hover:bg-green-200 "
+            >
+              <FaWhatsapp className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
+              WhatsApp
+            </a>
+          </div>
+        )}
 
         {isOwner && (
           <div className="mt-4 flex items-center justify-between">
