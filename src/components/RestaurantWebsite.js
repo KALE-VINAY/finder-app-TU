@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import {  Navigation, Phone , X} from 'lucide-react';
+import RestaurantRating from './RestaurantRating';
 
 const RestaurantWebsite = () => {
   const { id } = useParams();
@@ -295,9 +296,11 @@ const RestaurantWebsite = () => {
           {/* Restaurant Details */}
           <div className="w-full md:w-1/2">
             <h1 className="text-3xl md:text-4xl font-bold font-serif mb-4">{name}</h1>
-            <div className="space-y-2 mb-6">
-              <p className="text-gray-600">{cuisines}</p>
-              <p className="text-gray-600">Tezpur University, Tezpur</p>
+            
+           <div className=" mb-6">
+              <p className="text-gray-600 mb-2">{cuisines}</p>
+              <p className="text-gray-600 mb-2 md:mb-8 ">Tezpur University, Tezpur</p>
+              <RestaurantRating restaurantId={id} />
             </div>
 
             {/* Contact Details for Mobile */}
