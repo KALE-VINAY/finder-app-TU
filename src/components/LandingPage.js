@@ -12,10 +12,14 @@ import {
   Stethoscope, 
   Shirt, 
   ArrowRight,
-  MapPin,
-  Phone,
-  Clock,
-  UserPlus,UsersRound,Bike,Bus,Tag, DollarSign
+  // MapPin,
+  // Phone,
+  // Clock,
+  // UserPlus,
+  
+  UsersRound,Bike,Bus,
+  // Tag, 
+  DollarSign
 } from 'lucide-react';
 import Mainheader from './Mainheader';
 import ContactModal from './ContactModal';
@@ -63,14 +67,14 @@ const LandingPage = () => {
     },
     {
       title: "Buy and Sell ",
-      description: "Buy and Request an item from the University Students",
+      description: "Buy, sell, or request items within the TU student community!",
       icon: <DollarSign className="w-6 h-6" />,
       path: "/buy-sell",
       color: "bg-green-500"
     },
     {
       title: "University Clubs  ",
-      description: "Get the best priced cycles for sale in TU",
+      description: "Join TU's vibrant clubs for events, skills, and connections!",
       icon: <UsersRound className="w-6 h-6" />,
       path: "/tu-clubs",
       color: "bg-red-500"

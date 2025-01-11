@@ -1,15 +1,30 @@
-import React, { useState , useEffect} from 'react';
-import { ExternalLink, Search, Users } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ExternalLink, Search, Users, ChevronDown, ArrowUpCircle } from 'lucide-react';
 
 const UniversityClubs = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show button when user scrolls down 200px
+      setShowScrollTop(window.scrollY > 200);
+    };
 
-   const clubs = [
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
+  const clubs = [
     {
       name: "Photography Club",
       description: "Explore the art of photography, learn camera techniques, participate in photo walks, and showcase your work through exhibitions. Perfect for both beginners and experienced photographers!",
@@ -33,6 +48,14 @@ const UniversityClubs = () => {
       whatsappLink: "https://chat.whatsapp.com/Huwko9fV9Lz1CpH44mjUcr",
       category: "Performing Arts",
       memberCount: 85
+    },
+    {
+      name: "TU OTAKU CLUB 💢",
+      description: "Dive into the world of anime and manga. Join discussions, watch parties, cosplay events, and connect with fellow otakus. Celebrate Japanese culture and creativity with like-minded fans.",
+      logo: "/api/placeholder/100/100",
+      whatsappLink: "https://chat.whatsapp.com/F7jrJ1q6J6GLRUKhfchoHo",
+      category: "Anime & Manga",
+      memberCount: 230
     },
     {
       name: "TU - Yoga Club",
@@ -219,11 +242,11 @@ const UniversityClubs = () => {
         memberCount: 200
       },
     {
-      name: "Adventure Club",
+      name: "TU Cycling Club (TUCYC)",
       description: "Experience thrilling outdoor activities including hiking, rock climbing, mountain biking, and camping. Learn survival skills and explore nature while building leadership and teamwork abilities.",
       logo: "/api/placeholder/100/100",
       whatsappLink: "https://chat.whatsapp.com/EirVN7rKEb62aCgZz7KwHT",
-      category: "Adventure",
+      category: "Sports",
       memberCount: 150
     },
     {
@@ -265,10 +288,11 @@ const UniversityClubs = () => {
       whatsappLink: "https://chat.whatsapp.com/IcTEFr4WwjAE60S1W83crA",
       category: "Environment",
       memberCount: 88
-    },
+    }
+    
   ];
 
-  const categories = ['All', ...new Set(clubs.map(club => club.category))];
+  const categories = ['All', ...new Set(clubs.map(club => club.category))].sort();
 
   const filteredClubs = clubs.filter(club => {
     const matchesCategory = selectedCategory === 'All' || club.category === selectedCategory;
@@ -305,21 +329,34 @@ const UniversityClubs = () => {
               />
             </div>
 
-            {/* Categories */}
-            <div className="flex flex-wrap justify-center gap-2 w-full sm:w-auto">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-                    selectedCategory === category
-                      ? 'bg-blue-500 text-white shadow-md'
-                      : 'bg-white text-gray-600 hover:bg-gray-50'
-                  }`}
-                >
-                  {category}
-                </button>
-              ))}
+            {/* Category Dropdown */}
+            <div className="relative w-full sm:w-64">
+              <button
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className="w-full px-4 py-2 text-left bg-white border border-gray-200 rounded-lg flex items-center justify-between hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <span className="text-gray-700">{selectedCategory}</span>
+                <ChevronDown className={`w-5 h-5 text-gray-500 transition-transform duration-200 ${isDropdownOpen ? 'transform rotate-180' : ''}`} />
+              </button>
+              
+              {isDropdownOpen && (
+                <div className="absolute z-10 w-full mt-2 bg-white border border-gray-200 rounded-lg shadow-lg max-h-60 overflow-y-auto">
+                  {categories.map((category) => (
+                    <button
+                      key={category}
+                      onClick={() => {
+                        setSelectedCategory(category);
+                        setIsDropdownOpen(false);
+                      }}
+                      className={`w-full px-4 py-2 text-left hover:bg-gray-50 transition-colors duration-150 ${
+                        selectedCategory === category ? 'bg-blue-50 text-blue-600' : 'text-gray-700'
+                      }`}
+                    >
+                      {category}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -339,9 +376,6 @@ const UniversityClubs = () => {
                       alt={`${club.name} logo`}
                       className="w-16 h-16 rounded-lg object-cover shadow-sm"
                     /> */}
-                    {/* <span className="absolute -bottom-2 -right-2 bg-blue-500 text-white text-xs px-2 py-1 rounded-full">
-                      {club.category}
-                    </span> */}
                   </div>
                   <div className="ml-4">
                     <h3 className="text-xl font-semibold text-gray-900">{club.name}</h3>
@@ -376,18 +410,18 @@ const UniversityClubs = () => {
             <p className="text-gray-500 text-lg">No clubs found matching your criteria.</p>
           </div>
         )}
-
-        {/* Footer Note */}
-        {/* <div className="text-center mt-12 space-y-2">
-          <p className="text-gray-600">Can't find what you're looking for?</p>
-          <p className="text-gray-600">
-            Contact the Student Affairs Office to learn about
-            <span className="text-blue-500 font-medium ml-1">
-              starting your own club!
-            </span>
-          </p>
-        </div> */}
       </div>
+
+      {/* Scroll to Top Button */}
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 bg-green-500 hover:bg-green-900 text-white rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2"
+          aria-label="Scroll to top"
+        >
+          <ArrowUpCircle className="w-6 h-6" />
+        </button>
+      )}
     </div>
   );
 };

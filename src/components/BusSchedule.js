@@ -236,7 +236,7 @@ const BusSchedule = () => {
         </button>
       </div>
       
-      <div className="flex flex-col sm:flex-row justify-center gap-2 md:gap-4 my-3 md:my-5">
+      <div className="flex flex-row sm:flex-row justify-center gap-2 md:gap-4 my-3 md:my-5">
         <button 
           className={`px-4 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-base font-semibold transition-colors ${
             activeTab === 'ASTCToUni' 
@@ -259,8 +259,8 @@ const BusSchedule = () => {
         </button>
       </div>
 
-      <div className="flex flex-col sm:flex-row justify-center gap-3 my-4">
-        <div className="flex items-center gap-2">
+      <div className="flex flex-row sm:flex-row justify-center gap-2 my-4">
+        <div className="flex items-center gap-1">
           <label className="text-sm md:text-base font-semibold">Date:</label>
           <input
             type="date"
@@ -269,8 +269,8 @@ const BusSchedule = () => {
             onChange={handleDateChange}
           />
         </div>
-        <div className="flex items-center gap-2">
-          <label className="text-sm md:text-base font-semibold">Day:</label>
+        <div className="flex items-center gap-1">
+          <label className="text-sm md:text-base  -ml-1 font-semibold">Day:</label>
           <select
             className="p-1.5 md:p-2 rounded border text-sm md:text-base w-full sm:w-auto"
             value={selectedDate.getDay()}

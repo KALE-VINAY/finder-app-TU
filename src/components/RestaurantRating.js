@@ -15,6 +15,8 @@ const RestaurantRating = ({ restaurantId }) => {
   const [averageRating, setAverageRating] = useState(0);
   const [totalRatings, setTotalRatings] = useState(0);
   const [hasRated, setHasRated] = useState(false);
+  const [userRating, setUserRating] = useState(0);
+  const [thankYouMessage, setThankYouMessage] = useState(false);
 
   useEffect(() => {
     const fetchRatings = async () => {
@@ -58,8 +60,8 @@ const RestaurantRating = ({ restaurantId }) => {
     checkUserRating();
   }, [restaurantId]);
 
-  const handleRating = async (value) => {
-    if (hasRated) return;
+  const handleSubmitRating = async () => {
+    if (hasRated || userRating === 0) return;
 
     let userId = localStorage.getItem('userId');
     if (!userId) {
@@ -71,13 +73,14 @@ const RestaurantRating = ({ restaurantId }) => {
       await addDoc(collection(db, 'ratings'), {
         restaurantId,
         userId,
-        rating: value,
+        rating: userRating,
         timestamp: new Date()
       });
 
-      setRating(value);
       setHasRated(true);
+      setRating(userRating);
 
+      // Recalculate ratings
       const ratingsRef = collection(db, 'ratings');
       const q = query(ratingsRef, where('restaurantId', '==', restaurantId));
       const querySnapshot = await getDocs(q);
@@ -92,41 +95,67 @@ const RestaurantRating = ({ restaurantId }) => {
 
       setTotalRatings(count);
       setAverageRating(count > 0 ? (total / count).toFixed(1) : 0);
+      setThankYouMessage(true);
+
+      // Hide thank-you message after 3 seconds
+      setTimeout(() => setThankYouMessage(false), 3000);
     } catch (error) {
       console.error("Error adding rating:", error);
     }
   };
 
   return (
-    <div className="flex flex-col w-full max-w-lg  p-4 bg-white rounded-lg shadow md:max-w-md sm:max-w-sm">
+    <div className="flex flex-col w-full max-w-lg p-4 bg-white rounded-lg shadow md:max-w-md sm:max-w-sm">
+      {/* Overall Rating */}
       <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
         <div className="flex items-center space-x-1">
           {[1, 2, 3, 4, 5].map((star) => (
-            <button
+            <Star
               key={star}
-              className={`focus:outline-none ${hasRated ? 'cursor-default' : 'cursor-pointer'}`}
-              onClick={() => !hasRated && handleRating(star)}
-              onMouseEnter={() => !hasRated && setHover(star)}
-              onMouseLeave={() => !hasRated && setHover(0)}
-            >
-              <Star
-                className={`w-6 h-6 sm:w-5 sm:h-5 ${
-                  (hover || rating) >= star
-                    ? 'fill-yellow-400 text-yellow-400'
-                    : 'text-gray-300'
-                }`}
-              />
-            </button>
+              className={`w-6 h-6 sm:w-5 sm:h-5 ${
+                averageRating >= star ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'
+              }`}
+            />
           ))}
           <span className="text-lg sm:text-base font-bold">{averageRating}</span>
           <span className="text-gray-500 text-sm sm:text-xs">({totalRatings} ratings)</span>
         </div>
-        <div className="flex flex-col items-center sm:flex-row sm:items-center sm:space-x-2">
-          
-          
-        </div>
       </div>
-      {hasRated && (
+
+      {/* User Rating */}
+      {!hasRated && (
+        <div className="mt-4">
+          <p className="text-gray-600 text-sm mb-2">Rate this restaurant:</p>
+          <div className="flex items-center space-x-1">
+            {[1, 2, 3, 4, 5].map((star) => (
+              <button
+                key={star}
+                className="focus:outline-none cursor-pointer"
+                onClick={() => setUserRating(star)}
+                onMouseEnter={() => setHover(star)}
+                onMouseLeave={() => setHover(0)}
+              >
+                <Star
+                  className={`w-6 h-6 sm:w-5 sm:h-5 ${
+                    (hover || userRating) >= star
+                      ? 'fill-yellow-400 text-yellow-400'
+                      : 'text-gray-300'
+                  }`}
+                />
+              </button>
+            ))}
+          </div>
+          <button
+            onClick={handleSubmitRating}
+            className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+          >
+            Submit
+          </button>
+        </div>
+      )}
+
+      {/* Thank You Message */}
+      {thankYouMessage && (
         <p className="text-green-600 text-sm sm:text-xs mt-2">
           Thank you for rating this restaurant!
         </p>
