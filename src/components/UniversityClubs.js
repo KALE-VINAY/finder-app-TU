@@ -6,6 +6,11 @@ const UniversityClubs = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  
+// Add this useEffect to scroll to top when component mounts or id changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {

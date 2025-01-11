@@ -35,15 +35,15 @@ const TravelAndTours = () => {
       phContact1:'9706218186',
       // phContact2:'',
     },
-    // {
-    //   title: "DZUKOU VALLY",
-    //   price: "$1,799",
-    //   duration: "8 days",
-    //   description: "Island hopping in crystal clear waters",
-    //   imgUrl: '/tours/DZUKOU.jpg',
-    //   phContact1:'',
-    //   // phContact2:'',
-    // }
+    {
+      title: "Nameri Forest Reserve",
+      price: "$1,799",
+      duration: "8 days",
+      description: "Rafting in crystal clear waters, Forest walk, Camping",
+      imgUrl: '/tours/backpackNameri.jpg',
+      phContact1:'7002928127',
+      // phContact2:'',
+    },
     {
       title: "CHIGU CAMP ANINI",
       price: "$1,799",

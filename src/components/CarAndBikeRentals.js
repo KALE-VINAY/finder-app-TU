@@ -169,9 +169,19 @@ const CarAndBikeRentals = () => {
     
   ];
 
-
+// gts traveller contact:'6901812251'
   
   const traveller = [
+    {
+      name: "GTS AC Traveller (Daily goes from TU gate [4:45am]  to Guwahati 8:20am )",
+      category: "Luxury",
+      price: "$120/day",
+      features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
+      available: false ,
+      contact:'+919101651548',
+      imgURL:"https://tse3.mm.bing.net/th?id=OIP.Lfz8yaFZ3YLRmV03g4NvsgHaEM&pid=Api&P=0&h=180",
+    }
+    ,
     {
       name: "force traveller",
       category: "Sedan",
@@ -200,21 +210,21 @@ const CarAndBikeRentals = () => {
       imgURL:"https://tse2.mm.bing.net/th?id=OIP.BjmJOl0I2T17aFaC8aiNnwHaE8&pid=Api&P=0&h=180",
     }
     ,
-    {
-      name: "force traveller (GTS Traveller)",
-      category: "Luxury",
-      price: "$120/day",
-      features: ["5 Seats", "Automatic", "Premium Audio", "GPS"],
-      available: false ,
-      contact:'6901812251',
-      imgURL:"https://tse3.mm.bing.net/th?id=OIP.Lfz8yaFZ3YLRmV03g4NvsgHaEM&pid=Api&P=0&h=180",
-    }
-    ,
+    
   ];
 
 
 
   const bikes = [
+    {
+      name: "scooty (Near TU gate)",
+      category: "Sports",
+      price: "$40/day",
+      features: ["300cc", "ABS", "Digital Console"],
+      available: true ,
+      contact:'9085112235',
+      imgURL:"https://tse3.mm.bing.net/th?id=OIP.Z3msQ-LtqXGop03wp2LBjwHaGo&pid=Api&P=0&h=180",
+    },
     {
       name: "KTM Duke",
       category: "Sports",
@@ -233,15 +243,7 @@ const CarAndBikeRentals = () => {
       contact:'8876057961',
       imgURL:"https://tse4.mm.bing.net/th?id=OIP.k9upQd40jih0M56dBUHu1wHaE8&pid=Api&P=0&h=180",
     },
-    {
-      name: "scooty(Near TU)",
-      category: "Sports",
-      price: "$40/day",
-      features: ["300cc", "ABS", "Digital Console"],
-      available: true ,
-      contact:'9085112235',
-      imgURL:"https://tse3.mm.bing.net/th?id=OIP.Z3msQ-LtqXGop03wp2LBjwHaGo&pid=Api&P=0&h=180",
-    },
+    
     {
       name: "Access scooty",
       category: "Sports",

@@ -274,34 +274,39 @@ const ProductList = () => {
   );
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
-        <h2 className="text-3xl font-bold">
-          {viewMode === 'products' ? 'TU Campus Marketplace' : 'Product Requests by Students'}
-        </h2>
-        <div className="flex flex-wrap gap-4">
+    <div className="container mx-auto px-4 py-4 md:py-8">
+      <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-3">
+        <h1 className="text-3xl md:text-4xl font-bold mb-4">
+          {viewMode === 'products' ? 'TU Marketplace' : 'Product Requests'}
+        </h1>
+        <div className="flex flex-row justify-evenly gap-2">
           <button
             onClick={() => setViewMode(viewMode === 'products' ? 'requests' : 'products')}
-            className="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600 transition-colors"
+            className="bg-purple-500 text-white text-xs sm:text-sm md:text-base px-4 py-2 rounded hover:bg-purple-600 transition-colors"
           >
             {viewMode === 'products' ? 'View Requests' : 'View Products'}
           </button>
+          
+          
+
           {currentUser && (
             <button
               onClick={() => setShowUserListings(!showUserListings)}
-              className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
+              className="bg-blue-500 text-white text-xs sm:text-sm md:text-base px-4 py-2 rounded hover:bg-blue-600 transition-colors"
             >
               {showUserListings ? 'Show All' : 'Your Listings'}
             </button>
           )}
+          
           <button
             onClick={() =>
               handleNavigate(viewMode === 'products' ? '/product-form' : '/request-form')
             }
-            className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition-colors"
+            className="bg-green-500 text-white text-xs sm:text-sm md:text-base px-4 py-2 rounded hover:bg-green-600 transition-colors"
           >
-            {viewMode === 'products' ? 'Sell Product' : 'Request Product'}
+            {viewMode === 'products' ? 'Sell Your Product' : 'Request Product'}
           </button>
+          
         </div>
       </div>
 

@@ -120,18 +120,18 @@ const CycleList = () => {
         <h2 className="text-4xl font-bold text-center sm:text-left">
           {showUserCycles ? 'Your Listed Cycles' : 'Available Cycles for Sale'}
         </h2>
-        <div className="flex gap-4">
+        <div className="flex gap-4 mt-2">
           {currentUser && (
             <button
               onClick={() => setShowUserCycles(!showUserCycles)}
-              className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
+              className="bg-blue-500 text-white text-xs sm:text-sm md:text-base px-4 py-2 rounded hover:bg-blue-600 transition-colors"
             >
               {showUserCycles ? 'Show All Cycles' : 'Your Listed Cycles'}
             </button>
           )}
           <button
             onClick={handleSellCycle}
-            className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition-colors"
+            className="bg-green-500 text-white text-xs sm:text-sm md:text-base px-4 py-2 rounded hover:bg-green-600 transition-colors"
           >
             Sell Your Cycle
           </button>
@@ -153,43 +153,43 @@ const CycleList = () => {
       </div>
 
       {/* Filters */}
-      <div className="flex flex-col sm:flex-row justify-end  items-center mb-4 gap-4">
-        {/* Price Range Filter */}
-        <div className="flex items-center">
-          <label htmlFor="priceFilter" className="mr-2 text-gray-600">
-            Price Range:
-          </label>
-          <select
-            id="priceFilter"
-            value={priceFilter}
-            onChange={(e) => setPriceFilter(e.target.value)}
-            className="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            <option value="all">All</option>
-            <option value="0-2000">0-2000</option>
-            <option value="2001-5000">2001-5000</option>
-            <option value="5000+">5000+</option>
-          </select>
-        </div>
+<div className="flex flex-row justify-end items-center mb-4 gap-2 sm:gap-4 w-full overflow-x-auto px-2 sm:px-0">
+  {/* Price Range Filter */}
+  <div className="flex items-center flex-shrink-0">
+    <label htmlFor="priceFilter" className="mr-1 sm:mr-2 text-gray-600 text-xs sm:text-sm md:text-base whitespace-nowrap">
+      Price :
+    </label>
+    <select
+      id="priceFilter"
+      value={priceFilter}
+      onChange={(e) => setPriceFilter(e.target.value)}
+      className="border border-gray-300 rounded px-2 sm:px-3 md:px-4 py-1 sm:py-2 text-xs sm:text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-gray-500 min-w-[80px] sm:min-w-[100px]"
+    >
+      <option value="all">All</option>
+      <option value="0-2000">0-2000</option>
+      <option value="2001-5000">2001-5000</option>
+      <option value="5000+">5000+</option>
+    </select>
+  </div>
 
-        {/* Time Filter */}
-        <div className="flex items-center">
-          <label htmlFor="timeFilter" className="mr-2 text-gray-600">
-            Listed Time:
-          </label>
-          <select
-            id="timeFilter"
-            value={timeFilter}
-            onChange={(e) => setTimeFilter(e.target.value)}
-            className="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            <option value="all">All</option>
-            <option value="last3days">Last 3 Days</option>
-            <option value="lastWeek">Last Week</option>
-            <option value="lastMonth">Last Month</option>
-          </select>
-        </div>
-      </div>
+  {/* Time Filter */}
+  <div className="flex items-center flex-shrink-0">
+    <label htmlFor="timeFilter" className="mr-1 sm:mr-2 text-gray-600 text-xs sm:text-sm md:text-base whitespace-nowrap">
+      Time:
+    </label>
+    <select
+      id="timeFilter"
+      value={timeFilter}
+      onChange={(e) => setTimeFilter(e.target.value)}
+      className="border border-gray-300 rounded px-2 sm:px-3 md:px-4 py-1 sm:py-2 text-xs sm:text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-gray-500 min-w-[90px] sm:min-w-[120px]"
+    >
+      <option value="all">All</option>
+      <option value="last3days">Last 3 Days</option>
+      <option value="lastWeek">Last Week</option>
+      <option value="lastMonth">Last Month</option>
+    </select>
+  </div>
+</div>
 
       {displayedCycles.length === 0 ? (
         <div className="text-center py-10">
