@@ -95,7 +95,7 @@ const LandingPage = () => {
     },
     {
       title: "Student Businesses",
-      description: "Explore the Businesses from the University Students",
+      description: "Discover Businesses by University Students",
       icon: <Bike className="w-6 h-6" />,
       path: "/listing-business",
       color: "bg-green-500"
