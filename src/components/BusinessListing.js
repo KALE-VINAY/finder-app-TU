@@ -22,12 +22,18 @@ const BusinessListing = () => {
     fetchBusinesses();
   }, []);
 
+
   const fetchBusinesses = async () => {
     const businessCollection = collection(db, 'businesses');
     const snapshot = await getDocs(businessCollection);
     const businessList = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
     setBusinesses(businessList);
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -40,38 +46,6 @@ const BusinessListing = () => {
       images: [...prev.images, ...Array.from(e.target.files)],
     }));
   };
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     setLoading(true);
-
-//     const imageUrls = await Promise.all(
-//       formData.images.map(async (image) => {
-//         const imageRef = ref(storage, `business-images/${Date.now()}-${image.name}`);
-//         await uploadBytes(imageRef, image);
-//         return await getDownloadURL(imageRef);
-//       })
-//     );
-
-//     await addDoc(collection(db, 'businesses'), {
-//       ...formData,
-//       images: imageUrls,
-//       createdAt: new Date(),
-//     });
-
-//     fetchBusinesses();
-//     setFormData({
-//       name: '',
-//       description: '',
-//       category: '',
-//       contactNumber: '',
-//       instagramLink: '',
-//       email: '',
-//       images: [],
-//     });
-//     setLoading(false);
-//   };
-
 
 const handleSubmit = async (e) => {
   e.preventDefault();
