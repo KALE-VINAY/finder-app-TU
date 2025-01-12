@@ -90,6 +90,9 @@ import { useEffect } from 'react';
 import { auth } from '../firebase/firebaseConfig';
 import { useDispatch } from 'react-redux';
 import { addUser ,removeUser } from '../utils/userSlice';
+import BusinessListing from './BusinessListing';
+import BusinessDetails from './BusinessDetails';
+// import BusinessMarketplace from './BusinessMarketplace';
 
 
 const Body = () => {
@@ -214,6 +217,24 @@ const Body = () => {
          <ProtectedRoute>
           
           <UniversityClubs/>
+         </ProtectedRoute>
+      ),
+    },
+    {
+      path: '/listing-business',
+      element: (
+         <ProtectedRoute>
+          
+          <BusinessListing/>
+         </ProtectedRoute>
+      ),
+    },
+     {
+      path: '/business/:id',
+      element: (
+         <ProtectedRoute>
+          
+          <BusinessDetails/>
          </ProtectedRoute>
       ),
     },

@@ -93,13 +93,13 @@ const LandingPage = () => {
       path: "/travel-and-tours",
       color: "bg-blue-500"
     },
-    // {
-    //   title: "product sell form ",
-    //   description: "Buy and Request an item from the University Students",
-    //   icon: <Bike className="w-6 h-6" />,
-    //   path: "/product-form",
-    //   color: "bg-green-500"
-    // },
+    {
+      title: "Student Businesses",
+      description: "Explore the business from the University Students",
+      icon: <Bike className="w-6 h-6" />,
+      path: "/listing-business",
+      color: "bg-green-500"
+    },
     // {
     //   title: "request sell form ",
     //   description: "Buy and Request an item from the University Students",
