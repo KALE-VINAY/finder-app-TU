@@ -78,6 +78,13 @@ const LandingPage = () => {
       icon: <UsersRound className="w-6 h-6" />,
       path: "/tu-clubs",
       color: "bg-red-500"
+    },  
+    {
+      title: "Student Businesses",
+      description: "Discover Businesses by University Students",
+      icon: <Bike className="w-6 h-6" />,
+      path: "/listing-business",
+      color: "bg-green-500"
     },
     {
       title: "Sports Jersey & Department T-Shirts",
@@ -93,13 +100,7 @@ const LandingPage = () => {
       path: "/travel-and-tours",
       color: "bg-blue-500"
     },
-    {
-      title: "Student Businesses",
-      description: "Discover Businesses by University Students",
-      icon: <Bike className="w-6 h-6" />,
-      path: "/listing-business",
-      color: "bg-green-500"
-    },
+  
     // {
     //   title: "request sell form ",
     //   description: "Buy and Request an item from the University Students",
