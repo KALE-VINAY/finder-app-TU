@@ -70,7 +70,10 @@
 // export default BusSchedule;
 import React, { useState, useEffect } from 'react';
 import HeaderRent from './HeaderRent';
-import { Download } from 'lucide-react'; // Using lucide-react for the download icon
+import { Download,Upload } from 'lucide-react'; // Using lucide-react for the download icon
+import { storage, auth ,db } from '../firebase/firebaseConfig'; // Import auth
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { doc, getDoc, setDoc } from 'firebase/firestore';
 
 // Example holiday dates
 const holidays = [
@@ -80,7 +83,7 @@ const holidays = [
 ];
 
 // Bus Schedule PDF URL
-const BUS_SCHEDULE_PDF_URL = "https://firebasestorage.googleapis.com/v0/b/canteen-status-ce975.firebasestorage.app/o/BusSchedule.pdf?alt=media&token=afa8532f-786b-42bd-bcfc-f34e8190f684"; // Replace with your actual PDF URL
+// const BUS_SCHEDULE_PDF_URL = "https://firebasestorage.googleapis.com/v0/b/canteen-status-ce975.firebasestorage.app/o/BusSchedule.pdf?alt=media&token=afa8532f-786b-42bd-bcfc-f34e8190f684"; // Replace with your actual PDF URL
 
 // [Previous schedule data remains the same]
 const weekdayScheduleASTCToUni = [
@@ -140,12 +143,18 @@ const BusSchedule = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [upcomingBuses, setUpcomingBuses] = useState([]);
   const [activeTab, setActiveTab] = useState('ASTCToUni');
+  const [uploading, setUploading] = useState(false);
+  // const [pdfUrl, setPdfUrl] = useState(BUS_SCHEDULE_PDF_URL);
+  const [pdfUrl, setPdfUrl] = useState("");
+ // Initialize pdfUrl with the default URL
+//  const [pdfUrl, setPdfUrl] = useState("https://firebasestorage.googleapis.com/v0/b/canteen-status-ce975.firebasestorage.app/o/BusSchedule.pdf?alt=media&token=afa8532f-786b-42bd-bcfc-f34e8190f684");
 
   // Days of the week for the day selector
   const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    fetchCurrentPdfUrl();
   }, []);
 
   useEffect(() => {
@@ -155,9 +164,80 @@ const BusSchedule = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const handleDownloadPDF = () => {
-    window.open(BUS_SCHEDULE_PDF_URL, '_blank');
+    // Function to fetch the current PDF URL from Firestore
+    const fetchCurrentPdfUrl = async () => {
+      try {
+        const scheduleDocRef = doc(db, 'busSchedule', 'currentSchedule');
+        const scheduleDoc = await getDoc(scheduleDocRef);
+        
+        if (scheduleDoc.exists()) {
+          setPdfUrl(scheduleDoc.data().pdfUrl);
+        } else {
+          // Set default URL if no document exists
+          const defaultUrl = "https://firebasestorage.googleapis.com/v0/b/canteen-status-ce975.firebasestorage.app/o/BusSchedule.pdf?alt=media&token=afa8532f-786b-42bd-bcfc-f34e8190f684";
+          setPdfUrl(defaultUrl);
+          // Create the document with default URL
+          await setDoc(scheduleDocRef, { pdfUrl: defaultUrl });
+        }
+      } catch (error) {
+        console.error('Error fetching PDF URL:', error);
+      }
+    };
+
+
+
+  const isOwner = auth.currentUser?.uid === "eqVr7Hg7foRlwIp6GUYBf2sNjVF2";
+
+  const handleUploadPDF = async (e) => {
+    const file = e.target.files[0];
+    if (!file || file.type !== 'application/pdf') {
+      alert('Please select a valid PDF file');
+      return;
+    }
+
+    setUploading(true);
+    try {
+      // Create a reference to the new PDF in Firebase Storage
+      const storageRef = ref(storage, `bus-schedules/BusSchedule-${Date.now()}.pdf`);
+      
+      // Upload the file
+      await uploadBytes(storageRef, file);
+      
+      // Get the download URL
+      const downloadURL = await getDownloadURL(storageRef);
+
+       // Update URL in Firestore
+       const scheduleDocRef = doc(db, 'busSchedule', 'currentSchedule');
+       await setDoc(scheduleDocRef, { 
+         pdfUrl: downloadURL,
+         updatedAt: new Date(),
+         updatedBy: auth.currentUser.uid
+       });
+      // Update the PDF URL
+      // BUS_SCHEDULE_PDF_URL = downloadURL;
+      setPdfUrl(downloadURL);
+      // console.log(downloadURL);
+      alert('Schedule PDF updated successfully!');
+    } catch (error) {
+      console.error('Error uploading PDF:', error);
+      alert('Failed to upload PDF. Please try again.');
+    } finally {
+      setUploading(false);
+    }
   };
+
+
+
+
+
+   const handleDownloadPDF = () => {
+    if (pdfUrl) {
+      window.open(pdfUrl, '_blank');
+    } else {
+      alert('PDF URL not available. Please try again later.');
+    }
+  };
+
 
   const isHoliday = (date) => {
     const dateStr = date.toISOString().split("T")[0];
@@ -227,13 +307,39 @@ const BusSchedule = () => {
         <h1 className="text-xl md:text-2xl font-bold text-center md:text-left">
           University Bus Schedule
         </h1>
-        <button
-          onClick={handleDownloadPDF}
-          className="flex items-center gap-2 bg-red-500 text-white px-3 py-1.5 md:px-4 md:py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm md:text-base"
-        >
-          <Download className="w-4 h-4 md:w-5 md:h-5" />
-          Bus Schedule PDF
-        </button>
+        <div className="flex gap-2">
+          {isOwner && (
+            <div className="relative">
+              <input
+                type="file"
+                accept=".pdf"
+                onChange={handleUploadPDF}
+                className="hidden"
+                id="pdf-upload"
+                disabled={uploading}
+              />
+              <label
+                htmlFor="pdf-upload"
+                className={`flex items-center gap-2 bg-green-500 text-white px-3 py-1.5 md:px-4 md:py-2 rounded-lg hover:bg-green-700 transition-colors text-sm md:text-base cursor-pointer ${
+                  uploading ? 'opacity-50 cursor-not-allowed' : ''
+                }`}
+              >
+                <Upload className="w-4 h-4 md:w-5 md:h-5" />
+                {uploading ? 'Uploading...' : 'Update Schedule'}
+              </label>
+            </div>
+          )}
+          <button
+            onClick={handleDownloadPDF}
+            disabled={!pdfUrl}
+            className={`flex items-center gap-2 bg-red-500 text-white px-3 py-1.5 md:px-4 md:py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm md:text-base ${
+              !pdfUrl ? 'opacity-50 cursor-not-allowed' : ''
+            }`}
+          >
+            <Download className="w-4 h-4 md:w-5 md:h-5" />
+            Bus Schedule PDF
+          </button>
+        </div>
       </div>
       
       <div className="flex flex-row sm:flex-row justify-center gap-2 md:gap-4 my-3 md:my-5">
