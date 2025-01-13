@@ -366,13 +366,27 @@ const Login = () => {
   return (
     <div className="relative min-h-screen flex items-center justify-center">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0">
+      {/* <div className="absolute inset-0 z-0">
         <img 
           className="w-full h-full object-cover" 
           src='http://www.tezu.ernet.in/images/tu3.jpg' 
           alt="bg img"
         />
-      </div>
+      </div> */}
+          {/* Video Background with Overlay */}
+    
+      
+          <video
+         autoPlay
+         loop
+         muted
+         playsInline
+         className="fixed mb-24 inset-0 w-full h-full object-cover "
+       >
+         <source src="/TUDroneShot.mp4" type="video/mp4" />
+           Your browser does not support the video tag.
+        </video>
+
 
       {/* Form Container */}
       <div className="relative z-10 w-full max-w-md px-4">
@@ -382,7 +396,7 @@ const Login = () => {
             w-full 
             p-6 
             md:p-8 
-            bg-white/60 
+            bg-white/50 
             backdrop-blur-sm 
             rounded-xl 
             shadow-lg 
