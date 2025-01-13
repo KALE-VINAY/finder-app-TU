@@ -182,9 +182,9 @@ const RestaurantWebsite = () => {
       maplink: 'https://maps.app.goo.gl/TL5cvqKW5jWYeke88',
       contact1: 8876763895,
       contact2: 8876763895,
-      imageUrl1: "/srishti1.jpg" ,
-      imageUrl2: "/srishti2.jpg",
-      imageUrl3 : "/srishti2.jpg",
+      imageUrl1: "/varieties1.jpg" ,
+      imageUrl2: "/varieties2.jpg",
+      imageUrl3 : "/varieties1.jpg",
     },
     10: {
       name: "Soha's cafe",
@@ -250,9 +250,9 @@ const RestaurantWebsite = () => {
       maplink: 'https://maps.app.goo.gl/gLiTcH5XEii5tBUS9',
       contact1: 7635850112,
       contact2: 9707525721,
-      imageUrl1: "/srishti1.jpg" ,
-      imageUrl2: "/srishti2.jpg",
-      imageUrl3 : "/srishti2.jpg",
+      imageUrl1: "/chetry1.jpg" ,
+      imageUrl2: "/chetry2.jpg",
+      imageUrl3 : "/chetry1.jpg",
     },
   
     14: {
@@ -268,9 +268,9 @@ const RestaurantWebsite = () => {
       maplink: 'https://maps.app.goo.gl/gLiTcH5XEii5tBUS9',
       contact1: 9085375391,
       contact2: 6002705354,
-      imageUrl1: "/srishti1.jpg" ,
-      imageUrl2: "/srishti2.jpg",
-      imageUrl3 : "/srishti2.jpg",
+      imageUrl1: "/gobin1.jpg" ,
+      imageUrl2: "/gobin2.jpg",
+      imageUrl3 : "/gobin1.jpg",
     },
 
   };
