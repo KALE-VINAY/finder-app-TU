@@ -12,6 +12,8 @@ const BusinessDetails = () => {
   const [isOwner, setIsOwner] = useState(false);
   const [loading, setLoading] = useState(false);
   const [showAddProduct, setShowAddProduct] = useState(false);
+  const [imagesLoaded, setImagesLoaded] = useState({});
+  const [productImagesLoaded, setProductImagesLoaded] = useState({});
   const [productForm, setProductForm] = useState({
     name: '',
     price: '',
@@ -23,6 +25,21 @@ const BusinessDetails = () => {
     setIsOwner(auth.currentUser?.uid === business.ownerId);
     fetchProducts();
   }, [business.ownerId]);
+
+  const handleImageLoad = (index) => {
+    setImagesLoaded(prev => ({
+      ...prev,
+      [index]: true
+    }));
+  };
+
+  const handleProductImageLoad = (productId) => {
+    setProductImagesLoaded(prev => ({
+      ...prev,
+      [productId]: true
+    }));
+  };
+
 
   const fetchProducts = async () => {
     try {
@@ -210,7 +227,7 @@ const BusinessDetails = () => {
               onClick={() => setShowAddProduct(true)}
               className="w-full sm:w-auto flex items-center justify-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors text-sm sm:text-base"
             >
-              <Plus className="w-4 h-4" /> Add Product
+              <Plus className="w-4 h-4" /> Add Product (or Service)
             </button>
           )}
         </div>
@@ -270,7 +287,7 @@ const BusinessDetails = () => {
                     loading ? 'opacity-50 cursor-not-allowed' : ''
                   }`}
                 >
-                  {loading ? 'Adding...' : 'Add Product'}
+                  {loading ? 'Adding...' : 'Add Product (or Service)'}
                 </button>
                 <button
                   type="button"
@@ -284,39 +301,44 @@ const BusinessDetails = () => {
           </div>
         )}
 
-        {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          {products.map((product) => (
-            <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="relative pt-[75%]"> {/* 4:3 aspect ratio */}
-                <img
-                  src={product.imageUrl}
-                  alt={product.name}
-                  className="absolute top-0 left-0 w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-3 sm:p-4">
-                <div className="flex justify-between items-start">
-                  <div className="space-y-1">
-                    <h3 className="text-base sm:text-lg font-semibold line-clamp-2">{product.name}</h3>
-                    <p className="text-blue-600 font-medium text-sm sm:text-base">
-                      ₹{parseFloat(product.price).toFixed(2)}
-                    </p>
-                  </div>
-                  {isOwner && (
-                    <button
-                      onClick={() => handleDeleteProduct(product.id)}
-                      className="p-1 text-red-500 hover:text-red-700 transition-colors focus:outline-none focus:ring-2 focus:ring-red-500 rounded-full"
-                      aria-label="Delete product"
-                    >
-                      <Trash2 className="w-4 h-4 sm:w-5 sm:h-5" />
-                    </button>
+       {/* Products Grid with Loading State */}
+       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            {products.map((product) => (
+              <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="relative pt-[75%]">
+                  {!productImagesLoaded[product.id] && (
+                    <div className="absolute inset-0 bg-gray-200 animate-pulse" />
                   )}
+                  <img
+                    src={product.imageUrl}
+                    alt={product.name}
+                    className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-300 ${
+                      productImagesLoaded[product.id] ? 'opacity-100' : 'opacity-0'
+                    }`}
+                    onLoad={() => handleProductImageLoad(product.id)}
+                  />
+                </div>
+                <div className="p-3 sm:p-4">
+                  <div className="flex justify-between items-start">
+                    <div className="space-y-1">
+                      <h3 className="text-base sm:text-lg font-semibold line-clamp-2">{product.name}</h3>
+                      <p className="text-blue-600 font-medium text-sm sm:text-base">
+                        ₹{parseFloat(product.price).toFixed(2)}
+                      </p>
+                    </div>
+                    {isOwner && (
+                      <button
+                        onClick={() => handleDeleteProduct(product.id)}
+                        className="p-1 text-red-500 hover:text-red-700 transition-colors"
+                      >
+                        <Trash2 className="w-4 h-4 sm:w-5 sm:h-5" />
+                      </button>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
         {/* Empty state */}
         {products.length === 0 && (
@@ -326,8 +348,8 @@ const BusinessDetails = () => {
         )}
             </div>
 
-           {/* Image Gallery */}
-          <div className="p-6">
+       {/* Gallery with Loading State */}
+       <div className="p-6">
             <h2 className="text-2xl font-semibold mb-6 animate-fadeIn">Gallery</h2>
             <div className={`grid grid-cols-1 gap-6 ${getGridClass(business.images.length)}`}>
               {business.images.map((image, index) => (
@@ -338,10 +360,16 @@ const BusinessDetails = () => {
                   onClick={() => setSelectedImage(image)}
                 >
                   <div className="w-full h-full">
+                    {!imagesLoaded[index] && (
+                      <div className="absolute inset-0 bg-gray-200 animate-pulse" />
+                    )}
                     <img
                       src={image}
                       alt={`Gallery ${index + 1}`}
-                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                      className={`w-full h-full object-cover transform group-hover:scale-110 transition-all duration-500 ${
+                        imagesLoaded[index] ? 'opacity-100' : 'opacity-0'
+                      }`}
+                      onLoad={() => handleImageLoad(index)}
                     />
                     <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
                   </div>
