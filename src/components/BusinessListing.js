@@ -158,7 +158,7 @@ const BusinessListing = () => {
           {auth.currentUser && (
             <button
               onClick={() => setShowUserBusinesses(!showUserBusinesses)}
-              className={` px-1 py-1 md:px-4 md:py-2 rounded-md transition-colors ${
+              className={` px-3 py-2 md:px-4 md:py-2 rounded-md transition-colors ${
                 showUserBusinesses
                   ? 'bg-blue-100 text-blue-700 hover:bg-blue-200'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -170,7 +170,7 @@ const BusinessListing = () => {
 
           {/* List Your Business Button */}
           <button
-            className="bg-blue-600 text-white px-1 py-1 md:px-4 md:py-2 rounded-md hover:bg-blue-700 transition-colors"
+            className="bg-blue-600 text-white px-3 py-2 md:px-4 md:py-2 rounded-md hover:bg-blue-700 transition-colors"
             onClick={() => document.getElementById('business-form').scrollIntoView({ behavior: 'smooth' })}
           >
             List Your Business
