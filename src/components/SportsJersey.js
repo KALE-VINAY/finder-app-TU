@@ -122,7 +122,7 @@ const ListApparelForm = ({ onClose }) => {
               <input
                 type="text"
                 name="material"
-                placeholder="Material"
+                placeholder="Contact Details For Queries"
                 value={formData.material}
                 onChange={handleInputChange}
                 required
@@ -203,7 +203,7 @@ const ListApparelForm = ({ onClose }) => {
   );
 };
 
-// Display Component
+
 const DisplayApparel = () => {
   const [apparelList, setApparelList] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -220,6 +220,11 @@ const DisplayApparel = () => {
         const apparel = querySnapshot.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
+          images: doc.data().images.map(url => ({
+            url,
+            loaded: false,
+            error: false
+          }))
         }));
         setApparelList(apparel);
         setLoading(false);
@@ -232,6 +237,55 @@ const DisplayApparel = () => {
     );
     return () => unsubscribe();
   }, []);
+
+  useEffect(() => {
+    // Set up timeouts for each image
+    const timeouts = apparelList.flatMap(item =>
+      item.images.map((image, index) => 
+        setTimeout(() => {
+          if (!image.loaded) {
+            handleImageError(item.id, index);
+          }
+        }, 40000) // 40 seconds timeout
+      )
+    );
+
+    return () => timeouts.forEach(timeout => clearTimeout(timeout));
+  }, [apparelList]);
+
+  const handleImageLoad = (itemId, imageIndex) => {
+    setApparelList(prevList =>
+      prevList.map(item => {
+        if (item.id === itemId) {
+          const newImages = [...item.images];
+          newImages[imageIndex] = {
+            ...newImages[imageIndex],
+            loaded: true,
+            error: false
+          };
+          return { ...item, images: newImages };
+        }
+        return item;
+      })
+    );
+  };
+
+  const handleImageError = (itemId, imageIndex) => {
+    setApparelList(prevList =>
+      prevList.map(item => {
+        if (item.id === itemId) {
+          const newImages = [...item.images];
+          newImages[imageIndex] = {
+            ...newImages[imageIndex],
+            loaded: false,
+            error: true
+          };
+          return { ...item, images: newImages };
+        }
+        return item;
+      })
+    );
+  };
 
   const handleDelete = async (id) => {
     try {
@@ -254,22 +308,19 @@ const DisplayApparel = () => {
     return <div className="text-center py-8 text-red-600">{error}</div>;
   }
 
-  const filteredApparelList =
-    showUserListings && currentUser
-      ? apparelList.filter(
-          (item) =>
-            item.userId === currentUser.uid ||
-            item.userEmail === currentUser.email ||
-            item.contactInfo === currentUser.email
-        )
-      : apparelList;
+  const filteredApparelList = showUserListings && currentUser
+    ? apparelList.filter(item =>
+        item.userId === currentUser.uid ||
+        item.userEmail === currentUser.email ||
+        item.contactInfo === currentUser.email
+      )
+    : apparelList;
 
   const canDeleteItem = (item) => {
-    return (
-      currentUser &&
-      (item.userId === currentUser.uid ||
-        item.userEmail === currentUser.email ||
-        item.contactInfo === currentUser.email)
+    return currentUser && (
+      item.userId === currentUser.uid ||
+      item.userEmail === currentUser.email ||
+      item.contactInfo === currentUser.email
     );
   };
 
@@ -314,22 +365,36 @@ const DisplayApparel = () => {
             key={item.id}
             className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 flex flex-col"
           >
-            <div className="relative w-full overflow-x-scroll flex space-x-4 rounded-t-lg">
+            <div className="relative aspect-square w-full overflow-x-scroll flex space-x-4 rounded-t-lg">
               {item.images.map((image, index) => (
-                <img
-                  key={index}
-                  src={image}
-                  alt={item.title}
-                  className="w-full h-auto object-cover rounded-t-lg flex-shrink-0"
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = '/placeholder-image.jpg';
-                  }}
-                  style={{ minWidth: "100%" }}
-                />
+                <div key={index} className="relative aspect-square w-full h-full flex-shrink-0">
+                  {/* Skeleton Loader */}
+                  {!image.loaded && !image.error && (
+                    <div className="absolute aspect-square inset-0 bg-gray-400 animate-pulse rounded-t-lg" />
+                  )}
+
+                  {/* Error State */}
+                  {image.error && (
+                    <div className="absolute aspect-square inset-0 flex items-center justify-center bg-gray-200 text-gray-500 text-lg font-medium rounded-t-lg">
+                      Image failed to load
+                    </div>
+                  )}
+
+                  {/* Actual Image */}
+                  {!image.error && (
+                    <img
+                      src={image.url}
+                      alt={`${item.title} - Image ${index + 1}`}
+                      className={`w-full  h-full object-fit rounded-t-lg transition-opacity duration-300 ${
+                        image.loaded ? 'opacity-100' : 'opacity-0'
+                      }`}
+                      onLoad={() => handleImageLoad(item.id, index)}
+                      onError={() => handleImageError(item.id, index)}
+                    />
+                  )}
+                </div>
               ))}
             </div>
-
 
             <div className="p-4 space-y-3 flex-grow">
               <h3 className="text-lg font-semibold text-gray-800">
@@ -343,7 +408,17 @@ const DisplayApparel = () => {
                 <p className="text-sm text-gray-600">
                   Sizes: {item.sizeAvailability}
                 </p>
-                <p className="text-sm text-gray-600">Material: {item.material}</p>
+                <div className='flex flex-row'>
+                <p className="text-sm text-gray-600">Contact for queries:
+                </p>
+                  <a
+                    href={`tel:${item.material}`}
+                    className="ml-4 text-red-600  rounded-md  transition-colors flex items-center justify-center gap-2"
+                  >
+                    <Phone className="w-4 h-4" />
+                    {item.material}
+                  </a>
+                </div>
                 <p className="text-xl font-bold text-blue-600">₹{item.price}</p>
               </div>
             </div>
@@ -361,7 +436,7 @@ const DisplayApparel = () => {
               {canDeleteItem(item) && (
                 <button
                   onClick={() => handleDelete(item.id)}
-                  className="bg-red-600 w-1/3 text-white px-2 py-2  rounded-md hover:bg-red-700 transition-colors"
+                  className="bg-red-600 w-1/3 text-white px-2 py-2 rounded-md hover:bg-red-700 transition-colors"
                 >
                   Delete
                 </button>
@@ -373,8 +448,6 @@ const DisplayApparel = () => {
     </div>
   );
 };
-
-
 // Product Card Component
 const ProductCard = ({ title, description, imagePlaceholder, phNumber }) => (
   <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
