@@ -19,7 +19,7 @@ import {
   
   UsersRound,Bike,Bus,
   // Tag, 
-  DollarSign
+  DollarSign, Briefcase, Store, Building
 } from 'lucide-react';
 import Mainheader from './Mainheader';
 import ContactModal from './ContactModal';
@@ -82,9 +82,9 @@ const LandingPage = () => {
     {
       title: "Student Businesses",
       description: "Discover Businesses by University Students",
-      icon: <Bike className="w-6 h-6" />,
+      icon: <Building className="w-6 h-6" />,
       path: "/listing-business",
-      color: "bg-green-500"
+      color: "bg-pink-500"
     },
     {
       title: "Sports Jersey & Department T-Shirts",
