@@ -1,8 +1,9 @@
 import { Phone } from 'lucide-react';
 import React, { useState, useEffect } from 'react';
-import { collection, addDoc, query, orderBy, onSnapshot } from 'firebase/firestore';
+import { collection, addDoc, query, orderBy, onSnapshot,deleteDoc, doc } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { db, storage } from '../firebase/firebaseConfig';
+import { useAuth } from '../contexts/AuthContext';
 
 // Form Component
 const ListApparelForm = ({ onClose }) => {
@@ -18,7 +19,7 @@ const ListApparelForm = ({ onClose }) => {
     googleFormLink: '',
     images: [],
   };
-
+  const { currentUser } = useAuth(); // Add this line to get current user
   const [formData, setFormData] = useState(initialFormState);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -49,15 +50,19 @@ const ListApparelForm = ({ onClose }) => {
         })
       );
 
+      // Include user information in the document
       await addDoc(collection(db, 'apparel'), {
         ...formData,
         images: imageUrls,
         createdAt: new Date().toISOString(),
+        userId: currentUser.uid,           // Add user ID
+        userEmail: currentUser.email,      // Add user email
+        contactInfo: currentUser.email     // Set contact info to user email
       });
 
       setFormData(initialFormState);
       alert('Apparel listed successfully!');
-      onClose(); // Close the form after successful submission
+      onClose();
     } catch (error) {
       console.error('Error listing apparel:', error);
       setError('Failed to list apparel. Please try again.');
@@ -203,15 +208,18 @@ const DisplayApparel = () => {
   const [apparelList, setApparelList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [showUserListings, setShowUserListings] = useState(false);
+  const { currentUser } = useAuth();
 
   useEffect(() => {
     const q = query(collection(db, 'apparel'), orderBy('createdAt', 'desc'));
-    
-    const unsubscribe = onSnapshot(q, 
+
+    const unsubscribe = onSnapshot(
+      q,
       (querySnapshot) => {
-        const apparel = querySnapshot.docs.map(doc => ({
+        const apparel = querySnapshot.docs.map((doc) => ({
           id: doc.id,
-          ...doc.data()
+          ...doc.data(),
         }));
         setApparelList(apparel);
         setLoading(false);
@@ -222,9 +230,17 @@ const DisplayApparel = () => {
         setLoading(false);
       }
     );
-
     return () => unsubscribe();
   }, []);
+
+  const handleDelete = async (id) => {
+    try {
+      await deleteDoc(doc(db, 'apparel', id));
+    } catch (error) {
+      console.error("Error deleting apparel:", error);
+      setError("Failed to delete apparel item");
+    }
+  };
 
   if (loading) {
     return (
@@ -235,66 +251,129 @@ const DisplayApparel = () => {
   }
 
   if (error) {
-    return (
-      <div className="text-center py-8 text-red-600">
-        {error}
-      </div>
-    );
+    return <div className="text-center py-8 text-red-600">{error}</div>;
   }
 
-  if (apparelList.length === 0) {
+  const filteredApparelList =
+    showUserListings && currentUser
+      ? apparelList.filter(
+          (item) =>
+            item.userId === currentUser.uid ||
+            item.userEmail === currentUser.email ||
+            item.contactInfo === currentUser.email
+        )
+      : apparelList;
+
+  const canDeleteItem = (item) => {
     return (
-      <div className="text-center py-8 text-gray-600">
-        No apparel items found.
+      currentUser &&
+      (item.userId === currentUser.uid ||
+        item.userEmail === currentUser.email ||
+        item.contactInfo === currentUser.email)
+    );
+  };
+
+  if (filteredApparelList.length === 0) {
+    return (
+      <div>
+        {currentUser && (
+          <div className="flex justify-end mb-4">
+            <button
+              onClick={() => setShowUserListings(!showUserListings)}
+              className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
+            >
+              {showUserListings ? 'Show All' : 'Your Listings'}
+            </button>
+          </div>
+        )}
+        <div className="text-center py-8 text-gray-600">
+          {showUserListings
+            ? "You haven't listed any apparel items yet."
+            : "No apparel items found."}
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-      {apparelList.map((item) => (
-        <div key={item.id} className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
-          <div className="relative aspect-square">
-            <img
-              src={item.images[0]}
-              alt={item.title}
-              className="w-full h-full object-cover rounded-t-lg"
-              onError={(e) => {
-                e.target.onerror = null;
-                e.target.src = '/placeholder-image.jpg';
-              }}
-            />
-          </div>
-          
-          <div className="p-4 space-y-3">
-            <h3 className="text-lg font-semibold text-gray-800">{item.title}</h3>
-            <p className="text-sm text-gray-600 line-clamp-2">{item.description}</p>
-            
-            <div className="space-y-2">
-              <p className="text-sm text-gray-600">Sizes: {item.sizeAvailability}</p>
-              <p className="text-sm text-gray-600">Material: {item.material}</p>
-              <p className="text-xl font-bold text-blue-600">₹{item.price}</p>
+    <div>
+      {currentUser && (
+        <div className="flex justify-end mb-4">
+          <button
+            onClick={() => setShowUserListings(!showUserListings)}
+            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
+          >
+            {showUserListings ? 'Show All' : 'Your Listings'}
+          </button>
+        </div>
+      )}
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+        {filteredApparelList.map((item) => (
+          <div
+            key={item.id}
+            className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 flex flex-col"
+          >
+            <div className="relative w-full overflow-x-scroll flex space-x-4 rounded-t-lg">
+              {item.images.map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  alt={item.title}
+                  className="w-full h-auto object-cover rounded-t-lg flex-shrink-0"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = '/placeholder-image.jpg';
+                  }}
+                  style={{ minWidth: "100%" }}
+                />
+              ))}
             </div>
-            
-            <div className="pt-3 space-y-2 border-t">
+
+
+            <div className="p-4 space-y-3 flex-grow">
+              <h3 className="text-lg font-semibold text-gray-800">
+                {item.title}
+              </h3>
+              <p className="text-sm text-gray-600 line-clamp-2">
+                {item.description}
+              </p>
+
+              <div className="space-y-2">
+                <p className="text-sm text-gray-600">
+                  Sizes: {item.sizeAvailability}
+                </p>
+                <p className="text-sm text-gray-600">Material: {item.material}</p>
+                <p className="text-xl font-bold text-blue-600">₹{item.price}</p>
+              </div>
+            </div>
+
+            <div className="p-4 flex items-center justify-between border-t">
               <a
                 href={item.googleFormLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full text-center bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition-colors"
+                className="block w-1/3 text-center bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition-colors"
               >
                 Order Now
               </a>
-              <p className="text-sm text-gray-500 text-center">
-                Order by: {new Date(item.orderDeadline).toLocaleDateString()}
-              </p>
+
+              {canDeleteItem(item) && (
+                <button
+                  onClick={() => handleDelete(item.id)}
+                  className="bg-red-600 w-1/3 text-white px-2 py-2  rounded-md hover:bg-red-700 transition-colors"
+                >
+                  Delete
+                </button>
+              )}
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
+
 
 // Product Card Component
 const ProductCard = ({ title, description, imagePlaceholder, phNumber }) => (
