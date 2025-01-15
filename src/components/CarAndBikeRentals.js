@@ -217,7 +217,7 @@ const CarAndBikeRentals = () => {
 
   const bikes = [
     {
-      name: "scooty (Near TU gate)",
+      name: "Scooty (Near TU gate)",
       category: "Sports",
       price: "$40/day",
       features: ["300cc", "ABS", "Digital Console"],
