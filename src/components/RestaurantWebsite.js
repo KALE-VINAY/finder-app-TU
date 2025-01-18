@@ -232,7 +232,7 @@ const RestaurantWebsite = () => {
       iframe : "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254.37841906027188!2d92.83256059686357!3d26.701910049820047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3744ebb932f795b1%3A0x4d0311ca2d4fad53!2sEssential!5e0!3m2!1sen!2sin!4v1731346205626!5m2!1sen!2sin",
       maplink: 'https://maps.app.goo.gl/TUwH6pfnBjst6mfh9',
       contact1: 6026914370,
-      contact2: 9864934599,
+      contact2: 6026914370,
       imageUrl1: "/essential_food.jpg" ,
       imageUrl2: "/essential_food1.jpg",
       imageUrl3 : "/essential_food.jpg",
