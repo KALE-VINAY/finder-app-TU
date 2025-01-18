@@ -216,7 +216,7 @@ const BusinessListing = () => {
                 <button
                   onClick={(e) => handleDeleteBusiness(e, business.id)}
                   disabled={deleteLoading}
-                  className="absolute top-2 right-2 p-2 bg-red-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-red-200"
+                  className="absolute bottom-2 right-2 p-2 mb-2 bg-red-100 rounded-full opacity-100 transition-opacity hover:bg-red-200"
                   title="Delete business"
                 >
                   <Trash2 className="w-4 h-4 text-red-600" />

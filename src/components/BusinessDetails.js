@@ -4,6 +4,7 @@ import { MapPin, Phone, Mail, Instagram, Plus, Trash2 } from 'lucide-react';
 import { collection, addDoc, getDocs, query, where, deleteDoc, doc } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { db, storage, auth } from '../firebase/firebaseConfig';
+import { FaWhatsapp } from 'react-icons/fa';
 
 const BusinessDetails = () => {
   const { state: business } = useLocation();
@@ -19,6 +20,11 @@ const BusinessDetails = () => {
     price: '',
     image: null
   });
+
+  useEffect(() => {
+    
+    window.scrollTo(0, 0);
+  }, [ ]);
 
   useEffect(() => {
     // Check if current user is the business owner
@@ -322,14 +328,26 @@ const BusinessDetails = () => {
                   <div className="flex justify-between items-start">
                     <div className="space-y-1">
                       <h3 className="text-base sm:text-lg font-semibold line-clamp-2">{product.name}</h3>
+                      <div className='flex items-center space-x-2'> 
                       <p className="text-blue-600 font-medium text-sm sm:text-base">
                         ₹{parseFloat(product.price).toFixed(2)}
                       </p>
+                       {/* WhatsApp Button */}
+                                  <a
+                                    href={`https://wa.me/91${business.contactNumber}?text=Hello%20there,%20I%27m%20interested%20in%20your%20product%20${product.name}.`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center text-green-600 px-2 py-1 rounded-md hover:bg-green-200 "
+                                  >
+                                    <FaWhatsapp className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
+                                    WhatsApp
+                                  </a>
+                                  </div>
                     </div>
                     {isOwner && (
                       <button
                         onClick={() => handleDeleteProduct(product.id)}
-                        className="p-1 text-red-500 hover:text-red-700 transition-colors"
+                        className="p-3 text-red-500 hover:text-red-700 rounded-full  hover:bg-red-200 transition-colors"
                       >
                         <Trash2 className="w-4 h-4 sm:w-5 sm:h-5" />
                       </button>

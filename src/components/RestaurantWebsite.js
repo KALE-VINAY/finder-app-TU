@@ -290,7 +290,7 @@ const RestaurantWebsite = () => {
       imageUrl3 : "/cafetera3.jpg",
     },
     16: {
-      name: 'Shraddha hotel (prakash)',
+      name: 'Shraddha hotel (prakash restaurant)',
       cuisines: 'Fast food restaurant',
       price: '₹150 for one',
       rating: 4.3,
