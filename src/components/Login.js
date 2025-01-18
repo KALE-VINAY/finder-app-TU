@@ -366,17 +366,17 @@ const Login = () => {
   return (
     <div className="relative min-h-screen flex items-center justify-center">
       {/* Background Image */}
-      {/* <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0">
         <img 
           className="w-full h-full object-cover" 
           src='http://www.tezu.ernet.in/images/tu3.jpg' 
           alt="bg img"
         />
-      </div> */}
+      </div>
           {/* Video Background with Overlay */}
     
       
-          <video
+          {/* <video
          autoPlay
          loop
          muted
@@ -385,7 +385,7 @@ const Login = () => {
        >
          <source src="/TUDroneShot.mp4" type="video/mp4" />
            Your browser does not support the video tag.
-        </video>
+        </video> */}
 
 
       {/* Form Container */}
