@@ -172,7 +172,7 @@
 
 // export default MedicalServices;
 import React, { useEffect } from 'react';
-import { Phone, Clock, Truck, AlertCircle, Navigation } from 'lucide-react';
+import { Phone, Clock, Truck, AlertCircle, Navigation,Download } from 'lucide-react';
 import HeaderMedical from './HeaderMedical';
 
 const MedicalServices = () => {
@@ -227,7 +227,7 @@ const MedicalServices = () => {
             <h1 className="text-2xl sm:text-3xl font-bold text-green-800 mb-2">Campus Medical Services</h1>
             <p className="text-sm sm:text-base text-green-600">Your health is our priority</p>
           </div>
-
+          
           {/* Emergency Contacts Section */}
           <div className="bg-red-50 border border-red-200 rounded-lg p-3 sm:p-6">
             <div className="flex items-center text-red-800 text-lg sm:text-xl font-semibold mb-4">
@@ -254,7 +254,18 @@ const MedicalServices = () => {
               ))}
             </div>
           </div>
-
+          <div className='flex justify-center' > 
+             <button
+              onClick={() => window.open('https://firebasestorage.googleapis.com/v0/b/canteen-status-ce975.firebasestorage.app/o/Gymnasium_Form.pdf?alt=media&token=36df6b83-b2a7-498f-9b67-8194009e0d2a', '_blank')}
+            
+              className="flex  gap-2 bg-green-500 text-white px-3 py-1.5 md:px-4 md:py-2 rounded-lg hover:bg-green-700 transition-colors text-sm md:text-base 
+              
+            "
+            >
+              <Download className="w-4 h-4 md:w-5 md:h-5" />
+              Gymnasium Form 
+            </button>
+            </div>
           {/* Health Center Timings */}
           <div className="bg-white rounded-lg p-3 sm:p-6 shadow-sm">
             <div className="flex flex-col sm:flex-row items-start sm:items-center text-green-800 text-lg sm:text-xl font-semibold mb-4">
