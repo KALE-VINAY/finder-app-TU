@@ -119,8 +119,8 @@ const weekdayScheduleUniToASTC = [
   { time: "1:45 PM", route: "Dolabari, Parowa, Base Hospital,Tribeni", from: "Campus", to: "ASTC" },
   { time: "3:00 PM", route: "Dolabari, Parowa, Base Hospital,Tribeni", from: "Campus", to: "ASTC" },
   { time: "4:40 PM", route: "Dolabari, Parowa, Base Hospital,Tribeni", from: "Campus", to: "ASTC" },
-  { time: "5:40 PM", route: "Dolabari, Parowa, Dhanua Nagar, Mission Chariali, Vartak,Murhateteli, Tribeni", from: "Campus", to: "ASTC" },
-  { time: "5:40 PM", route: "Dolabari, Parowa,Mission Chariali, Vartak,Murhateteli, Railgate", from: "Campus", to: "ASTC" },
+  { time: "5:10 PM", route: "Dolabari, Parowa, Dhanua Nagar, Mission Chariali, Vartak,Murhateteli, Tribeni", from: "Campus", to: "ASTC" },
+  { time: "5:10 PM", route: "Dolabari, Parowa,Mission Chariali, Vartak,Murhateteli, Railgate", from: "Campus", to: "ASTC" },
   { time: "8:00 PM", route: "Dolabari, Parowa, Dhanua Nagar, Majgaon, Vartak, Tribeni", from: "Campus", to: "ASTC" },
 ];
 

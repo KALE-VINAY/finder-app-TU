@@ -135,7 +135,7 @@ const BusinessListing = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
-        <h1 className="text-3xl mb-3 font-bold">Student Businesses</h1>
+        <h1 className="text-3xl mb-3 font-serif font-bold">Student Businesses</h1>
         <div className="flex flex-row sm:flex-row gap-4 w-full sm:w-auto">
           {/* Filter Dropdown
           <div className="relative">

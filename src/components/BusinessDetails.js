@@ -150,7 +150,7 @@ const BusinessDetails = () => {
           <div className="absolute inset-0 bg-black/30" />
         </div>
         <div className="relative container mx-auto px-4 h-full flex flex-col justify-center">
-          <h1 className="text-5xl font-bold text-white mb-4 animate-slideInDown">
+          <h1 className="text-5xl font-serif font-bold text-white mb-4 animate-slideInDown">
             {business.name}
           </h1>
           <p className="text-xl text-white/90 font-light animate-slideInUp">
@@ -327,7 +327,7 @@ const BusinessDetails = () => {
                 <div className="p-3 sm:p-4">
                   <div className="flex justify-between items-start">
                     <div className="space-y-1">
-                      <h3 className="text-base sm:text-lg font-semibold line-clamp-2">{product.name}</h3>
+                      <h3 className="text-base sm:text-lg font-serif font-semibold line-clamp-2">{product.name}</h3>
                       <div className='flex items-center space-x-2'> 
                       <p className="text-blue-600 font-medium text-sm sm:text-base">
                         ₹{parseFloat(product.price).toFixed(2)}

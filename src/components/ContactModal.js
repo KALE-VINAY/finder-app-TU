@@ -34,10 +34,10 @@ const ContactModal = () => {
           
           <div className="space-y-6">
             <div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-xl font-serif text-gray-900 mb-2">
                 {contactInfo.name}
               </h3>
-              <p className="text-gray-600 mb-4">{contactInfo.position}</p>
+              <p className="text-gray-600 font-sans mb-4">{contactInfo.position}</p>
             </div>
 
             <div className="space-y-4">
