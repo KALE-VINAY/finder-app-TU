@@ -335,7 +335,7 @@ const UniversityClubs = () => {
             </div>
 
             {/* Category Dropdown */}
-            <div className="relative w-full sm:w-64">
+            <div className="relative w-9/12 sm:w-64">
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 className="w-full px-4 py-2 text-left bg-white border border-gray-200 rounded-lg flex items-center justify-between hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500"

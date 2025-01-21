@@ -93,13 +93,13 @@ const LandingPage = () => {
       path: "/sports-jersey",
       color: "bg-purple-500"
     },
-     {
-      title: "Travel & Tours",
-      description: "Explore exciting destinations and tour packages",
-      icon: <Plane className="w-6 h-6" />,
-      path: "/travel-and-tours",
-      color: "bg-blue-500"
-    },
+    //  {
+    //   title: "Travel & Tours",
+    //   description: "Explore exciting destinations and tour packages",
+    //   icon: <Plane className="w-6 h-6" />,
+    //   path: "/travel-and-tours",
+    //   color: "bg-blue-500"
+    // },
   
     // {
     //   title: "request sell form ",

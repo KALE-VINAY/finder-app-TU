@@ -369,12 +369,12 @@ const Login = () => {
       <div className="absolute inset-0 z-0">
         <img 
           className="w-full h-full object-cover" 
-          src='http://www.tezu.ernet.in/images/tu3.jpg' 
+          src='/login_bg.png' 
           alt="bg img"
         />
       </div>
           {/* Video Background with Overlay */}
-    
+          {/* https://www.tezu.ernet.in/images/tu3.jpg */}
       
           {/* <video
          autoPlay

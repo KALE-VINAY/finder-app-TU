@@ -196,7 +196,7 @@ const MedicalServices = () => {
     {
       name: "M/S Anirudha Medicos",
       location: "Near Tezpur Gate, Napaam",
-      contact: "8723015310",
+      contact: "8723015310",  
       deliveryHours: "08:00 AM - 9:30 PM",
       deliveryNote: "Free delivery for orders",
       imgURL: '/medical_anirudha1.png',

@@ -170,7 +170,10 @@ const ListApparelForm = ({ onClose }) => {
               required
               className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
-
+            <div className="w-full px-4    " 
+            >
+              <p className='text-sm text-gray-500'>Can upload upto three images</p>
+              </div>
             <input
               type="file"
               multiple
@@ -408,18 +411,23 @@ const DisplayApparel = () => {
                 <p className="text-sm text-gray-600">
                   Sizes: {item.sizeAvailability}
                 </p>
+                <p className="text-sm text-gray-600">
+                  Order By: {item.orderDeadline}
+                </p>
                 <div className='flex flex-row'>
                 <p className="text-sm text-gray-600">Contact for queries:
                 </p>
                   <a
                     href={`tel:${item.material}`}
-                    className="ml-4 text-red-600  rounded-md  transition-colors flex items-center justify-center gap-2"
+                    className="ml-4 text-blue-600  rounded-md  transition-colors flex items-center justify-center gap-2"
                   >
                     <Phone className="w-4 h-4" />
                     {item.material}
                   </a>
                 </div>
+                
                 <p className="text-xl font-bold text-blue-600">₹{item.price}</p>
+                
               </div>
             </div>
 

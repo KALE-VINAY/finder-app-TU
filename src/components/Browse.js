@@ -891,9 +891,9 @@ const Browse = () => {
              {/* Logo */}
              <div className="flex items-center">
                <img className="w-16 md:w-24" src="food_logo_f.png" alt="logo" />
-               <h1 className="hidden md:block ml-4 text-2xl md:text-4xl font-serif font-bold text-gray-800">
+               {/* <h1 className="hidden md:block ml-4 text-2xl md:text-4xl font-serif font-bold text-gray-800">
                  TU Food App
-               </h1>
+               </h1> */}
              </div>
      
              {/* Hamburger Menu for Mobile */}
@@ -920,7 +920,7 @@ const Browse = () => {
              {/* Navbar Links */}
              <nav
                className={`${
-                 isMenuOpen ? "block mt-5 " : "hidden"
+                 isMenuOpen ? "block mt-5  " : "hidden"
                } absolute md:relative  top-16 md:top-0 left-0 w-full md:w-auto bg-gray-500 md:bg-transparent md:flex flex-col md:flex-row items-center`}
              >
                <Link
@@ -1036,8 +1036,8 @@ const Browse = () => {
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-gray-800 mb-8 uppercase tracking-wider">
                 Hostel Canteens in TU
               </h2>
-              <h2 className="font-serif font-bold text-gray-800 mb-5 text-2xl text-center">
-                
+              <h2 className=" font-bold text-gray-800 mb-5 text-xl text-center">
+                Real time status of canteens Coming Soon ...
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {canteens.map((canteen) => (

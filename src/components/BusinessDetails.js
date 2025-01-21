@@ -167,7 +167,7 @@ const BusinessDetails = () => {
           <div className="p-6 bg-gray-50 mt-4">
             <div className="max-w-3xl">
               <h2 className="text-2xl font-semibold mb-6 animate-fadeIn">About Us</h2>
-              <p className="text-gray-600 leading-relaxed mb-8 animate-fadeIn">
+              <p className="text-gray-600 font-sans leading-relaxed mb-8 animate-fadeIn">
                 {business.description}
               </p>
 
@@ -181,7 +181,12 @@ const BusinessDetails = () => {
                     <div className="p-4 rounded-full bg-blue-100 hover:bg-blue-200 transition-colors duration-300">
                       <Phone className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-blue-600" />
                     </div>
-                    <p className="mt-2 text-sm text-gray-500">Contact</p>
+                  </a>
+                  <a
+                    href={`tel:${business.contactNumber}`}
+                    className="text-sm md:text-lg font-medium text-blue-600 hover:text-blue-700"
+                  >
+                  <p className="mt-2 text-sm md:text-lg text-gray-500">Contact</p>
                   </a>
                 </div>
 
@@ -197,8 +202,14 @@ const BusinessDetails = () => {
                     <div className="p-4 rounded-full bg-purple-100 hover:bg-purple-200 transition-colors duration-300">
                       <Mail className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-purple-600" />
                     </div>
-                    <p className="mt-2 text-sm text-gray-500">Email</p>
                   </a>
+                  <a
+                    href={`mailto:${business.email}`}
+                    className="text-sm md:text-lg  font-medium text-purple-600 hover:text-purple-700"
+                  >
+                  <p className="mt-2 text-sm md:text-lg text-gray-500">Email</p>
+                  </a>
+
                 </div>
 
                 {/* Instagram */}
@@ -216,7 +227,14 @@ const BusinessDetails = () => {
                       <div className="p-4 rounded-full bg-pink-100 hover:bg-pink-200 transition-colors duration-300">
                         <Instagram className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-pink-600" />
                       </div>
-                      <p className="mt-2 text-sm text-gray-500">Instagram</p>
+                    </a>
+                    <a
+                      href={business.instagramLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm md:text-lg font-medium text-pink-600 hover:text-pink-700"
+                    >
+                    <p className="mt-2 text-sm md:text-lg text-gray-500">Instagram</p>
                     </a>
                   </div>
                 )}
@@ -233,7 +251,7 @@ const BusinessDetails = () => {
               onClick={() => setShowAddProduct(true)}
               className="w-full sm:w-auto flex items-center justify-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors text-sm sm:text-base"
             >
-              <Plus className="w-4 h-4" /> Add Product (or Service)
+              <Plus className="w-4 h-4" /> Add Product ( or Service)
             </button>
           )}
         </div>

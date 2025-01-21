@@ -284,6 +284,10 @@ const BusinessListing = () => {
             required
             className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
+          <div className="w-full px-4    " 
+            >
+              <p className='text-sm text-blue-500'>can upload upto three images</p>
+              </div>
           <input
             type="file"
             multiple
