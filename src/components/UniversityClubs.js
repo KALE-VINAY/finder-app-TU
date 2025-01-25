@@ -194,7 +194,7 @@ const UniversityClubs = () => {
       name: "Astronomy Club TU",
       description: "Explore the cosmos through stargazing sessions, astronomy workshops, and space science discussions. Regular observation nights and educational events.",
       logo: "/api/placeholder/100/100",
-      whatsappLink: "https://chat.whatsapp.com/INVvxBmz1rwBsyDYdsSAjM",
+      whatsappLink: "https://chat.whatsapp.com/FZphAAmwzpC8Wo2THzPRUz",
       category: "Science",
       memberCount: 150
     },
