@@ -143,7 +143,7 @@ const ProductCard = ({ item, isOwner, type, formatDate }) => {
           <h3 className="text-xl font-semibold">{item.name}</h3>
           <span className="text-sm text-gray-500">{formatDate(item.createdAt)}</span>
         </div>
-        <p className="text-gray-600 mb-2">{item.description}</p>
+        <p className="text-gray-600 text-sm mb-2">{item.description}</p>
         {type === 'products' ? (
           <p className="text-lg font-bold text-green-600">₹{item.price}</p>
         ) : (
