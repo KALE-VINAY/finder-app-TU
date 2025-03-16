@@ -326,7 +326,7 @@ const BusinessDetails = () => {
         )}
 
        {/* Products Grid with Loading State */}
-       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+       <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {products.map((product) => (
               <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                 <div className="relative pt-[75%]">
@@ -355,17 +355,17 @@ const BusinessDetails = () => {
                                     href={`https://wa.me/91${business.contactNumber}?text=Hello%20there,%20I%27m%20interested%20in%20your%20product%20${product.name}.`}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center text-green-600 px-2 py-1 rounded-md hover:bg-green-200 "
+                                    className="flex text-sm items-center text-green-600 px-2 py-1 rounded-md hover:bg-green-200 "
                                   >
-                                    <FaWhatsapp className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
-                                    WhatsApp
+                                    <FaWhatsapp className="w-4 h-4 sm:w-2 sm:h-4 mr-1" />
+                                    {/* WhatsApp */}
                                   </a>
                                   </div>
                     </div>
                     {isOwner && (
                       <button
                         onClick={() => handleDeleteProduct(product.id)}
-                        className="p-3 text-red-500 hover:text-red-700 rounded-full  hover:bg-red-200 transition-colors"
+                        className="-p-1 text-red-500 hover:text-red-700 rounded-full  hover:bg-red-200 transition-colors"
                       >
                         <Trash2 className="w-4 h-4 sm:w-5 sm:h-5" />
                       </button>
