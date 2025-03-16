@@ -28,7 +28,7 @@ const BusinessListing = () => {
   useEffect(() => {
     fetchBusinesses();
     window.scrollTo(0, 0);
-  }, []);
+  }, [showUserBusinesses, selectedCategory]);
 
   const fetchBusinesses = async () => {
     try {
