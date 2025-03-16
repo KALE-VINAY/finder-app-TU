@@ -153,14 +153,14 @@ const BusinessDetails = () => {
           <h1 className="text-5xl font-serif font-bold text-white mb-4 animate-slideInDown">
             {business.name}
           </h1>
-          <p className="text-xl text-white/90 font-light animate-slideInUp">
+          <p className="text-xl my-2 text-white/90 font-light animate-slideInUp">
             {business.category}
           </p>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 -mt-32 relative z-10">
+      <div className="container  mx-auto px-4  -mt-28 relative z-10">
         <div className="bg-white rounded-xl shadow-xl overflow-hidden animate-slideInUp">
        
                      {/* Business Details */}
